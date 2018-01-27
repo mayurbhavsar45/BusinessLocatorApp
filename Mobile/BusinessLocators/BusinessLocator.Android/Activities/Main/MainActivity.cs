@@ -2,8 +2,9 @@
 using Android.Widget;
 using Android.OS;
 using Android.Support.V7.App;
-using Toolbar = Android.Support.V7.Widget.Toolbar;
+using Android.Support.Design.Widget;
 using Android.Views;
+using BusinessLocator.Android.Adapters;
 
 namespace BusinessLocator.Android
 {
@@ -12,25 +13,21 @@ namespace BusinessLocator.Android
     public class MainActivity : AppCompatActivity
     {
         TextView titletoolbar;
+        BottomNavigationView bottomNavigation;
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
 
             // Set our view from the "main" layout resource
             SetContentView(Resource.Layout.Main);
-            Toast.MakeText(this, "hello", ToastLength.Short).Show();
-          // // var toolbar = FindViewById<Toolbar>(Resource.Id.toolbar);
-          //  titletoolbar = FindViewById<TextView>(Resource.Id.toolbar_title);
-          //  titletoolbar = FindViewById<TextView>(Resource.Id.toolbar_title);
-           // titletoolbar.Text = "BUSINESS LOCATOR";
-          //  SetSupportActionBar(toolbar);
-        }
-        public override bool OnCreateOptionsMenu(IMenu menu)
-        {
-            //MenuInflater.Inflate(Resource.Menu.mainactivitymenu, menu);
-            return base.OnCreateOptionsMenu(menu);
-        }
+           // Toast.MakeText(this, "hello", ToastLength.Short).Show();
 
+            bottomNavigation = FindViewById<BottomNavigationView>(Resource.Id.bottom_navigation);
+            bottomNavigation.SetShiftMode(false, false);
+       
+
+        }
+        
 
     }
 }

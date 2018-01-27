@@ -1,141 +1,133 @@
 <?xml version="1.0" encoding="utf-8"?>
- <LinearLayout
-       xmlns:android="http://schemas.android.com/apk/res/android"
-       android:layout_width="match_parent"
-       android:layout_height="match_parent"
-       android:background="@drawable/background">
-
-   <ScrollView
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background">
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" >
-   <LinearLayout
-       xmlns:android="http://schemas.android.com/apk/res/android"
-      android:orientation="vertical"
-      android:layout_width="match_parent"
-      android:layout_height="match_parent"
-      android:minWidth="25px"
-      android:minHeight="25px"
-      android:background="@drawable/background">
-   
-      <TextView
-          android:text="BUSINESS LOCATOR"
-          android:textAppearance="?android:attr/textAppearanceLarge"
-          android:layout_width="match_parent"
-          android:layout_height="wrap_content"
-          android:id="@+id/txttitle"
-          android:textSize="27sp"
-          android:gravity="center_horizontal"
-          android:layout_marginTop="50dp"
-          android:textColor="#ffffff" />
-      <TextView
-          android:text="Buisness Requirements"
-          android:textAppearance="?android:attr/textAppearanceMedium"
-          android:layout_width="match_parent"
-          android:layout_height="wrap_content"
-          android:id="@+id/txtsubtitle"
-          android:textColor="#ffffff"
-          android:textSize="15sp"
-          android:gravity="center"
-          android:layout_marginTop="3dp" />
-      <TextView
-          android:text="Welcome"
-          android:textAppearance="?android:attr/textAppearanceLarge"
-          android:layout_width="match_parent"
-          android:layout_height="wrap_content"
-          android:id="@+id/txtsubtitle1"
-          android:gravity="center"
-          android:layout_marginTop="50dp"
-          android:textSize="25sp"
-          android:textColor="#ffffff" />
-      <TextView
-          android:text="Lorem Ipsum is simply dummy text of the printing and typesetting industry"
-          android:textAppearance="?android:attr/textAppearanceSmall"
-          android:layout_width="match_parent"
-          android:layout_height="wrap_content"
-          android:id="@+id/txtsymmary"
-          android:gravity="center"
-          android:textColor="#b2c9e8"
-          android:layout_marginTop="3dp"
-          android:textSize="12sp"
-          android:layout_marginLeft="20dp"
-          android:layout_marginRight="20dp" />
-      <EditText
-          android:layout_width="match_parent"
-          android:layout_height="wrap_content"
-          android:id="@+id/euname"
-          android:background="@drawable/rounded_edittext"
-          android:layout_marginTop="30dp"
-          android:hint="User name"
-          android:textColorHint="#abc5ea"
-          android:gravity="top|left"
-          android:layout_marginLeft="20dp"
-          android:layout_marginRight="20dp"
-          android:paddingLeft="30dp"
-          android:paddingBottom="12dp"
-          android:paddingTop="12dp"
-          android:textColor="#ffffff"
-          android:lines="1"
-          android:singleLine="true" />
-      <EditText
-          android:layout_width="match_parent"
-          android:layout_height="wrap_content"
-          android:id="@+id/epwd"
-          android:background="@drawable/rounded_edittext"
-          android:layout_marginTop="10dp"
-          android:hint="Password"
-          android:textColorHint="#abc5ea"
-          android:gravity="top|left"
-          android:layout_marginLeft="20dp"
-          android:layout_marginRight="20dp"
-          android:paddingLeft="30dp"
-          android:paddingBottom="12dp"
-          android:paddingTop="12dp"
-          android:textColor="#ffffff"
-          android:lines="1"
-          android:password="true"
-          android:singleLine="true" />
-      <TextView
-          android:textAppearance="?android:attr/textAppearanceMedium"
-          android:layout_width="match_parent"
-          android:layout_height="wrap_content"
-          android:id="@+id/forgotpwdlink"
-          android:text="Forgot password ?"
-          android:clickable="true"
-          android:textSize="16sp"
-          android:textStyle="normal"
-          android:textColor="#ffffff"
-          android:layout_marginTop="20dp"
-          android:gravity="right"
-          android:layout_marginRight="20dp"
-          android:layout_marginBottom="20dp" />
-      <Button
-          android:text="Login"
-          android:layout_width="match_parent"
-          android:layout_height="wrap_content"
-          android:id="@+id/btnlogin"
-          android:layout_marginLeft="20dp"
-          android:layout_marginRight="20dp"
-          android:background="@drawable/rounded_button"
-          android:paddingBottom="12dp"
-          android:paddingTop="12dp"
-          android:textColor="#4684cd"
-          android:textSize="15sp" />
-      <TextView
-          android:text="Don't have an account yet ? Sign Up"
-          android:textAppearance="?android:attr/textAppearanceMedium"
-          android:layout_width="match_parent"
-          android:layout_height="wrap_content"
-          android:id="@+id/signuplink"
-          android:clickable="true"
-          android:textSize="17sp"
-          android:textColor="#ffffff"
-          android:layout_marginTop="50dp"
-          android:gravity="center"
-          android:textStyle="normal" />
-   
-  </LinearLayout>
-   
-  </ScrollView>
-  
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:minWidth="25px"
+            android:minHeight="25px"
+            android:background="@drawable/background">
+            <TextView
+                android:text="BUSINESS LOCATOR"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/txttitle"
+                android:textSize="27sp"
+                android:gravity="center_horizontal"
+                android:layout_marginTop="50dp"
+                android:textColor="#ffffff" />
+            <TextView
+                android:text="Buisness Requirements"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/txtsubtitle"
+                android:textColor="#ffffff"
+                android:textSize="15sp"
+                android:gravity="center"
+                android:layout_marginTop="3dp" />
+            <TextView
+                android:text="Welcome"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/txtsubtitle1"
+                android:gravity="center"
+                android:layout_marginTop="50dp"
+                android:textSize="25sp"
+                android:textColor="#ffffff" />
+            <TextView
+                android:text="Lorem Ipsum is simply dummy text of the printing and typesetting industry"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/txtsymmary"
+                android:gravity="center"
+                android:textColor="#b2c9e8"
+                android:layout_marginTop="3dp"
+                android:textSize="12sp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp" />
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/euname"
+                android:background="@drawable/rounded_edittext"
+                android:layout_marginTop="30dp"
+                android:hint="User name"
+                android:textColorHint="#abc5ea"
+                android:gravity="top|left"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:paddingLeft="30dp"
+                android:paddingBottom="12dp"
+                android:paddingTop="12dp"
+                android:textColor="#ffffff"
+                android:lines="1"
+                android:singleLine="true" />
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/epwd"
+                android:background="@drawable/rounded_edittext"
+                android:layout_marginTop="10dp"
+                android:hint="Password"
+                android:textColorHint="#abc5ea"
+                android:gravity="top|left"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:paddingLeft="30dp"
+                android:paddingBottom="12dp"
+                android:paddingTop="12dp"
+                android:textColor="#ffffff"
+                android:lines="1"
+                android:password="true"
+                android:singleLine="true" />
+            <TextView
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/forgotpwdlink"
+                android:text="Forgot password ?"
+                android:clickable="true"
+                android:textSize="16sp"
+                android:textStyle="normal"
+                android:textColor="#ffffff"
+                android:layout_marginTop="20dp"
+                android:gravity="right"
+                android:layout_marginRight="20dp"
+                android:layout_marginBottom="20dp" />
+            <Button
+                android:text="Login"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/btnlogin"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:background="@drawable/rounded_button"
+                android:paddingBottom="12dp"
+                android:paddingTop="12dp"
+                android:textColor="#4684cd"
+                android:textSize="15sp" />
+            <TextView
+                android:text="Don't have an account yet ? Sign Up"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/signuplink"
+                android:clickable="true"
+                android:textSize="17sp"
+                android:textColor="#ffffff"
+                android:layout_marginTop="50dp"
+                android:gravity="center"
+                android:textStyle="normal" />
+        </LinearLayout>
+    </ScrollView>
 </LinearLayout>
-  
