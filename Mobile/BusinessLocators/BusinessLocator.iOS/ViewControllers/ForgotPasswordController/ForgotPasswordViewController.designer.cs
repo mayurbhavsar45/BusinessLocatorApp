@@ -24,6 +24,10 @@ namespace BusinessLocator.iOS
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UIButton btnSubmit { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UILabel lblForgotPassword { get; set; }
 
         [Outlet]
@@ -44,6 +48,11 @@ namespace BusinessLocator.iOS
             if (btnBack != null) {
                 btnBack.Dispose ();
                 btnBack = null;
+            }
+
+            if (btnSubmit != null) {
+                btnSubmit.Dispose ();
+                btnSubmit = null;
             }
 
             if (lblForgotPassword != null) {

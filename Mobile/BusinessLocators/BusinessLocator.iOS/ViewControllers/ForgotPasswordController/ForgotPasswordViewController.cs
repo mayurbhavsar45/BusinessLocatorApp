@@ -36,11 +36,22 @@ namespace BusinessLocator.iOS
                 this.NavigationController.PopViewController(true);
             };
 
+            btnSubmit.TouchUpInside += (sender, e) => 
+            {
+                MainViewController mainViewController = this.Storyboard.InstantiateViewController("MainViewController") as MainViewController;
+                if(mainViewController!=null)
+                {
+                    this.NavigationController.PushViewController(mainViewController, true);
+                }
+            };
+
         }
 
         public override void ViewWillAppear(bool animated)
         {
             base.ViewWillAppear(animated);
+            this.NavigationController.NavigationBarHidden = true;
         }
+
     }
 }

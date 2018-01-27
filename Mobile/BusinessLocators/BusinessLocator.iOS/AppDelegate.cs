@@ -24,6 +24,7 @@ namespace BusinessLocator.iOS
             return true;
         }
 
+
         public override void OnResignActivation(UIApplication application)
         {
             // Invoked when the application is about to move from active to inactive state.
