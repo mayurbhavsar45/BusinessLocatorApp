@@ -104,6 +104,12 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\" />
+    <Folder Include="ViewControllers\MainController\" />
+    <Folder Include="ViewControllers\LocationController\" />
+    <Folder Include="ViewControllers\ChatController\" />
+    <Folder Include="Model\" />
+    <Folder Include="ViewControllers\NotificationController\" />
+    <Folder Include="ViewControllers\UserProfileController\" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="LaunchScreen.storyboard" />
@@ -112,17 +118,38 @@
   <ItemGroup>
     <None Include="Info.plist" />
     <None Include="Entitlements.plist" />
+    <None Include="BusinessLocator.iOS.csproj" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Main.cs" />
     <Compile Include="AppDelegate.cs" />
-    <Compile Include="UserTypeViewModel.cs" />
     <Compile Include="ViewControllers\ForgotPasswordController\ForgotPasswordViewController.cs" />
     <Compile Include="ViewControllers\ForgotPasswordController\ForgotPasswordViewController.designer.cs" />
     <Compile Include="ViewControllers\LoginController\LoginViewController.cs" />
     <Compile Include="ViewControllers\LoginController\LoginViewController.designer.cs" />
     <Compile Include="ViewControllers\SignUpController\SignUpViewController.cs" />
     <Compile Include="ViewControllers\SignUpController\SignUpViewController.designer.cs" />
+    <Compile Include="ViewControllers\MainController\MainViewController.cs" />
+    <Compile Include="ViewControllers\MainController\MainViewController.designer.cs">
+      <DependentUpon>MainViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewControllers\LocationController\LocationViewController.cs" />
+    <Compile Include="ViewControllers\LocationController\LocationViewController.designer.cs">
+      <DependentUpon>LocationViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewControllers\ChatController\ChatViewController.cs" />
+    <Compile Include="ViewControllers\ChatController\ChatViewController.designer.cs">
+      <DependentUpon>ChatViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Model\UserTypeViewModel.cs" />
+    <Compile Include="ViewControllers\NotificationController\NotificationViewController.cs" />
+    <Compile Include="ViewControllers\NotificationController\NotificationViewController.designer.cs">
+      <DependentUpon>NotificationViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewControllers\UserProfileController\UserProfileViewController.cs" />
+    <Compile Include="ViewControllers\UserProfileController\UserProfileViewController.designer.cs">
+      <DependentUpon>UserProfileViewController.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\BusinessLocator.Models\BusinessLocator.Models.csproj">
@@ -136,6 +163,16 @@
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\back_icon.png" />
+    <BundleResource Include="Resources\ic_magnifier.png" />
+    <BundleResource Include="Resources\ic_person_outline_white_24dp.png" />
+    <BundleResource Include="Resources\chat-tab-icon.png" />
+    <BundleResource Include="Resources\notification_tab_icon.png" />
+    <BundleResource Include="Resources\icon-chat-bubble-30.png" />
+    <BundleResource Include="Resources\icon-marker-30.png" />
+    <BundleResource Include="Resources\icon-pass-fail-30.png" />
+    <BundleResource Include="Resources\icon-notification-30.png" />
+    <BundleResource Include="Resources\icon-user-male-30.png" />
+    <BundleResource Include="Resources\icon-filter-30.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
 </Project>
