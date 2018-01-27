@@ -18,6 +18,7 @@ namespace BusinessLocator.Android
 
             // Set our view from the "main" layout resource
             SetContentView(Resource.Layout.Main);
+            Toast.MakeText(this, "hello", ToastLength.Short).Show();
           // // var toolbar = FindViewById<Toolbar>(Resource.Id.toolbar);
           //  titletoolbar = FindViewById<TextView>(Resource.Id.toolbar_title);
           //  titletoolbar = FindViewById<TextView>(Resource.Id.toolbar_title);
