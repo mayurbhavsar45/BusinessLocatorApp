@@ -3,5 +3,39 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    >
+    android:minWidth="25px"
+    android:minHeight="25px">
+   <LinearLayout
+      android:orientation="horizontal"
+      android:layout_width="match_parent"
+      android:layout_height="50dp"
+      android:id="@+id/linearLayout1"
+      android:background="#212121">
+    <ImageButton
+        android:layout_width="50dp"
+        android:layout_height="match_parent"
+        android:id="@+id/btnBack"
+        android:background="@null"
+        android:src="@drawable/icons_back"
+        android:scaleType="fitCenter"
+        android:padding="15dp" />
+    <TextView
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/lblTitle"
+        android:text="Business Locator"
+        android:textColor="#ffffff"
+        android:gravity="center_vertical"
+        android:layout_weight="1"
+        android:textSize="14dp" />
+    <ImageButton
+        android:layout_width="50dp"
+        android:layout_height="match_parent"
+        android:id="@+id/btnAdd"
+        android:background="@null"
+        android:src="@drawable/icons_filter27"
+        android:padding="15dp"
+        android:scaleType="fitCenter" />
+  </LinearLayout>
 </LinearLayout>

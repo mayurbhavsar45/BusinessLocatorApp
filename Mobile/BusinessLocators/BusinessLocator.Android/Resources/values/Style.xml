@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+  <resources xmlns:android="http://schemas.android.com/apk/res/android">
+    <style name="MyTheme" parent="Theme.AppCompat.Light.NoActionBar">
+      <item name="android:colorPrimary">@color/colorPrimary</item>
+      <item name="android:colorPrimaryDark">@color/colorPrimaryDark</item>
+      <item name="colorAccent">@color/colorAccent</item>
+      <item name="android:statusBarColor">@color/colorPrimaryDark</item>
+      <item name="android:spinnerItemStyle">@style/SpinnerItem</item>
+    </style>
+    <style name="SpinnerItem" parent="android:Widget.TextView.SpinnerItem">
+        <item name="android:textAppearance">@style/TextAppearanceSpinnerItem</item>
+    </style>
+     <style name="TextAppearanceSpinnerItem" parent="android:TextAppearance.Widget.TextView.SpinnerItem">
+        <item name="android:textColor">#FFFFFF</item>
+    </style>
+  
+</resources>

@@ -1,4 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-  <string name="app_name">BusinessLocator.Android</string>
+  <string name="app_name">BusinessLocator</string>
+  <string-array name="gender">
+    <item>Are you</item>
+    <item>Provider</item>
+    <item>Consumer</item>
+  </string-array>
 </resources>
