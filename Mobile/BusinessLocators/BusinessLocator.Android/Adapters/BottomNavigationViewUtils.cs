@@ -11,6 +11,8 @@ using Android.Views;
 using Android.Widget;
 using Android.Support.Design.Widget;
 using Android.Support.Design.Internal;
+using Android.Util;
+using System.Runtime.Remoting.Contexts;
 
 namespace BusinessLocator.Android.Adapters
 {
@@ -28,6 +30,9 @@ namespace BusinessLocator.Android.Adapters
             try
             {
                 var menuView = bottomNavigationView.GetChildAt(0) as BottomNavigationMenuView;
+              
+                // set your width here
+                
                 if (menuView == null)
                 {
                     System.Diagnostics.Debug.WriteLine("Unable to find BottomNavigationMenuView");
@@ -50,8 +55,10 @@ namespace BusinessLocator.Android.Adapters
                         continue;
 
                     item.SetShiftingMode(enableItemShiftMode);
+                    item.SetPadding(0, 17, 0, 0);
                     item.SetChecked(item.ItemData.IsChecked);
-
+                    
+                   
                 }
 
                 menuView.UpdateMenuView();

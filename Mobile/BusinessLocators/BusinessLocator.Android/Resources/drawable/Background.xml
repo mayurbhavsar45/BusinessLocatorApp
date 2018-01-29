@@ -4,8 +4,7 @@
       android:centerColor="#5e7cc2"
       android:endColor="#6e76c1"
       android:angle="90"/>
-  <item
-     android:paddingTop="14dp"></item>
+  
   <corners
       android:radius="0dp"/>
 

@@ -14,5 +14,10 @@
      <style name="TextAppearanceSpinnerItem" parent="android:TextAppearance.Widget.TextView.SpinnerItem">
         <item name="android:textColor">#FFFFFF</item>
     </style>
+    <style name="NavigationViewStyle">
+    
+      <item name="android:listPreferredItemHeightSmall">70dp</item>
+      <!-- menu item height-->
+    </style>
   
 </resources>

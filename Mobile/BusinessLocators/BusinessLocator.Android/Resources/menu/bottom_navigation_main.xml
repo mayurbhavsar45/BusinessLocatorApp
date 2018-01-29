@@ -3,20 +3,19 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
       xmlns:app="http://schemas.android.com/apk/res-auto">
   <item
-     android:id="@+id/menu_home"
+     android:id="@+id/menu_location"
      android:enabled="true"
-     android:icon="@drawable/icons_location"
-     android:top="5dp"
+     android:icon="@drawable/icons_location48"
      app:showAsAction="ifRoom" />
 
   <item
-      android:id="@+id/menu_document"
+      android:id="@+id/menu_inbox"
       android:enabled="true"
       android:icon="@drawable/icons_chat30"
       app:showAsAction="always" />
 
   <item
-      android:id="@+id/menu_message"
+      android:id="@+id/menu_notification"
       android:enabled="true"
       android:icon="@drawable/icons_notification32"
       app:showAsAction="always" />
@@ -28,9 +27,9 @@
       app:showAsAction="always" />
 
   <item
-      android:id="@+id/menu_settings"
+      android:id="@+id/menu_profile"
       android:enabled="true"
-      android:icon="@drawable/icons_acount32"
+      android:icon="@drawable/account2"
       app:showAsAction="always|withText" />
 
 </menu>
