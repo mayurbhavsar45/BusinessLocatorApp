@@ -41,13 +41,41 @@ namespace BusinessLocator.Android.Fragments
             gmap.UiSettings.ScrollGesturesEnabled = true;
             gmap.UiSettings.ZoomGesturesEnabled = true;
             LatLng latlng = new LatLng(21.183549, 72.783175);
+            LatLng latlng2 = new LatLng(21.186312, 72.783175);
+            LatLng latlng3 = new LatLng(21.190160, 72.778953);
+            LatLng latlng4 = new LatLng(21.182070, 72.782674);
             CameraUpdate camera = CameraUpdateFactory.NewLatLngZoom(latlng, 15);
-            gmap.MoveCamera(camera);
-            MarkerOptions markerOption = new MarkerOptions();
-            markerOption.SetPosition(latlng);
-            markerOption.SetTitle("Natrix Software Private Limited");
+           
+            var color = BitmapDescriptorFactory.HueBlue;
+           gmap.MoveCamera(camera);
+            
 
-            gmap.AddMarker(markerOption);
+            Marker m1 = gmap.AddMarker(new MarkerOptions()
+                .SetPosition(latlng)
+                .SetTitle("Title1")
+                .SetSnippet("Snippet1")
+                .SetIcon(BitmapDescriptorFactory.DefaultMarker(color)));
+
+            Marker m2 = gmap.AddMarker(new MarkerOptions()
+              .SetPosition(latlng2)
+              .SetTitle("Title1")
+              .SetSnippet("Snippet1")
+              .SetIcon(BitmapDescriptorFactory.DefaultMarker(color)));
+
+            Marker m3 = gmap.AddMarker(new MarkerOptions()
+              .SetPosition(latlng3)
+              .SetTitle("Title1")
+              .SetSnippet("Snippet1")
+              .SetIcon(BitmapDescriptorFactory.DefaultMarker(color)));
+
+            Marker m4 = gmap.AddMarker(new MarkerOptions()
+             .SetPosition(latlng4)
+             .SetTitle("Title1")
+             .SetSnippet("Snippet1")
+             .SetIcon(BitmapDescriptorFactory.DefaultMarker(color)));
+
+
+
         }
 
         private void SetUpMap()
