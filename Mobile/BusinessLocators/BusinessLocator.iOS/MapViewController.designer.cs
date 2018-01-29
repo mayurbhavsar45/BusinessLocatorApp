@@ -11,18 +11,18 @@ using UIKit;
 
 namespace BusinessLocator.iOS
 {
-    [Register ("MainViewController")]
-    partial class MainViewController
+    [Register ("MapViewController")]
+    partial class MapViewController
     {
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UITabBar MainTabBar { get; set; }
+        UIKit.UILabel lblMap { get; set; }
 
         void ReleaseDesignerOutlets ()
         {
-            if (MainTabBar != null) {
-                MainTabBar.Dispose ();
-                MainTabBar = null;
+            if (lblMap != null) {
+                lblMap.Dispose ();
+                lblMap = null;
             }
         }
     }

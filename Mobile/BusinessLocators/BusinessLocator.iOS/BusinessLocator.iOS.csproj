@@ -150,6 +150,15 @@
     <Compile Include="ViewControllers\UserProfileController\UserProfileViewController.designer.cs">
       <DependentUpon>UserProfileViewController.cs</DependentUpon>
     </Compile>
+    <Compile Include="MapViewController.cs" />
+    <Compile Include="MapViewController.designer.cs">
+      <DependentUpon>MapViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MapListViewController.cs" />
+    <Compile Include="MapListViewController.designer.cs">
+      <DependentUpon>MapListViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomCollectionSource.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\BusinessLocator.Models\BusinessLocator.Models.csproj">
@@ -173,6 +182,9 @@
     <BundleResource Include="Resources\icon-notification-30.png" />
     <BundleResource Include="Resources\icon-user-male-30.png" />
     <BundleResource Include="Resources\icon-filter-30.png" />
+    <BundleResource Include="Resources\Search.png" />
+    <BundleResource Include="Resources\Filter.png" />
+    <BundleResource Include="Resources\launcher_icon.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
 </Project>
