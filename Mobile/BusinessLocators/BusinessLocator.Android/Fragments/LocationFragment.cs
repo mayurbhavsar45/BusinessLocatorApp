@@ -43,14 +43,12 @@ namespace BusinessLocator.Android.Fragments
             var fragments = new Fragment[]
             {
                 new MapViewFragment(),
-                new ListViewFragment()
-               
+                new ListViewFragment(),             
             };
 
             var titles = CharSequence.ArrayFromStringArray(new[] {
                 "Map View",
-                "List View"
-               
+                "List View",      
             });
 
 
@@ -58,8 +56,8 @@ namespace BusinessLocator.Android.Fragments
             viewPager.Adapter = new ViewPagerAdapter(ChildFragmentManager, fragments, titles);
             tabLayout.SetTabTextColors(Color.Rgb(192, 192, 192), Color.Rgb(62, 133, 199));
 
-            tabLayout.SetupWithViewPager(viewPager);
-            //  tabLayout.GetTabAt(0).SetIcon(Resource.Drawable.home2);
+           tabLayout.SetupWithViewPager(viewPager);
+          // tabLayout.GetTabAt(0).SetIcon(Resource.Drawable.home2);
            
 
         }
