@@ -18,6 +18,13 @@ namespace BusinessLocator.iOS
         {
             base.ViewDidLoad();
 
+            var gradientLayer = new CAGradientLayer();
+            gradientLayer.Colors = new[] { UIColor.FromRGB(98, 107, 186).CGColor, UIColor.FromRGB(57, 122, 193).CGColor };
+            gradientLayer.Locations = new NSNumber[] { 0, 1 };
+            gradientLayer.Frame = new CGRect(0, 0, locationtabHeaderView.Frame.Width+50, locationtabHeaderView.Frame.Height);
+            //gradientLayer.Frame = locationtabHeaderView.Frame;
+            locationtabHeaderView.Layer.InsertSublayer(gradientLayer,0);
+
             var layout = collectionViewPager.CollectionViewLayout as UICollectionViewFlowLayout;
             layout.ItemSize = new CGSize(UIScreen.MainScreen.Bounds.Width, UIScreen.MainScreen.Bounds.Height - 120);
 
@@ -30,14 +37,14 @@ namespace BusinessLocator.iOS
             AddChildViewController(listViewController);
             controllers.Add(listViewController);
 
-            btnMapView.TouchUpInside += (sender, e) => 
+            btnMapView.TouchUpInside +=(sender, e) => 
             {
-                ScrollToPosition (0);
+                ScrollToPosition(0);
             };
 
-            btnListView.TouchUpInside += (sender, e) =>
+            btnListView.TouchUpInside+=(sender, e) => 
             {
-                ScrollToPosition (1);
+                ScrollToPosition(1);
             };
 
             var source = new CustomCollectionSource<UIViewController>(controllers, GetCell);
@@ -54,14 +61,14 @@ namespace BusinessLocator.iOS
                     position++;
                 }
 
-                //if (position == 1)
-                //{
-                //    //ShowHelpIfNecessary(TutorialHelper.SchedulesScores);
-                //}
+                if (position == 1)
+                {
+                    //ShowHelpIfNecessary(TutorialHelper.SchedulesScores);
+                }
 
                 SetButtonColor(position);
 
-                //lcIndicatorLeading.Constant = collectionViewPager.ContentOffset.X / 2f;
+                //_lcIndicatorLeading.Constant = collectionViewPager.ContentOffset.X / 2f;
             };
         }
 

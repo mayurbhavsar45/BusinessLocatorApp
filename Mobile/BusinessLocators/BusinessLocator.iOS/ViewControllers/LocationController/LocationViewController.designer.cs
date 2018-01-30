@@ -7,7 +7,6 @@
 using Foundation;
 using System;
 using System.CodeDom.Compiler;
-using UIKit;
 
 namespace BusinessLocator.iOS
 {
@@ -15,24 +14,27 @@ namespace BusinessLocator.iOS
     partial class LocationViewController
     {
         [Outlet]
-        [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UIButton btnListView { get; set; }
 
+
         [Outlet]
-        [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UIButton btnMapView { get; set; }
 
+
         [Outlet]
-        [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UICollectionView collectionViewPager { get; set; }
 
-        [Outlet]
-        [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UIView IndicatorView { get; set; }
 
         [Outlet]
-        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UIView IndicatorView { get; set; }
+
+
+        [Outlet]
         UIKit.UIView locationtabHeaderView { get; set; }
+
+
+        [Outlet]
+        UIKit.UIView TabContainer { get; set; }
 
         void ReleaseDesignerOutlets ()
         {
@@ -49,11 +51,6 @@ namespace BusinessLocator.iOS
             if (collectionViewPager != null) {
                 collectionViewPager.Dispose ();
                 collectionViewPager = null;
-            }
-
-            if (IndicatorView != null) {
-                IndicatorView.Dispose ();
-                IndicatorView = null;
             }
 
             if (locationtabHeaderView != null) {

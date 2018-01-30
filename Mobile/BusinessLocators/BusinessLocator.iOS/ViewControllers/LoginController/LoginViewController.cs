@@ -161,9 +161,9 @@ namespace BusinessLocator.iOS
             btnLogin.TouchUpInside += (sender, e) => 
             {
                 MainViewController mainViewController = this.Storyboard.InstantiateViewController("MainViewController") as MainViewController;
-                if(mainViewController!=null)
+                if(mainViewController != null)
                 {
-                    this.NavigationController.PushViewController(mainViewController,true);                    
+                    this.NavigationController.PushViewController(mainViewController, true);                    
                 }
             };
 

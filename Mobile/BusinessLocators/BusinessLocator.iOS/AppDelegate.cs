@@ -1,5 +1,6 @@
 ﻿using Foundation;
 using UIKit;
+using Google.Maps;
 
 namespace BusinessLocator.iOS
 {
@@ -9,6 +10,8 @@ namespace BusinessLocator.iOS
     public class AppDelegate : UIApplicationDelegate
     {
         // class-level declarations
+
+        const string MapsApiKey = "AIzaSyAYLSqyezVBGpLO5hiI2zP9TiX4XfjSPCE"; //"AIzaSyDvWQ5x5NaLtPnWydFKkHqD0Azq50ECGwQ"; 
 
         public override UIWindow Window
         {
@@ -20,7 +23,7 @@ namespace BusinessLocator.iOS
         {
             // Override point for customization after application launch.
             // If not required for your application you can safely delete this method
-
+            MapServices.ProvideAPIKey(MapsApiKey);
             return true;
         }
 

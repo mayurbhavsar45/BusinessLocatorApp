@@ -34,12 +34,12 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="55" id="mz6-MI-AWw"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="25"/>
-                                <color key="textColor" red="0.31728967470000002" green="0.5764967715" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
                                 <nil key="highlightedColor"/>
+                                <color key="textColor" colorSpace="calibratedWhite" white="1" alpha="1"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" customColorSpace="sRGB" colorSpace="calibratedRGB" red="0.26666666666666666" green="0.38823529411764707" blue="0.99215686274509807" alpha="1"/>
                         <constraints>
                             <constraint firstItem="1728" firstAttribute="top" secondItem="537" secondAttribute="bottom" constant="8" id="VKp-ip-7HR"/>
                             <constraint firstItem="537" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" constant="177" id="Zxc-4N-LIG"/>
