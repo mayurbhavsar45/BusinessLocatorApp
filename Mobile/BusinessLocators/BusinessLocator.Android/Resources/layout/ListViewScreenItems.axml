@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="10dp">
+    <refractored.controls.CircleImageView
+        android:paddingTop="16dp"
+        android:src="@drawable/user"
+        android:layout_height="80dp"
+        android:id="@+id/profile"
+        android:layout_width="80dp"
+        app:civ_border_width="4dp"
+        app:civ_border_color="#f3f3f3" />
+    <ImageView
+        android:src="@drawable/icons_account24"
+        android:layout_height="25dp"
+        android:id="@+id/user"
+        android:layout_toRightOf="@id/profile"
+        android:layout_width="25dp"
+        android:layout_marginLeft="10dp" />
+    <TextView
+        android:text="Brauce wills"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/user"
+        android:id="@+id/name"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="2dp"
+        android:textSize="11sp" />
+    <ImageView
+        android:src="@drawable/icons_marker24"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_below="@id/user"
+        android:id="@+id/locationimg"
+        android:layout_toRightOf="@id/profile"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="5dp" />
+    <TextView
+        android:text="303-304,Airen Heights ware house road,"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/locationimg"
+        android:id="@+id/locationtext"
+        android:layout_below="@id/name"
+        android:layout_marginTop="15dp"
+        android:textSize="11sp" />
+    <ImageView
+        android:src="@drawable/icons_phone24"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_toRightOf="@id/name"
+        android:id="@+id/call"
+        android:layout_marginLeft="36dp" />
+    <TextView
+        android:text="9362-265-214"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/name"
+        android:id="@+id/phonelabel"
+        android:layout_marginLeft="60dp"
+        android:layout_marginTop="2dp"
+        android:textSize="11sp" />
+    <ImageView
+        android:src="@drawable/icons_below24"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:layout_below="@id/locationimg"
+        android:id="@+id/bottomarrow"
+        android:layout_toRightOf="@id/profile"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp" />
+    <ImageView
+        android:src="@drawable/icons_wine24"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:layout_below="@id/locationimg"
+        android:id="@+id/bottle1"
+        android:layout_toRightOf="@id/bottomarrow"
+        android:layout_marginLeft="2dp"
+        android:layout_marginTop="12dp" />
+    <ImageView
+        android:src="@drawable/icons_below24"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:layout_below="@id/locationimg"
+        android:id="@+id/bottomarrow2"
+        android:layout_toRightOf="@id/bottle1"
+        android:layout_marginLeft="2dp"
+        android:layout_marginTop="10dp" />
+    <ImageView
+        android:src="@drawable/icons_wine24"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:layout_below="@id/locationimg"
+        android:id="@+id/bottle2"
+        android:layout_toRightOf="@id/bottomarrow2"
+        android:layout_marginLeft="2dp"
+        android:layout_marginTop="12dp" />
+    <TextView
+        android:text="More Details  &gt;    "
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/bottle2"
+        android:id="@+id/textView1"
+        android:layout_below="@id/locationimg"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="25dp"
+        android:textSize="12sp" />
+</RelativeLayout>

@@ -10,11 +10,11 @@ using Fragment = Android.Support.V4.App.Fragment;
 
 namespace BusinessLocator.Android
 {
-    [Activity(Label = "",Theme ="@style/MyTheme",MainLauncher =true)]
+    [Activity(Label = "",Theme ="@style/MyTheme", MainLauncher = true)]
 
     public class MainActivity : AppCompatActivity
     {
-       
+    
         BottomNavigationView bottomNavigation;
         protected override void OnCreate(Bundle savedInstanceState)
         {

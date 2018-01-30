@@ -29,10 +29,10 @@
             android:padding="12dp"
             android:scaleType="fitCenter" />
     </LinearLayout>
-    <TextView
-        android:text="InboxFragment"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/textView1" />
+  <ListView
+      android:id="@+id/list"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:divider="#e3e3e3"
+      android:dividerHeight="4px" />
 </LinearLayout>
