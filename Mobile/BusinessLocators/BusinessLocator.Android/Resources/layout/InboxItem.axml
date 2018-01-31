@@ -3,7 +3,10 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:padding="10dp">
+    android:paddingTop="1dp"
+    android:paddingBottom="1dp"
+    android:paddingLeft="10dp"
+    android:paddingRight="10dp">
     <refractored.controls.CircleImageView
         android:paddingTop="16dp"
         android:src="@drawable/user1"
@@ -18,8 +21,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_toRightOf="@id/profile"
-        android:maxLength="10"
-        android:ellipsize="end"
         android:id="@+id/name"
         android:layout_alignParentTop="true"
         android:layout_marginTop="15dp"
@@ -29,15 +30,18 @@
     <TextView
         android:text="303-304,Airen Heights ware house road,"
         android:textAppearance="?android:attr/textAppearanceSmall"
-        android:layout_width="wrap_content"
+        android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:layout_toRightOf="@id/profile"
         android:id="@+id/txtmsg"
         android:layout_below="@id/name"
         android:layout_marginTop="3dp"
-        android:textSize="11sp"
+        android:textSize="14sp"
         android:layout_marginLeft="20dp"
-        android:textColor="#cdcdcd" />
+        android:textColor="#cdcdcd"
+        android:maxLength="50"
+        android:ellipsize="marquee"
+        android:maxLines="1" />
     <TextView
         android:text="4:00 AM    "
         android:layout_width="wrap_content"
@@ -50,16 +54,25 @@
         android:gravity="right" />
     <TextView
         android:id="@+id/count"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
         android:background="@drawable/item_count_num"
-        android:text="12"
+        android:text="11"
         android:textColor="#FFF"
         android:textSize="10sp"
         android:textStyle="bold"
+        android:padding="3dp"
         android:layout_toRightOf="@id/txtmsg"
         android:layout_below="@id/lbltime"
         android:layout_alignParentRight="false"
-        android:layout_marginLeft="50dp"
-        android:layout_marginTop="4dp" />
+        android:layout_marginTop="4dp"
+        android:gravity="center"
+        android:layout_marginLeft="30dp" />
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="#cecece"
+        android:layout_below="@id/txtmsg"
+        android:layout_toRightOf="@id/profile"
+        android:layout_marginTop="20dp" />
 </RelativeLayout>

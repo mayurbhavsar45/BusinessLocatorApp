@@ -125,8 +125,9 @@
     <Compile Include="Activities\Main\MainActivity.cs" />
     <Compile Include="Activities\SignUp\SignUpActivity.cs" />
     <Compile Include="Adapters\BottomNavigationViewUtils.cs" />
-    <Compile Include="Adapters\InboxAdapter.cs" />
+    <Compile Include="Adapters\InboxScreenAdapter.cs" />
     <Compile Include="Adapters\ListviewScreenAdapter.cs" />
+    <Compile Include="Adapters\NotificationAdapter.cs" />
     <Compile Include="Adapters\ViewPagerAdapter.cs" />
     <Compile Include="Fragments\InboxFragment.cs" />
     <Compile Include="Fragments\ListViewFragment.cs" />
@@ -135,7 +136,7 @@
     <Compile Include="Fragments\NotificationFragment.cs" />
     <Compile Include="Fragments\ProfileFragment.cs" />
     <Compile Include="Fragments\WallsFragment.cs" />
-    <Compile Include="Models\InboxClass.cs" />
+    <Compile Include="Models\Chat.cs" />
     <Compile Include="Models\Person.cs" />
     <Compile Include="Resources\Resource.Designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -333,7 +334,9 @@
     <AndroidResource Include="Resources\drawable\user3.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\item_count_num.xml" />
+    <AndroidResource Include="Resources\drawable\item_count_num.xml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <Import Project="..\packages\Xamarin.Android.Support.Annotations.26.1.0.1\build\MonoAndroid80\Xamarin.Android.Support.Annotations.targets" Condition="Exists('..\packages\Xamarin.Android.Support.Annotations.26.1.0.1\build\MonoAndroid80\Xamarin.Android.Support.Annotations.targets')" />
