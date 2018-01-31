@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -31,10 +32,92 @@
             android:padding="10dp"
             android:scaleType="fitCenter" />
     </LinearLayout>
-    <TextView
-        android:text="ProfileFragment"
-        android:textAppearance="?android:attr/textAppearanceLarge"
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <com.github.florent37.diagonallayout.DiagonalLayout
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+            app:diagonal_angle="16"
+            android:id="@+id/coverprofile"
+            app:diagonal_gravity="left|bottom"
+            android:minWidth="25px"
+            android:minHeight="25px">
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                android:src="@drawable/user4" />
+        </com.github.florent37.diagonallayout.DiagonalLayout>
+        <refractored.controls.CircleImageView
+            android:paddingTop="16dp"
+            android:src="@drawable/user3"
+            android:layout_height="100dp"
+            android:id="@+id/profile"
+            android:layout_width="100dp"
+            app:civ_border_width="4dp"
+            app:civ_border_color="#f3f3f3"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="180dp" />
+        <TextView
+            android:text="James lo"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/name"
+            android:layout_gravity="top"
+            android:layout_toRightOf="@id/profile"
+            android:layout_below="@id/coverprofile"
+            android:layout_marginTop="-29dp"
+            android:layout_marginLeft="20dp" />
+        <TextView
+            android:text="+91 9696962565"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/coverprofile"
+            android:id="@+id/textView1"
+            android:layout_toRightOf="@id/profile"
+            android:layout_marginLeft="20dp" />
+    </RelativeLayout>
+    <LinearLayout
+        android:layout_height="100dp"
+        android:layout_width="match_parent"
+        android:background="#11000000"
+        android:layout_marginTop="-100dp" />
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/textView1" />
+        android:padding="10dp"
+        android:background="#f3f3f3"
+        android:layout_marginTop="4dp">
+        <TextView
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:text="Email Address"
+            android:textColor="#333333" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:layout_marginTop="4dp">
+        <TextView
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:text="jameslo@gmail.com"
+            android:id="@+id/email" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:background="#f3f3f3"
+        android:layout_marginTop="4dp">
+        <TextView
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:text="Address"
+            android:textColor="#333333" />
+    </LinearLayout>
 </LinearLayout>

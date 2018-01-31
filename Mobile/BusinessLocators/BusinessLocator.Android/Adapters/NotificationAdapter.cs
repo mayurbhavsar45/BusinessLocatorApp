@@ -9,23 +9,38 @@ using Android.OS;
 using Android.Runtime;
 using Android.Views;
 using Android.Widget;
+using BusinessLocator.Android.Models;
+
 
 namespace BusinessLocator.Android.Adapters
 {
-    class NotificationAdapter : BaseAdapter
+    class NotificationAdapter : BaseAdapter<NotificationModel>
     {
+        Activity context;
+        List<NotificationModel> list;
 
-        Context context;
+        public NotificationAdapter(Activity _context, List<NotificationModel> _list) : base()
 
-        public NotificationAdapter(Context context)
         {
-            this.context = context;
+            this.context = _context;
+            this.list = _list;
+
+        }
+        public override NotificationModel this[int position]
+        {
+            get
+            {
+                return list[position];
+            }
         }
 
 
-        public override Java.Lang.Object GetItem(int position)
+        public override int Count
         {
-            return position;
+            get
+            {
+                return list.Count;
+            }
         }
 
         public override long GetItemId(int position)
@@ -33,46 +48,37 @@ namespace BusinessLocator.Android.Adapters
             return position;
         }
 
+
         public override View GetView(int position, View convertView, ViewGroup parent)
         {
-            var view = convertView;
-            NotificationAdapterViewHolder holder = null;
+            View view = convertView;
 
-            if (view != null)
-                holder = view.Tag as NotificationAdapterViewHolder;
 
-            if (holder == null)
+            if (view == null)
+                view = context.LayoutInflater.Inflate(Resource.Layout.NotificationItem, parent, false);
+
+            NotificationModel item = this[position];
+
+            view.FindViewById<TextView>(Resource.Id.name).Text = item.name;
+            view.FindViewById<TextView>(Resource.Id.txtmsg).Text = item.msg;
+         
+            view.FindViewById<TextView>(Resource.Id.lbltime).Text = item.time;
+            var a=  item.image;
+            var count = item.count;
+            if(a==0 && count==0)
             {
-                holder = new NotificationAdapterViewHolder();
-                var inflater = context.GetSystemService(Context.LayoutInflaterService).JavaCast<LayoutInflater>();
-                //replace with your item and your holder items
-                //comment back in
-                //view = inflater.Inflate(Resource.Layout.item, parent, false);
-                //holder.Title = view.FindViewById<TextView>(Resource.Id.text);
-                view.Tag = holder;
+                view.FindViewById<TextView>(Resource.Id.count).Visibility = ViewStates.Gone;
+                view.FindViewById<ImageView>(Resource.Id.profile).Visibility = ViewStates.Gone;
             }
-
-
-            //fill in your items
-            //holder.Title.Text = "new text here";
+            else
+            {
+                view.FindViewById<ImageView>(Resource.Id.profile).Visibility = ViewStates.Visible;
+                view.FindViewById<TextView>(Resource.Id.count).Visibility = ViewStates.Visible;
+                view.FindViewById<ImageView>(Resource.Id.profile).SetImageResource(item.image);
+                view.FindViewById<TextView>(Resource.Id.count).Text = item.count.ToString();
+            }
 
             return view;
         }
-
-        //Fill in cound here, currently 0
-        public override int Count
-        {
-            get
-            {
-                return 0;
-            }
-        }
-
-    }
-
-    class NotificationAdapterViewHolder : Java.Lang.Object
-    {
-        //Your adapter views to re-use
-        //public TextView Title { get; set; }
     }
 }
