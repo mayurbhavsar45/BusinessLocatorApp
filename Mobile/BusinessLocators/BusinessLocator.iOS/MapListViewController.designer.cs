@@ -16,13 +16,13 @@ namespace BusinessLocator.iOS
     {
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UILabel lblList { get; set; }
+        UIKit.UITableView UsersTableView { get; set; }
 
         void ReleaseDesignerOutlets ()
         {
-            if (lblList != null) {
-                lblList.Dispose ();
-                lblList = null;
+            if (UsersTableView != null) {
+                UsersTableView.Dispose ();
+                UsersTableView = null;
             }
         }
     }

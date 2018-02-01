@@ -188,6 +188,12 @@
       <DependentUpon>MapListViewController.cs</DependentUpon>
     </Compile>
     <Compile Include="CustomCollectionSource.cs" />
+    <Compile Include="Model\LocationsListViewItemModel.cs" />
+    <Compile Include="UsersTableViewSource.cs" />
+    <Compile Include="UsersCell.cs" />
+    <Compile Include="UsersCell.designer.cs">
+      <DependentUpon>UsersCell.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\BusinessLocator.Models\BusinessLocator.Models.csproj">
@@ -215,6 +221,18 @@
     <BundleResource Include="Resources\Filter.png" />
     <BundleResource Include="Resources\launcher_icon.png" />
     <BundleResource Include="Resources\marker.png" />
+    <BundleResource Include="Resources\marker-pin.png" />
+    <BundleResource Include="Resources\icon_below.png" />
+    <BundleResource Include="Resources\icon_wine.png" />
+    <BundleResource Include="Resources\user1.jpg" />
+    <BundleResource Include="Resources\user2.jpg" />
+    <BundleResource Include="Resources\user3.png" />
+    <BundleResource Include="Resources\user4.jpg" />
+    <BundleResource Include="Resources\right_arrow.png" />
+    <BundleResource Include="Resources\icon_marker.png" />
+    <BundleResource Include="Resources\icon_call.png" />
+    <BundleResource Include="Resources\icon_account.png" />
+    <BundleResource Include="Resources\discloser_icon.png" />
   </ItemGroup>
   <ItemGroup>
     <XamarinComponentReference Include="googleiosmaps">

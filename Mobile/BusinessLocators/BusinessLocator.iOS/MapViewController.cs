@@ -34,44 +34,50 @@ namespace BusinessLocator.iOS
                                             zoom: 5);
             mapView = MapView.FromCamera(CGRect.Empty, camera);
             mapView.MyLocationEnabled = true;
+            mapView.Settings.MyLocationButton = true;
+            mapView.MyLocationEnabled = true;
+            mapView.Settings.SetAllGesturesEnabled(true);
+            //mapView.MapType = MapViewType.Satellite;
+
 
             //Marker
-            var xamMarker = new Marker() 
+            var first_marker = new Marker() 
             {
-                Title = "Natrix",
-                Snippet = "Surat, Gujarat",
+                Title = "Jim",
+                //Snippet = "Surat, Gujarat",
                 Position = new CLLocationCoordinate2D(21.183549, 72.783175),
                 Map = mapView
             };
 
-            var xamMarker2 = new Marker()
+            var second_marker = new Marker()
             {
-                Title = "Divyesh",
-                Snippet = "Surat, Gujarat",
-                Position = new CLLocationCoordinate2D(21.186312, 72.783175),
+                Title = "Thomas",
+                //Snippet = "Surat, Gujarat",
+                Position = new CLLocationCoordinate2D(21.186312, 73.783175),
                 Map = mapView
             };
 
-            var marker = new Marker()
+            var third_marker = new Marker()
             {
-                Title = "Business Locator",
-                Snippet = "Surat, Adajan",
+                Title = "Katherin",
+                //Snippet = "Surat, Adajan",
                 Position = new CLLocationCoordinate2D(25.182070, 73.782674),
                 Map = mapView
             };
 
-            var marker4 = new Marker()
+            var fourth_marker = new Marker()
             {
-                Title = "Xamarin ios",
-                Snippet = "Surat, Adajan",
+                Title = "Jonathan",
+                //Snippet = "Surat, Adajan",
                 Position = new CLLocationCoordinate2D(24.182070, 75.782674),
                 Map = mapView
             };
 
             //Customize Marker
-            xamMarker.Icon = UIImage.FromFile("marker");
+            second_marker.Icon = UIImage.FromFile("icon-marker-30");
+            fourth_marker.Icon = UIImage.FromFile("marker-pin");
+            third_marker.Icon = UIImage.FromFile("icon-marker-30");
 
-            marker.Icon = UIImage.FromFile("marker");
             View = mapView;
         }
 

@@ -61,10 +61,10 @@ namespace BusinessLocator.iOS
                     position++;
                 }
 
-                if (position == 1)
-                {
-                    //ShowHelpIfNecessary(TutorialHelper.SchedulesScores);
-                }
+                //if (position == 1)
+                //{
+                //    //ShowHelpIfNecessary(TutorialHelper.SchedulesScores);
+                //}
 
                 SetButtonColor(position);
 
