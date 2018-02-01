@@ -9,6 +9,5 @@
         android:id="@+id/list"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:divider="#e3e3e3"
-        android:dividerHeight="4px" />
+        />
 </LinearLayout>

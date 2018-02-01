@@ -22,10 +22,11 @@
             android:layout_weight="1"
             android:textSize="16dp" />
     </LinearLayout>
-    <TextView
-        android:text="NotificationFragment"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/textView1" />
+  <ListView
+       android:id="@+id/list"
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:divider="@null"
+       android:dividerHeight="0dp"
+        />
 </LinearLayout>

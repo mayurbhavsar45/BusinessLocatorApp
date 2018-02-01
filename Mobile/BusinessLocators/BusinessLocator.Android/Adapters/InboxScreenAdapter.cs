@@ -10,21 +10,23 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using BusinessLocator.Android.Models;
+using Refractored.Controls;
 
 namespace BusinessLocator.Android.Adapters
 {
-    class InboxAdapter : BaseAdapter<InboxClass>
+    class InboxScreenAdapter : BaseAdapter<Chat>
     {
         Activity context;
-        List<InboxClass> list;
+        List<Chat> list;
 
-        public InboxAdapter(Activity _context, List<InboxClass> _list) : base()
+        public InboxScreenAdapter(Activity _context, List<Chat> _list) :base()
+
         {
             this.context = _context;
             this.list = _list;
 
         }
-        public override InboxClass this[int position]
+        public override Chat this[int position]
         {
             get
             {
@@ -53,16 +55,16 @@ namespace BusinessLocator.Android.Adapters
 
 
             if (view == null)
-                view = context.LayoutInflater.Inflate(Resource.Layout.ListViewScreenItems, parent, false);
+                view = context.LayoutInflater.Inflate(Resource.Layout.InboxItem, parent, false);
 
-            InboxClass item = this[position];
+            Chat item = this[position];
 
             view.FindViewById<TextView>(Resource.Id.name).Text = item.name;
             view.FindViewById<TextView>(Resource.Id.txtmsg).Text = item.msg;
             view.FindViewById<TextView>(Resource.Id.count).Text = item.count.ToString();
             view.FindViewById<TextView>(Resource.Id.lbltime).Text = item.time;
             view.FindViewById<ImageView>(Resource.Id.profile).SetImageResource(item.image);
-            
+
             return view;
         }
     }

@@ -10,6 +10,7 @@ using Android.Runtime;
 using Android.Util;
 using Android.Views;
 using Android.Widget;
+using Com.Github.Florent37.Diagonallayout;
 using Fragment = Android.Support.V4.App.Fragment;
 
 namespace BusinessLocator.Android
@@ -26,6 +27,7 @@ namespace BusinessLocator.Android
         public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
         {
             // Use this to return your custom view for this Fragment
+          
              return inflater.Inflate(Resource.Layout.ProfileFragment, container, false);
 
            

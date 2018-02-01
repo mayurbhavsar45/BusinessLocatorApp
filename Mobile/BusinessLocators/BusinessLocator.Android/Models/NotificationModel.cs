@@ -12,7 +12,7 @@ using Android.Widget;
 
 namespace BusinessLocator.Android.Models
 {
-    class InboxClass
+    class NotificationModel
     {
         public int sid { get; set; }
         public string name { get; set; }
