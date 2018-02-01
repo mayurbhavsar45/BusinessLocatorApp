@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:minWidth="25px"
+    android:minHeight="25px">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:orientation="horizontal"
+        android:id="@+id/linearLayout1"
+        android:background="@drawable/background">
+        <ImageButton
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:id="@+id/btnback"
+            android:background="@null"
+            android:src="@drawable/icons_back"
+            android:padding="10dp"
+            android:scaleType="fitCenter" />
+        <TextView
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/lblTitle"
+            android:text="Settings"
+            android:textColor="#ffffff"
+            android:layout_weight="1"
+            android:textSize="16dp"
+            android:layout_gravity="left"
+            android:gravity="center_vertical"
+            android:paddingLeft="110dp"
+            android:textStyle="bold" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingBottom="20dp"
+        android:orientation="vertical"
+        android:background="#f3f3f3">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#ffffff"
+            android:orientation="horizontal"
+            android:padding="10dp"
+            android:layout_marginTop="10dp">
+            <TextView
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:text="Notification"
+                android:layout_weight="80"
+                android:textColor="#333333"
+                android:textStyle="bold" />
+            <Switch
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="20"
+                android:id="@+id/switch1" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#ffffff"
+            android:orientation="horizontal"
+            android:padding="10dp"
+            android:layout_marginTop="10dp">
+            <TextView
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:text="About Us"
+                android:textColor="#333333"
+                android:layout_weight="90"
+                android:textStyle="bold" />
+            <ImageButton
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:id="@+id/arrowright"
+                android:background="@null"
+                android:src="@drawable/icons_forward40"
+                android:padding="10dp"
+                android:layout_gravity="right"
+                android:layout_weight="10"
+                android:scaleType="center" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#ffffff"
+            android:orientation="horizontal"
+            android:padding="10dp"
+            android:layout_marginTop="10dp">
+            <TextView
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:text="Help"
+                android:textColor="#333333"
+                android:layout_weight="90"
+                android:textStyle="bold" />
+            <ImageButton
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:id="@+id/arrowright"
+                android:background="@null"
+                android:src="@drawable/icons_forward40"
+                android:padding="10dp"
+                android:layout_gravity="right"
+                android:layout_weight="10"
+                android:scaleType="center" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#4087c7"
+            android:orientation="horizontal"
+            android:padding="10dp"
+            android:layout_marginTop="10dp">
+            <TextView
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:text="Log Out"
+                android:textColor="#ffffff"
+                android:textStyle="bold" />
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

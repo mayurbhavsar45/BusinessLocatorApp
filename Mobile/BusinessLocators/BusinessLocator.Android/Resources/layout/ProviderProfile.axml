@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:minWidth="25px"
+    android:minHeight="25px">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:orientation="horizontal"
+        android:id="@+id/linearLayout1"
+        android:background="@drawable/background">
+        <ImageButton
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:id="@+id/btnback"
+            android:background="@null"
+            android:src="@drawable/icons_back"
+            android:padding="10dp"
+            android:scaleType="fitCenter" />
+        <TextView
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/lblTitle"
+            android:textColor="#ffffff"
+            android:layout_weight="1"
+            android:textSize="16dp"
+            android:gravity="center"
+            android:textStyle="bold"
+            android:text="Provider Profile" />
+        <ImageButton
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:id="@+id/btnback"
+            android:background="@null"
+            android:src="@drawable/icons_chatwhite"
+            android:padding="10dp"
+            android:scaleType="fitCenter" />
+    </LinearLayout>
+    <RelativeLayout
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent">
+        <ImageView
+            android:layout_height="210dp"
+            android:layout_width="match_parent"
+            android:scaleType="centerCrop"
+            android:src="@drawable/user4"
+            android:alpha="0.5"
+            android:id="@+id/imageView2" />
+        <refractored.controls.CircleImageView
+            android:src="@drawable/user3"
+            android:layout_height="95dp"
+            android:id="@+id/profile"
+            android:layout_width="95dp"
+            app:civ_border_width="4dp"
+            android:gravity="center"
+            android:layout_gravity="center"
+            app:civ_border_color="#ff4982c6"
+            android:layout_alignParentTop="true"
+            android:layout_centerInParent="true"
+            android:layout_marginTop="10dp" />
+        <TextView
+            android:text="James lo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/profile"
+            android:id="@+id/name"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:textColor="#ffffff"
+            android:layout_centerInParent="true"
+            android:paddingTop="5dp" />
+        <TextView
+            android:text="+91 9691265224"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/phone"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            android:layout_below="@id/name"
+            android:layout_centerInParent="true"
+            android:textColor="#ffffff" />
+        <RatingBar
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/ratingBar"
+            android:layout_below="@id/name"
+            android:rating="3"
+            android:scaleX="0.5"
+            android:scaleY="0.5"
+            android:backgroundTint="#4982c6"
+            android:layout_centerInParent="true"
+            android:paddingTop="20dp"
+            android:numStars="5"
+            android:stepSize="1" />
+    </RelativeLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingBottom="20dp"
+        android:orientation="vertical"
+        android:background="#f9f9f9">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#ffffff"
+            android:orientation="horizontal"
+            android:padding="10dp">
+            <ImageButton
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:id="@+id/emailbtn"
+                android:background="@null"
+                android:src="@drawable/iconsemailblack"
+                android:layout_gravity="center"
+                android:layout_weight="10"
+                android:layout_marginLeft="14dp"
+                android:scaleType="fitCenter" />
+            <TextView
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:text="jameslo@gmail.com"
+                android:layout_weight="90"
+                android:textColor="#333333"
+                android:textStyle="bold"
+                android:layout_marginLeft="35dp"
+                android:paddingTop="5dp" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#ffffff"
+            android:orientation="horizontal"
+            android:padding="10dp"
+            android:layout_marginTop="5dp">
+            <ImageButton
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:id="@+id/emailbtn"
+                android:background="@null"
+                android:src="@drawable/iconsmarkerblack"
+                android:layout_gravity="center"
+                android:layout_weight="10"
+                android:scaleType="fitCenter"
+                android:layout_marginLeft="14dp" />
+            <TextView
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:text="3ts,Ware House Road"
+                android:layout_weight="90"
+                android:inputType="textMultiLine"
+                android:singleLine="false"
+                android:scrollHorizontally="false"
+                android:textColor="#333333"
+                android:textStyle="bold"
+                android:layout_marginLeft="35dp"
+                android:paddingTop="5dp" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#ffffff"
+            android:orientation="horizontal"
+            android:padding="10dp"
+            android:layout_marginTop="5dp">
+            <ImageButton
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:id="@+id/emailbtn"
+                android:background="@null"
+                android:src="@drawable/iconsdocument40"
+                android:layout_weight="20"
+                android:layout_marginLeft="0dp"
+                android:scaleType="fitCenter" />
+            <TextView
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:text="Report Provider"
+                android:layout_weight="90"
+                android:textColor="#4982c6"
+                android:textStyle="bold"
+                android:layout_marginLeft="20dp"
+                android:scrollHorizontally="false"
+                android:paddingTop="3dp" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#ffffff"
+            android:orientation="horizontal"
+            android:padding="10dp">
+            <ImageButton
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:id="@+id/emailbtn"
+                android:background="@null"
+                android:src="@drawable/iconsstar40"
+                android:layout_weight="20"
+                android:scaleType="fitCenter"
+                android:layout_marginLeft="7dp" />
+            <TextView
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:text="Review by other consumer"
+                android:layout_weight="90"
+                android:singleLine="false"
+                android:scrollHorizontally="false"
+                android:textColor="#4982c6"
+                android:textStyle="bold"
+                android:layout_marginLeft="27dp"
+                android:textAlignment="viewStart"
+                android:paddingTop="3dp" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#ffffff"
+            android:orientation="horizontal"
+            android:padding="10dp">
+            <ImageButton
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:id="@+id/emailbtn"
+                android:background="@null"
+                android:src="@drawable/iconsopenbox40"
+                android:layout_weight="10"
+                android:layout_marginLeft="10dp"
+                android:scaleType="fitCenter" />
+            <TextView
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:text="Products Available"
+                android:layout_weight="90"
+                android:singleLine="false"
+                android:scrollHorizontally="false"
+                android:textColor="#4982c6"
+                android:textStyle="bold"
+                android:layout_marginLeft="32dp"
+                android:paddingTop="3dp" />
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>
