@@ -16,10 +16,19 @@ namespace BusinessLocator.iOS
     {
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UIView MapListView { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UITableView UsersTableView { get; set; }
 
         void ReleaseDesignerOutlets ()
         {
+            if (MapListView != null) {
+                MapListView.Dispose ();
+                MapListView = null;
+            }
+
             if (UsersTableView != null) {
                 UsersTableView.Dispose ();
                 UsersTableView = null;

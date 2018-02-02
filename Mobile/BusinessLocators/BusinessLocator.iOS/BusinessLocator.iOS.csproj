@@ -105,78 +105,30 @@
     <ImageAsset Include="Resources\Media.xcassets\Contents.json">
       <Visible>false</Visible>
     </ImageAsset>
-    <ImageAsset Include="Resources\Media.xcassets\AppIcon.appiconset\Contents.json">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Resources\Media.xcassets\AppIcon.appiconset\Icon-App-20x20%401x.png">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Resources\Media.xcassets\AppIcon.appiconset\Icon-App-20x20%402x.png">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Resources\Media.xcassets\AppIcon.appiconset\Icon-App-20x20%403x.png">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Resources\Media.xcassets\AppIcon.appiconset\Icon-App-29x29%401x.png">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Resources\Media.xcassets\AppIcon.appiconset\Icon-App-29x29%402x.png">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Resources\Media.xcassets\AppIcon.appiconset\Icon-App-29x29%403x.png">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Resources\Media.xcassets\AppIcon.appiconset\Icon-App-40x40%401x.png">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Resources\Media.xcassets\AppIcon.appiconset\Icon-App-40x40%402x.png">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Resources\Media.xcassets\AppIcon.appiconset\Icon-App-40x40%403x.png">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Resources\Media.xcassets\AppIcon.appiconset\Icon-App-57x57%401x.png">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Resources\Media.xcassets\AppIcon.appiconset\Icon-App-57x57%402x.png">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Resources\Media.xcassets\AppIcon.appiconset\Icon-App-60x60%401x.png">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Resources\Media.xcassets\AppIcon.appiconset\Icon-App-60x60%402x.png">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Resources\Media.xcassets\AppIcon.appiconset\Icon-App-60x60%403x.png">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Resources\Media.xcassets\AppIcon.appiconset\Icon-App-72x72%401x.png">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Resources\Media.xcassets\AppIcon.appiconset\Icon-App-72x72%402x.png">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Resources\Media.xcassets\AppIcon.appiconset\Icon-App-76x76%401x.png">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Resources\Media.xcassets\AppIcon.appiconset\Icon-App-76x76%402x.png">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Resources\Media.xcassets\AppIcon.appiconset\Icon-App-76x76%403x.png">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Resources\Media.xcassets\AppIcon.appiconset\Icon-App-83.5x83.5%402x.png">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Resources\Media.xcassets\AppIcon.appiconset\Icon-Small-50x50%401x.png">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Resources\Media.xcassets\AppIcon.appiconset\Icon-Small-50x50%402x.png">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Resources\Media.xcassets\AppIcon.appiconset\ItunesArtwork%402x.png">
-      <Visible>false</Visible>
-    </ImageAsset>
+    <ImageAsset Include="Resources\Media.xcassets\AppIcon.appiconset\Contents.json" />
+    <ImageAsset Include="Resources\Media.xcassets\AppIcon.appiconset\Icon-App-20x20%401x.png" />
+    <ImageAsset Include="Resources\Media.xcassets\AppIcon.appiconset\Icon-App-20x20%402x.png" />
+    <ImageAsset Include="Resources\Media.xcassets\AppIcon.appiconset\Icon-App-20x20%403x.png" />
+    <ImageAsset Include="Resources\Media.xcassets\AppIcon.appiconset\Icon-App-29x29%401x.png" />
+    <ImageAsset Include="Resources\Media.xcassets\AppIcon.appiconset\Icon-App-29x29%402x.png" />
+    <ImageAsset Include="Resources\Media.xcassets\AppIcon.appiconset\Icon-App-29x29%403x.png" />
+    <ImageAsset Include="Resources\Media.xcassets\AppIcon.appiconset\Icon-App-40x40%401x.png" />
+    <ImageAsset Include="Resources\Media.xcassets\AppIcon.appiconset\Icon-App-40x40%402x.png" />
+    <ImageAsset Include="Resources\Media.xcassets\AppIcon.appiconset\Icon-App-40x40%403x.png" />
+    <ImageAsset Include="Resources\Media.xcassets\AppIcon.appiconset\Icon-App-57x57%401x.png" />
+    <ImageAsset Include="Resources\Media.xcassets\AppIcon.appiconset\Icon-App-57x57%402x.png" />
+    <ImageAsset Include="Resources\Media.xcassets\AppIcon.appiconset\Icon-App-60x60%401x.png" />
+    <ImageAsset Include="Resources\Media.xcassets\AppIcon.appiconset\Icon-App-60x60%402x.png" />
+    <ImageAsset Include="Resources\Media.xcassets\AppIcon.appiconset\Icon-App-60x60%403x.png" />
+    <ImageAsset Include="Resources\Media.xcassets\AppIcon.appiconset\Icon-App-72x72%401x.png" />
+    <ImageAsset Include="Resources\Media.xcassets\AppIcon.appiconset\Icon-App-72x72%402x.png" />
+    <ImageAsset Include="Resources\Media.xcassets\AppIcon.appiconset\Icon-App-76x76%401x.png" />
+    <ImageAsset Include="Resources\Media.xcassets\AppIcon.appiconset\Icon-App-76x76%402x.png" />
+    <ImageAsset Include="Resources\Media.xcassets\AppIcon.appiconset\Icon-App-76x76%403x.png" />
+    <ImageAsset Include="Resources\Media.xcassets\AppIcon.appiconset\Icon-App-83.5x83.5%402x.png" />
+    <ImageAsset Include="Resources\Media.xcassets\AppIcon.appiconset\Icon-Small-50x50%401x.png" />
+    <ImageAsset Include="Resources\Media.xcassets\AppIcon.appiconset\Icon-Small-50x50%402x.png" />
+    <ImageAsset Include="Resources\Media.xcassets\AppIcon.appiconset\ItunesArtwork%402x.png" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\" />
@@ -186,6 +138,10 @@
     <Folder Include="Model\" />
     <Folder Include="ViewControllers\NotificationController\" />
     <Folder Include="ViewControllers\UserProfileController\" />
+    <Folder Include="ViewControllers\MapController\" />
+    <Folder Include="ViewControllers\MapListController\" />
+    <Folder Include="Cells\" />
+    <Folder Include="TableSources\" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="LaunchScreen.storyboard" />
@@ -227,21 +183,33 @@
     <Compile Include="ViewControllers\UserProfileController\UserProfileViewController.designer.cs">
       <DependentUpon>UserProfileViewController.cs</DependentUpon>
     </Compile>
-    <Compile Include="MapViewController.cs" />
-    <Compile Include="MapViewController.designer.cs">
-      <DependentUpon>MapViewController.cs</DependentUpon>
-    </Compile>
-    <Compile Include="MapListViewController.cs" />
-    <Compile Include="MapListViewController.designer.cs">
+    <Compile Include="Model\LocationsListViewItemModel.cs" />
+    <Compile Include="ViewControllers\MapListController\MapListViewController.cs" />
+    <Compile Include="ViewControllers\MapListController\MapListViewController.designer.cs">
       <DependentUpon>MapListViewController.cs</DependentUpon>
     </Compile>
-    <Compile Include="CustomCollectionSource.cs" />
-    <Compile Include="Model\LocationsListViewItemModel.cs" />
-    <Compile Include="UsersTableViewSource.cs" />
-    <Compile Include="UsersCell.cs" />
-    <Compile Include="UsersCell.designer.cs">
+    <Compile Include="ViewControllers\MapController\MapViewController.cs" />
+    <Compile Include="ViewControllers\MapController\MapViewController.designer.cs">
+      <DependentUpon>MapViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cells\UsersCell.cs" />
+    <Compile Include="Cells\UsersCell.designer.cs">
       <DependentUpon>UsersCell.cs</DependentUpon>
     </Compile>
+    <Compile Include="TableSources\UsersTableViewSource.cs" />
+    <Compile Include="TableSources\CustomCollectionSource.cs" />
+    <Compile Include="Model\ChatViewTableItemModel.cs" />
+    <Compile Include="Cells\ChatViewCell.cs" />
+    <Compile Include="Cells\ChatViewCell.designer.cs">
+      <DependentUpon>ChatViewCell.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TableSources\ChatViewTableSource.cs" />
+    <Compile Include="Model\NotificationTableItemModel.cs" />
+    <Compile Include="Cells\NotificationsCell.cs" />
+    <Compile Include="Cells\NotificationsCell.designer.cs">
+      <DependentUpon>NotificationsCell.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TableSources\NotificationsViewTableSource.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\BusinessLocator.Models\BusinessLocator.Models.csproj">

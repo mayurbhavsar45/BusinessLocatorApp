@@ -16,11 +16,19 @@ namespace BusinessLocator.iOS
     {
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UIImageView discloserIcon { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UILabel lblAddress { get; set; }
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UILabel lblMobileNumber { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UILabel lblMore { get; set; }
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
@@ -32,6 +40,11 @@ namespace BusinessLocator.iOS
 
         void ReleaseDesignerOutlets ()
         {
+            if (discloserIcon != null) {
+                discloserIcon.Dispose ();
+                discloserIcon = null;
+            }
+
             if (lblAddress != null) {
                 lblAddress.Dispose ();
                 lblAddress = null;
@@ -40,6 +53,11 @@ namespace BusinessLocator.iOS
             if (lblMobileNumber != null) {
                 lblMobileNumber.Dispose ();
                 lblMobileNumber = null;
+            }
+
+            if (lblMore != null) {
+                lblMore.Dispose ();
+                lblMore = null;
             }
 
             if (lblName != null) {

@@ -8,7 +8,7 @@ namespace BusinessLocator.iOS
 {
     public class UsersTableViewSource : UITableViewSource 
     {
-        public static NSString CellID = new NSString("UsersCell");
+        public static NSString CellID = new NSString("UserCell");
         private List<LocationsListViewItemModel> _items;
 
         public UsersTableViewSource(List<LocationsListViewItemModel> items)
@@ -36,11 +36,11 @@ namespace BusinessLocator.iOS
             return _items.Count;
         }
 
-        //public override void RowSelected(UITableView tableView, NSIndexPath indexPath)
-        //{
-        //    var selected_row =  _items[indexPath.Row].Name;
-        //    new UIAlertView("Alert","You've Selected: " + selected_row,null,"Ok", null).Show();
-        //    tableView.DeselectRow(indexPath, true);
-        //}
+        public override void RowSelected(UITableView tableView, NSIndexPath indexPath)
+        {
+            var selected_row =  _items[indexPath.Row].Name;
+            new UIAlertView("Alert","You've Selected: " + selected_row,null,"Ok", null).Show();
+            tableView.DeselectRow(indexPath, true);
+        }
     }
 }

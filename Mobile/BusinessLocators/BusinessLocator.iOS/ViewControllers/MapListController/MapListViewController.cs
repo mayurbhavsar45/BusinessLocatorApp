@@ -4,6 +4,7 @@ using UIKit;
 using System.Collections.Generic;
 using BusinessLocator.iOS.Model;
 using CoreAnimation;
+using CoreGraphics;
 
 namespace BusinessLocator.iOS
 {
@@ -41,14 +42,22 @@ namespace BusinessLocator.iOS
                     Name = "Dwayn Smith",
                     Location = "303-304, Airen Heights",
                     MobileNumber = "9362-265-214"
-                }
+                },
 
+                new LocationsListViewItemModel
+                {
+                    Image = "user4.jpg",
+                    Name = "Jack Maa",
+                    Location = "303-304, Airen Heights",
+                    MobileNumber = "9362-265-214"
+                }
             };
 
             UsersTableView.Source = new UsersTableViewSource(listItems);
 
-            UsersTableView.RowHeight = 120f; //UITableView.AutomaticDimension;
-            UsersTableView.EstimatedRowHeight = 150f;
+            UsersTableView.RowHeight =  UITableView.AutomaticDimension;
+            UsersTableView.SeparatorColor = UIColor.Clear;
+            UsersTableView.EstimatedRowHeight = 50f;
             UsersTableView.ReloadData();
 
         }

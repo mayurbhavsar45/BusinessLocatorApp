@@ -36,6 +36,14 @@ namespace BusinessLocator.iOS
         [Outlet]
         UIKit.UIView TabContainer { get; set; }
 
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UIButton btnSearch { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UILabel lblTitle { get; set; }
+
         void ReleaseDesignerOutlets ()
         {
             if (btnListView != null) {
@@ -48,9 +56,19 @@ namespace BusinessLocator.iOS
                 btnMapView = null;
             }
 
+            if (btnSearch != null) {
+                btnSearch.Dispose ();
+                btnSearch = null;
+            }
+
             if (collectionViewPager != null) {
                 collectionViewPager.Dispose ();
                 collectionViewPager = null;
+            }
+
+            if (lblTitle != null) {
+                lblTitle.Dispose ();
+                lblTitle = null;
             }
 
             if (locationtabHeaderView != null) {
