@@ -166,7 +166,8 @@
             android:background="#ffffff"
             android:orientation="horizontal"
             android:padding="10dp"
-            android:layout_marginTop="5dp">
+            android:layout_marginTop="5dp"
+            android:id="@+id/reportproviderlayout">
             <ImageButton
                 android:layout_width="30dp"
                 android:layout_height="30dp"
@@ -192,7 +193,8 @@
             android:layout_height="wrap_content"
             android:background="#ffffff"
             android:orientation="horizontal"
-            android:padding="10dp">
+            android:padding="10dp"
+            android:id="@+id/reviewconsumerlayout">
             <ImageButton
                 android:layout_width="30dp"
                 android:layout_height="30dp"
@@ -220,7 +222,8 @@
             android:layout_height="wrap_content"
             android:background="#ffffff"
             android:orientation="horizontal"
-            android:padding="10dp">
+            android:padding="10dp"
+            android:id="@+id/productlayout">
             <ImageButton
                 android:layout_width="30dp"
                 android:layout_height="30dp"

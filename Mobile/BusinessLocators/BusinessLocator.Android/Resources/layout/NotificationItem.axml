@@ -41,13 +41,13 @@
             android:textAppearance="?android:attr/textAppearanceSmall"
             android:layout_height="wrap_content"
             android:id="@+id/txtmsg"
-            android:textSize="14sp"
+            android:textSize="13sp"
             android:textColor="#cdcdcd"
-            android:maxLength="50"
+            android:maxLength="40"
             android:ellipsize="marquee"
             android:maxLines="1"
-            android:layout_weight="10"
-            android:layout_width="match_parent" />
+            android:layout_width="match_parent"
+            android:layout_weight="10" />
         <TextView
             android:id="@+id/count"
             android:layout_width="match_parent"
@@ -70,7 +70,7 @@
         android:layout_height="wrap_content"
         android:layout_toRightOf="@id/name"
         android:id="@+id/lbltime"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="11dp"
         android:textSize="12sp"
         android:layout_alignParentRight="true"
         android:gravity="right" />

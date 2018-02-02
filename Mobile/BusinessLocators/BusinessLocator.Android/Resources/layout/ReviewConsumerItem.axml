@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingTop="1dp"
+    android:paddingBottom="1dp"
+    android:paddingLeft="10dp"
+    android:paddingRight="10dp">
+    <refractored.controls.CircleImageView
+        android:paddingTop="16dp"
+        android:src="@drawable/user1"
+        android:layout_height="60dp"
+        android:id="@+id/profile"
+        android:layout_width="60dp"
+        app:civ_border_width="4dp"
+        app:civ_border_color="#f3f3f3"
+        android:layout_centerVertical="true" />
+    <TextView
+        android:text="cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccBrauce wills"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/profile"
+        android:id="@+id/name"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="15dp"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        android:layout_marginLeft="20dp" />
+    <TextView
+        android:text="03/01/2018"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/lbltime"
+        android:layout_marginTop="10dp"
+        android:textSize="12sp"
+        android:layout_alignParentRight="true"
+        android:gravity="right"
+        android:layout_below="@id/name" />
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="#cecece"
+        android:layout_below="@id/lbltime"
+        android:layout_toRightOf="@id/profile"
+        android:layout_marginTop="10dp" />
+</RelativeLayout>
