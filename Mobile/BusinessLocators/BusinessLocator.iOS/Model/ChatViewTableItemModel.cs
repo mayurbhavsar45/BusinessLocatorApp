@@ -32,5 +32,11 @@ namespace BusinessLocator.iOS.Model
             get;
             set;
         }
+
+        public bool Status
+        {
+            get;
+            set;
+        }
     }
 }

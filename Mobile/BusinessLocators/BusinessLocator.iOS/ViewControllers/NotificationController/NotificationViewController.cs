@@ -36,11 +36,9 @@ namespace BusinessLocator.iOS
 
                 new NotificationTableItemModel
                 {
-                    Image = "user2.jpg",
-                    Name = "Hank",
+                    Name = "MR.Bin",
                     Duration = "1:00 AM",
                     Description = "What is your name?",
-                    MesaageCount = "3"
                 },
 
                 new NotificationTableItemModel
@@ -72,11 +70,9 @@ namespace BusinessLocator.iOS
 
                 new NotificationTableItemModel
                 {
-                    Image = "user2.jpg",
                     Name = "Obama",
                     Duration = "2:00 PM",
                     Description = "What is your name?",
-                    MesaageCount = "1"
                 }
 
             };

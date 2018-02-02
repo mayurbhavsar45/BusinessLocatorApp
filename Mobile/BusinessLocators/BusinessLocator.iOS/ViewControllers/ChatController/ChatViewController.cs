@@ -14,6 +14,8 @@ namespace BusinessLocator.iOS
         {
         }
 
+        public ChatViewController(){}
+
         public override void ViewDidLoad()
         {
             base.ViewDidLoad();
@@ -32,16 +34,18 @@ namespace BusinessLocator.iOS
                     Name = "George",
                     Duration = "2:00 PM",
                     Description = "What is your name?",
-                    MesaageCount = "2"
+                    MesaageCount = "2",
+                    Status = true
                 },
 
                 new ChatViewTableItemModel
                 {
                     Image = "user2.jpg",
-                    Name = "Hank",
+                    Name = "Mr.Bin",
                     Duration = "1:00 AM",
                     Description = "What is your name?",
-                    MesaageCount = "3"
+                    MesaageCount = "3",
+                    Status = true
                 },
 
                 new ChatViewTableItemModel
@@ -50,7 +54,8 @@ namespace BusinessLocator.iOS
                     Name = "Harry",
                     Duration = "2:30 AM",
                     Description = "What is your name?",
-                    MesaageCount = "7"
+                    MesaageCount = "7",
+                    Status = false
                 },
 
                 new ChatViewTableItemModel
@@ -59,7 +64,8 @@ namespace BusinessLocator.iOS
                     Name = "Henry",
                     Duration = "2:00 PM",
                     Description = "What is your name?",
-                    MesaageCount = "4"
+                    MesaageCount = "4",
+                    Status = false
                 },
 
                 new ChatViewTableItemModel
@@ -77,12 +83,14 @@ namespace BusinessLocator.iOS
                     Name = "Obama",
                     Duration = "2:00 PM",
                     Description = "What is your name?",
-                    MesaageCount = "1"
+                    MesaageCount = "1",
+                    Status = false
                 }
 
             };
 
-            ChatViewTable.Source = new ChatViewTableSource(data);
+            //ChatViewTable.Source = new ChatViewTableSource(data);
+            ChatViewTable.Source = new ChatViewTableSource(this, data);
 
             ChatViewTable.RowHeight = UITableView.AutomaticDimension;
             ChatViewTable.EstimatedRowHeight = 40f;
