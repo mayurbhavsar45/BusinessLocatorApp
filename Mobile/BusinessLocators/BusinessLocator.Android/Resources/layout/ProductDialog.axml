@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:padding="15dp">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="L'orcal professional Series expert"
+                android:textColor="#333333"
+                android:textSize="16sp"
+                android:layout_gravity="center"
+                android:textStyle="bold" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Vitamino color mask 200ml"
+                android:textColor="#333333"
+                android:textSize="13sp"
+                android:layout_gravity="center"
+                android:textStyle="bold"
+                android:id="@+id/ptitle" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="20dp">
+                <ImageView
+                    android:layout_height="130dp"
+                    android:layout_width="130dp"
+                    android:src="@drawable/product4"
+                    android:scaleType="centerCrop"
+                    android:id="@+id/pimage" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                    <TextView
+                        android:layout_height="wrap_content"
+                        android:layout_width="match_parent"
+                        android:text="price"
+                        android:layout_marginLeft="30dp"
+                        android:textSize="16sp"
+                        android:textColor="#537fc5"
+                        android:textStyle="bold" />
+                    <TextView
+                        android:layout_height="wrap_content"
+                        android:layout_width="match_parent"
+                        android:text="$20"
+                        android:layout_marginLeft="30dp"
+                        android:textSize="14sp"
+                        android:textColor="#333333"
+                        android:layout_marginTop="8dp"
+                        android:id="@+id/price" />
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="2dp"
+                        android:background="#cecece"
+                        android:layout_marginTop="7dp"
+                        android:layout_marginLeft="30dp" />
+                    <TextView
+                        android:layout_height="wrap_content"
+                        android:layout_width="match_parent"
+                        android:text="Quantity"
+                        android:layout_marginLeft="30dp"
+                        android:textSize="16sp"
+                        android:textColor="#537fc5"
+                        android:textStyle="bold"
+                        android:layout_marginTop="15dp" />
+                    <TextView
+                        android:layout_height="wrap_content"
+                        android:layout_width="match_parent"
+                        android:text="2"
+                        android:layout_marginLeft="30dp"
+                        android:textSize="14sp"
+                        android:textColor="#333333"
+                        android:layout_marginTop="5dp"
+                        android:id="@+id/quantity" />
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="2dp"
+                        android:background="#cecece"
+                        android:layout_marginTop="7dp"
+                        android:layout_marginLeft="30dp" />
+                </LinearLayout>
+            </LinearLayout>
+            <TextView
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:text="Description"
+                android:layout_marginTop="30dp"
+                android:layout_marginLeft="10dp"
+                android:textSize="16sp"
+                android:textColor="#537fc5"
+                android:textStyle="bold"
+                android:id="@+id/descriptionlbl" />
+            <TextView
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:text="ggggggggggggggggggggggggggggggggggggggggggggsxsssssssssssssssssssssssssssssssssssssssssssssssssssssssDescription"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="10dp"
+                android:textSize="14sp"
+                android:textColor="#333333"
+                android:id="@+id/desc" />
+            <Button
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:text="Contact Provider"
+                android:layout_marginTop="30dp"
+                android:layout_marginLeft="30dp"
+                android:textSize="14sp"
+                android:textColor="#ffffff"
+                android:background="@drawable/roundedbutton_blue"
+                android:layout_marginRight="30dp" />
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>
