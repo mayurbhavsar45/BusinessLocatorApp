@@ -305,6 +305,13 @@
     <BundleResource Include="Resources\attachment_pin.png" />
     <BundleResource Include="Resources\icon-menu-vertical-30.png" />
     <BundleResource Include="Resources\send_message.png" />
+    <BundleResource Include="Resources\twitter-mask.png" />
+    <BundleResource Include="Resources\Polygon_one.png" />
+    <BundleResource Include="Resources\Polygon_Shape.png" />
+    <BundleResource Include="Resources\icon-unlock-30.png" />
+    <BundleResource Include="Resources\icon-bungalow-30.png" />
+    <BundleResource Include="Resources\lock_open.png" />
+    <BundleResource Include="Resources\edit-icon.png" />
   </ItemGroup>
   <ItemGroup>
     <XamarinComponentReference Include="googleiosmaps">
