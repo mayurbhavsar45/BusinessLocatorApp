@@ -39,8 +39,22 @@ namespace BusinessLocator.Android.Fragments
             lstSource.Add(new Chat() { sid = 5, name = "Benjamin", msg = "303-304,Airen Heights,wore House roadrrrrrrrrrrrrrrrrrrrrrrrrrr", time = "6:00 AM", count = 10, image = Resource.Drawable.user1 });
             adp = new InboxScreenAdapter(this.Activity, lstSource);
             lstview.Adapter = adp;
+            lstview.ItemClick += Lstview_ItemClick;
             return v;
           
+        }
+
+        private void Lstview_ItemClick(object sender, AdapterView.ItemClickEventArgs e)
+        {
+            var item = this.adp.GetItemAtPosition(e.Position);
+            int imgid= item.image;
+            int sid= item.sid;
+            string name= item.name;
+            Intent i = new Intent(this.Activity, typeof(ChatActivity));
+            i.PutExtra("imgid", imgid);
+            i.PutExtra("sid", sid);
+            i.PutExtra("name", name);
+            StartActivity(i);
         }
     }
 }

@@ -5,6 +5,7 @@ using System.Text;
 
 using Android.App;
 using Android.Content;
+using Android.Content.PM;
 using Android.Graphics;
 using Android.Graphics.Drawables;
 using Android.OS;
@@ -15,7 +16,8 @@ using Android.Widget;
 
 namespace BusinessLocator.Android
 {
-    [Activity(Label = "ProviderProfileActivity", MainLauncher = true, Theme = "@style/MyTheme", WindowSoftInputMode = SoftInput.StateHidden)]
+
+    [Activity(Label = "ProviderProfileActivity", Theme = "@style/MyTheme", ConfigurationChanges = ConfigChanges.Orientation | ConfigChanges.ScreenSize, WindowSoftInputMode = SoftInput.StateHidden)]
     public class ProviderProfileActivity : AppCompatActivity
     {
         LinearLayout productlayot,reviewconsumerlayout;

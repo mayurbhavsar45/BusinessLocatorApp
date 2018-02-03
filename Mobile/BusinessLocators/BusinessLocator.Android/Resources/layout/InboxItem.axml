@@ -1,84 +1,86 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_width="match_parent"
+    android:layout_width="fill_parent"
     android:layout_height="wrap_content"
-    android:paddingTop="1dp"
-    android:paddingBottom="1dp"
-    android:paddingLeft="10dp"
-    android:paddingRight="10dp">
-    <refractored.controls.CircleImageView
-        android:paddingTop="16dp"
-        android:src="@drawable/user1"
-        android:layout_height="60dp"
-        android:id="@+id/profile"
-        android:layout_width="60dp"
-        app:civ_border_width="4dp"
-        app:civ_border_color="#f3f3f3" />
-    <TextView
-        android:text="Brauce wills"
-        android:textAppearance="?android:attr/textAppearanceSmall"
+    android:orientation="horizontal"
+    android:paddingBottom="0dip"
+    android:paddingRight="5dip"
+    android:paddingLeft="5dip">
+    <LinearLayout
+        android:id="@+id/thumbnail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_toRightOf="@id/profile"
-        android:id="@+id/name"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="15dp"
-        android:textSize="14sp"
-        android:textStyle="bold"
-        android:layout_marginLeft="20dp" />
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_toRightOf="@id/profile"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="3dp"
-        android:layout_below="@id/name"
-        android:id="@+id/layout1">
-        <TextView
-            android:text="303-304,Airen Heights ware house road,"
-            android:textAppearance="?android:attr/textAppearanceSmall"
-            android:layout_height="wrap_content"
-            android:id="@+id/txtmsg"
-            android:textSize="14sp"
-            android:textColor="#cdcdcd"
-            android:maxLength="50"
-            android:ellipsize="marquee"
-            android:maxLines="1"
-            android:layout_weight="10"
-            android:layout_width="match_parent" />
-        <TextView
-            android:id="@+id/count"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="11"
-            android:layout_weight="90"
-            android:textColor="#FFF"
-            android:textSize="10sp"
-            android:textStyle="bold"
-            android:padding="3dp"
-            android:background="@drawable/item_count_num"
-            android:layout_centerVertical="true"
-            android:layout_alignParentRight="true"
-            android:layout_marginRight="8dp"
-            android:gravity="center" />
+        android:layout_alignParentLeft="true"
+        android:layout_marginRight="5dip"
+        android:paddingBottom="3dip">
+        <refractored.controls.CircleImageView
+            android:id="@+id/profile"
+            android:layout_width="60dip"
+            android:layout_height="60dip"
+            android:src="@drawable/user3"
+            app:civ_border_width="4dp"
+            app:civ_border_color="#f3f3f3"
+            android:scaleType="centerCrop" />
     </LinearLayout>
     <TextView
-        android:text="4:00 AM"
+        android:id="@+id/name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_toRightOf="@id/name"
+        android:layout_toRightOf="@+id/thumbnail"
+        android:text="Rihanna Love the way lie"
+        android:textColor="#040404"
+        android:typeface="sans"
+        android:textSize="17dip"
+        android:textStyle="normal"
+        android:layout_marginTop="7dip"
+        android:layout_alignTop="@+id/thumbnail" />
+    <TextView
+        android:id="@+id/txtmsg"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/name"
+        android:textColor="#b8b8b8"
+        android:textSize="13dip"
+        android:maxLength="35"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:layout_marginTop="1dip"
+        android:layout_toRightOf="@+id/thumbnail"
+        android:text="Just gona stand there and"
+        android:textStyle="normal" />
+    <TextView
         android:id="@+id/lbltime"
-        android:layout_marginTop="10dp"
-        android:textSize="12sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_alignParentRight="true"
-        android:gravity="right" />
+        android:layout_alignTop="@id/name"
+        android:text="5:45 AM"
+        android:layout_marginRight="5dip"
+        android:textSize="12dip"
+        android:textStyle="bold"
+        android:gravity="right"
+        android:textColor="#333333" />
+    <TextView
+        android:id="@+id/count"
+        android:layout_width="27dp"
+        android:layout_height="27dp"
+        android:text="11"
+        android:textColor="#FFF"
+        android:textSize="13sp"
+        android:textStyle="bold"
+        android:layout_below="@id/lbltime"
+        android:background="@drawable/item_count_num"
+        android:layout_marginTop="2dip"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="5dip"
+        android:gravity="center" />
     <View
         android:layout_width="match_parent"
         android:layout_height="2dp"
         android:background="#cecece"
-        android:layout_below="@id/layout1"
+        android:layout_below="@id/txtmsg"
+        android:layout_marginTop="24dp"
         android:layout_toRightOf="@id/profile"
-        android:layout_marginTop="20dp" />
+        android:layout_marginLeft="60dp" />
 </RelativeLayout>

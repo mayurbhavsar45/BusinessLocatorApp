@@ -36,6 +36,9 @@
     <AndroidUseSharedRuntime>True</AndroidUseSharedRuntime>
     <AndroidLinkMode>None</AndroidLinkMode>
     <EmbedAssembliesIntoApk>False</EmbedAssembliesIntoApk>
+    <AotAssemblies>false</AotAssemblies>
+    <EnableLLVM>false</EnableLLVM>
+    <BundleAssemblies>false</BundleAssemblies>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugSymbols>True</DebugSymbols>
@@ -127,6 +130,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Activities\ChangePassword\ChangePasswordActivity.cs" />
+    <Compile Include="Activities\Chat\ChatActivity.cs" />
     <Compile Include="Activities\ForgotPassword\ForgotPasswordActivity.cs" />
     <Compile Include="Activities\Login\LoginActivity.cs" />
     <Compile Include="Activities\Main\MainActivity.cs" />
@@ -135,6 +139,7 @@
     <Compile Include="Activities\Review By Consumer\ReviewByConsumerActivity.cs" />
     <Compile Include="Activities\Setting\SettingActivity.cs" />
     <Compile Include="Activities\SignUp\SignUpActivity.cs" />
+    <Compile Include="Activities\Splash\SplashActivity.cs" />
     <Compile Include="Adapters\BottomNavigationViewUtils.cs" />
     <Compile Include="Adapters\InboxScreenAdapter.cs" />
     <Compile Include="Adapters\ListviewScreenAdapter.cs" />
@@ -227,6 +232,12 @@
       <SubType>Designer</SubType>
     </AndroidResource>
     <AndroidResource Include="Resources\layout\ReviewConsumerItem.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\SplashLayout.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\Chat.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
   </ItemGroup>
@@ -436,6 +447,35 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\icons_sent40.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\SplashBackground.xml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\lanucher.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\main.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\main2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\main3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\profile5.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\icons_edit25.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\icons_attach25.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\icons_menu25.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <Import Project="..\packages\Xamarin.Android.Support.Annotations.26.1.0.1\build\MonoAndroid80\Xamarin.Android.Support.Annotations.targets" Condition="Exists('..\packages\Xamarin.Android.Support.Annotations.26.1.0.1\build\MonoAndroid80\Xamarin.Android.Support.Annotations.targets')" />

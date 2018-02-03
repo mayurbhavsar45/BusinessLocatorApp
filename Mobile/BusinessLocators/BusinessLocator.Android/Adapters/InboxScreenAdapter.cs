@@ -67,5 +67,9 @@ namespace BusinessLocator.Android.Adapters
 
             return view;
         }
+        public Chat GetItemAtPosition(int position)
+        {
+            return list[position];
+        }
     }
 }

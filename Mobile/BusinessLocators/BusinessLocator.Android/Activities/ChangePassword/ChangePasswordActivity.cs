@@ -5,6 +5,7 @@ using System.Text;
 
 using Android.App;
 using Android.Content;
+using Android.Content.PM;
 using Android.OS;
 using Android.Runtime;
 using Android.Support.V7.App;
@@ -13,7 +14,7 @@ using Android.Widget;
 
 namespace BusinessLocator.Android
 {
-    [Activity(Label = "ChangePasswordActivity", Theme = "@style/MyTheme", WindowSoftInputMode = SoftInput.StateHidden)]
+    [Activity(Label = "ChangePasswordActivity", Theme = "@style/MyTheme", ConfigurationChanges = ConfigChanges.Orientation | ConfigChanges.ScreenSize, WindowSoftInputMode = SoftInput.StateHidden)]
     public class ChangePasswordActivity : AppCompatActivity
     {
         ImageButton btnback;

@@ -18,7 +18,7 @@ namespace BusinessLocator.Android
 {
     public class ProfileFragment : Fragment
     {
-        LinearLayout layoutpwd, layoutconsumer;
+        TextView lblpwd, lblconsumer;
         ImageButton btnfilter;
         public override void OnCreate(Bundle savedInstanceState)
         {
@@ -30,14 +30,23 @@ namespace BusinessLocator.Android
         public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
         {
            View v=inflater.Inflate(Resource.Layout.ProfileFragment, container, false);
-
-            layoutpwd = v.FindViewById<LinearLayout>(Resource.Id.pwdlayout);
-            btnfilter = v.FindViewById<ImageButton>(Resource.Id.btnFilter);
+            btnfilter= v.FindViewById<ImageButton>(Resource.Id.btnFilter);
+            lblpwd = v.FindViewById<TextView>(Resource.Id.lblchangepwd);
+            lblconsumer = v.FindViewById<TextView>(Resource.Id.lblconsumer);
+            lblpwd.Click += Lblpwd_Click;
             btnfilter.Click += Btnfilter_Click;
-            layoutpwd.Click += Layoutpwd_Click;
-             return v ;
+             return v ;    
+        }
 
-           
+       
+
+      
+
+        private void Lblpwd_Click(object sender, EventArgs e)
+        {
+
+            Intent i = new Intent(this.Activity, typeof(ChangePasswordActivity));
+            StartActivity(i);
         }
 
         private void Btnfilter_Click(object sender, EventArgs e)
@@ -46,10 +55,6 @@ namespace BusinessLocator.Android
             StartActivity(i);
         }
 
-        private void Layoutpwd_Click(object sender, EventArgs e)
-        {
-            Intent i = new Intent(this.Activity, typeof(ChangePasswordActivity));
-            StartActivity(i);
-        }
+        
     }
 }

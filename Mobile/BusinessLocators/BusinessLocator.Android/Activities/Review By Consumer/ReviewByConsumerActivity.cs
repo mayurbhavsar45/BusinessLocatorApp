@@ -5,6 +5,7 @@ using System.Text;
 
 using Android.App;
 using Android.Content;
+using Android.Content.PM;
 using Android.OS;
 using Android.Runtime;
 using Android.Support.V7.App;
@@ -15,7 +16,7 @@ using BusinessLocator.Android.Models;
 
 namespace BusinessLocator.Android
 {
-    [Activity(Label = "ReviewByConsumerActivity", Theme = "@style/MyTheme")]
+    [Activity(Label = "ReviewByConsumerActivity", Theme = "@style/MyTheme", ConfigurationChanges = ConfigChanges.Orientation | ConfigChanges.ScreenSize, WindowSoftInputMode = SoftInput.StateHidden)]
     public class ReviewByConsumerActivity : AppCompatActivity
     {
         ListView lstview;

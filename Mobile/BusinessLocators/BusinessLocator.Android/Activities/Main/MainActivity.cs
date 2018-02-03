@@ -7,11 +7,12 @@ using Android.Views;
 using BusinessLocator.Android.Adapters;
 using BusinessLocator.Android.Fragments;
 using Fragment = Android.Support.V4.App.Fragment;
+using Android.Content.PM;
 
 namespace BusinessLocator.Android
 {
-    [Activity(Label = "",Theme ="@style/MyTheme", MainLauncher = true)]
-
+   
+    [Activity(Label = "", Theme = "@style/MyTheme", ConfigurationChanges = ConfigChanges.Orientation | ConfigChanges.ScreenSize, WindowSoftInputMode = SoftInput.StateHidden)]
     public class MainActivity : AppCompatActivity
     {
     
