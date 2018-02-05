@@ -19,14 +19,24 @@ namespace BusinessLocator.Android
     public class LoginActivity : AppCompatActivity
     {
         TextView signuplink,forgotpwdlink;
+        Button btnlogin;
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.Login);
             signuplink = FindViewById<TextView>(Resource.Id.signuplink);
             forgotpwdlink = FindViewById<TextView>(Resource.Id.forgotpwdlink);
+            btnlogin = FindViewById<Button>(Resource.Id.btnlogin);
+
             signuplink.Click += Signuplink_Click;
             forgotpwdlink.Click += Forgotpwdlink_Click;
+            btnlogin.Click += Btnlogin_Click;
+        }
+
+        private void Btnlogin_Click(object sender, EventArgs e)
+        {
+            Intent i = new Intent(this, typeof(MainActivity));
+            StartActivity(i);
         }
 
         private void Forgotpwdlink_Click(object sender, EventArgs e)
@@ -41,5 +51,6 @@ namespace BusinessLocator.Android
             StartActivity(i);
 
         }
+
     }
 }

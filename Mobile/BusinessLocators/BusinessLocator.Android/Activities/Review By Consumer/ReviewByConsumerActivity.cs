@@ -22,13 +22,15 @@ namespace BusinessLocator.Android
         ListView lstview;
         List<Review> lstSource;
         ReviewConsumerAdapter adp;
+        ImageButton btnback;
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.ReviewByConsumer);
             lstSource = new List<Review>();
             lstview =FindViewById<ListView>(Resource.Id.list);
-
+            btnback = FindViewById<ImageButton>(Resource.Id.btnback);
+            btnback.Click += Btnback_Click;
             lstSource.Add(new Review() { review = "Hiiii,How are u???", time = "03/1/2018", image = Resource.Drawable.user2 });
             lstSource.Add(new Review() { review = "Hellooo", time = "02/1/2018", image = Resource.Drawable.user1 });
             lstSource.Add(new Review() { review = "303-304,Airen Heights,wore House roadrrrrrrrrrrrrrrrrrrrrrrrrrr", time = "6:00 AM", image = Resource.Drawable.user3 });
@@ -38,6 +40,11 @@ namespace BusinessLocator.Android
           
             adp = new ReviewConsumerAdapter(this, lstSource);
             lstview.Adapter = adp;
+        }
+
+        private void Btnback_Click(object sender, EventArgs e)
+        {
+            Finish();
         }
     }
 }

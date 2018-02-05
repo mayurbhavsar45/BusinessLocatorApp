@@ -31,9 +31,9 @@ namespace BusinessLocator.Android.Activities.Splash
 
         async void SimulateStartup()
         {
-            await Task.Delay(3000);
+            await Task.Delay(1000);
 
-            StartActivity(new Intent(Application.Context, typeof(MainActivity)));
+            StartActivity(new Intent(Application.Context, typeof(LoginActivity)));
         }
     }
 }

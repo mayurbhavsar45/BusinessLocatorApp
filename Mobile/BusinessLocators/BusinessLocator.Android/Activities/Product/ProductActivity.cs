@@ -24,10 +24,14 @@ namespace BusinessLocator.Android
         ProductAdapter adp;
         RecyclerView.LayoutManager layoutmanager;
         List<Product> lstdata = new List<Product>();
+        ImageButton btnback;
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.Product);
+            ImageButton btnback = FindViewById<ImageButton>(Resource.Id.btnback);
+            btnback.Click += Btnback_Click;
+
             lstdata.Add(new Product() { imgid = Resource.Drawable.product4, title = "Duos Shampoo og Basim 2x750ml",price=40 });
             lstdata.Add(new Product() { imgid = Resource.Drawable.product3, title = "Vitamino color mask 200ml",price = 60 });
             lstdata.Add(new Product() { imgid = Resource.Drawable.product4, title = "Duos Shampoo og Basim 2x750ml",price = 60 });
@@ -49,6 +53,11 @@ namespace BusinessLocator.Android
             rv.SetLayoutManager(layoutmanager);
 
             // Create your application here
+        }
+
+        private void Btnback_Click(object sender, EventArgs e)
+        {
+            Finish();
         }
 
         private void Adp_ItemClick(object sender, int position)

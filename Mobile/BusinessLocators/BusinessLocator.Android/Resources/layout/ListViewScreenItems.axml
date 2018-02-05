@@ -18,7 +18,8 @@
         android:id="@+id/user"
         android:layout_toRightOf="@id/profile"
         android:layout_width="25dp"
-        android:layout_marginLeft="10dp" />
+        android:layout_marginLeft="10dp"
+        android:tint="#ff3498db" />
     <TextView
         android:text="Brauce wills"
         android:textAppearance="?android:attr/textAppearanceSmall"
@@ -37,7 +38,8 @@
         android:id="@+id/locationimg"
         android:layout_toRightOf="@id/profile"
         android:layout_marginLeft="10dp"
-        android:layout_marginTop="5dp" />
+        android:layout_marginTop="5dp"
+        android:tint="#ff3498db" />
     <TextView
         android:text="303-304,Airen Heights ware house road,"
         android:textAppearance="?android:attr/textAppearanceSmall"
@@ -54,7 +56,8 @@
         android:layout_height="25dp"
         android:layout_toRightOf="@id/name"
         android:id="@+id/call"
-        android:layout_marginLeft="36dp" />
+        android:layout_marginLeft="36dp"
+        android:tint="#ff3498db" />
     <TextView
         android:text="9362-265-214"
         android:textAppearance="?android:attr/textAppearanceSmall"
@@ -73,7 +76,8 @@
         android:id="@+id/bottomarrow"
         android:layout_toRightOf="@id/profile"
         android:layout_marginLeft="10dp"
-        android:layout_marginTop="10dp" />
+        android:layout_marginTop="10dp"
+        android:tint="#ff3498db" />
     <ImageView
         android:src="@drawable/icons_wine24"
         android:layout_width="32dp"
@@ -82,7 +86,8 @@
         android:id="@+id/bottle1"
         android:layout_toRightOf="@id/bottomarrow"
         android:layout_marginLeft="2dp"
-        android:layout_marginTop="12dp" />
+        android:layout_marginTop="12dp"
+        android:tint="#ff3498db" />
     <ImageView
         android:src="@drawable/icons_below24"
         android:layout_width="35dp"
@@ -91,7 +96,8 @@
         android:id="@+id/bottomarrow2"
         android:layout_toRightOf="@id/bottle1"
         android:layout_marginLeft="2dp"
-        android:layout_marginTop="10dp" />
+        android:layout_marginTop="10dp"
+        android:tint="#ff3498db" />
     <ImageView
         android:src="@drawable/icons_wine24"
         android:layout_width="32dp"
@@ -100,7 +106,8 @@
         android:id="@+id/bottle2"
         android:layout_toRightOf="@id/bottomarrow2"
         android:layout_marginLeft="2dp"
-        android:layout_marginTop="12dp" />
+        android:layout_marginTop="12dp"
+        android:tint="#ff3498db" />
     <TextView
         android:text="More Details  &gt;    "
         android:layout_width="wrap_content"

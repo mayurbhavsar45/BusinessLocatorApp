@@ -21,11 +21,14 @@ namespace BusinessLocator.Android
     public class ProviderProfileActivity : AppCompatActivity
     {
         LinearLayout productlayot,reviewconsumerlayout;
+        ImageButton btnback;
+
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.ProviderProfile);
             RatingBar ratingBar =FindViewById<RatingBar>(Resource.Id.ratingBar);
+            ImageButton btnback = FindViewById<ImageButton>(Resource.Id.btnback);
             LayerDrawable stars = (LayerDrawable)ratingBar.ProgressDrawable;
             stars.GetDrawable(2).SetColorFilter(Color.Yellow, PorterDuff.Mode.SrcAtop);
 
@@ -33,7 +36,13 @@ namespace BusinessLocator.Android
             reviewconsumerlayout= FindViewById<LinearLayout>(Resource.Id.reviewconsumerlayout);
             productlayot.Click += Productlayot_Click;
             reviewconsumerlayout.Click += Reviewconsumerlayout_Click;
+            btnback.Click += Btnback_Click;
             // Create your application here
+        }
+
+        private void Btnback_Click(object sender, EventArgs e)
+        {
+            Finish();
         }
 
         private void Reviewconsumerlayout_Click(object sender, EventArgs e)

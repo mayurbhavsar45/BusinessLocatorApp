@@ -82,4 +82,81 @@
             android:padding="10dp"
             android:scaleType="fitCenter" />
     </LinearLayout>
+    <LinearLayout
+        android:id="@+id/RevealCollection"
+        android:layout_below="@id/btnmenu"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="#eaecec">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:background="#eaecec">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical">
+                <ImageButton
+                    android:id="@+id/imgdoc"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:background="@drawable/icons_document100" />
+                <TextView
+                    android:id="@+id/doc"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="File"
+                    android:textColor="#333333"
+                    android:textStyle="bold"
+                    android:typeface="serif" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical">
+                <ImageButton
+                    android:id="@+id/imgdoc1"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:background="@drawable/icons_picture100" />
+                <TextView
+                    android:id="@+id/doc1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Gallery"
+                    android:textColor="#333333"
+                    android:textStyle="bold" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical">
+                <ImageButton
+                    android:id="@+id/imgdoc2"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:background="@drawable/icons_camera96" />
+                <TextView
+                    android:id="@+id/doc2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Camera"
+                    android:textColor="#333333"
+                    android:textStyle="bold" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
 </LinearLayout>
