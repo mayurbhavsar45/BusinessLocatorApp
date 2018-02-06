@@ -33,6 +33,7 @@ namespace BusinessLocator.Android.Fragments
         public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
         {
             View v = inflater.Inflate(Resource.Layout.MapViewFragment, container, false);
+             v.SetLayerType(LayerType.Hardware, null);
             //mCustomMarkerView= inflater.Inflate(Resource.Layout.view_custom_marker, container);
             var s = Application.Context.GetSystemService(Context.LayoutInflaterService) as LayoutInflater;
             mCustomMarkerView = s.Inflate(Resource.Layout.view_custom_marker, null);
@@ -99,26 +100,26 @@ namespace BusinessLocator.Android.Fragments
             //    .SetSnippet("Snippet1")
             //    .SetIcon(BitmapDescriptorFactory.DefaultMarker(color)));
 
-            Marker m2 = gmap.AddMarker(new MarkerOptions()
-              .SetPosition(latlng2)
-              .SetTitle("Title2")
-              .SetSnippet("Snippet2")
-              .SetIcon(BitmapDescriptorFactory.FromBitmap(bmp)));
+            //Marker m2 = gmap.AddMarker(new MarkerOptions()
+            //  .SetPosition(latlng2)
+            //  .SetTitle("Title2")
+            //  .SetSnippet("Snippet2")
+            //  .SetIcon(BitmapDescriptorFactory.FromBitmap(bmp)));
            
 
 
-            Marker m3 = gmap.AddMarker(new MarkerOptions()
-              .SetPosition(latlng3)
-              .SetTitle("Title3")
-              .SetSnippet("Snippet3")
-              .SetIcon(BitmapDescriptorFactory.FromBitmap(bmp)));
+            //Marker m3 = gmap.AddMarker(new MarkerOptions()
+            //  .SetPosition(latlng3)
+            //  .SetTitle("Title3")
+            //  .SetSnippet("Snippet3")
+            //  .SetIcon(BitmapDescriptorFactory.FromBitmap(bmp)));
            
 
-            Marker m4 = gmap.AddMarker(new MarkerOptions()
-             .SetPosition(latlng4)
-             .SetTitle("Title4")
-             .SetSnippet("Snippet4s")
-             .SetIcon(BitmapDescriptorFactory.FromBitmap(bmp)));
+            //Marker m4 = gmap.AddMarker(new MarkerOptions()
+            // .SetPosition(latlng4)
+            // .SetTitle("Title4")
+            // .SetSnippet("Snippet4s")
+            // .SetIcon(BitmapDescriptorFactory.FromBitmap(bmp)));
            
 
 

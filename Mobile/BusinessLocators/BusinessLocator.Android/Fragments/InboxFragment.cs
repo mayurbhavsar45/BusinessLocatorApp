@@ -29,6 +29,7 @@ namespace BusinessLocator.Android.Fragments
         public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
         {
             View v = inflater.Inflate(Resource.Layout.InboxFragment, container, false);
+            v.SetLayerType(LayerType.Hardware, null);
             lstSource = new List<Chat>();
             lstview = v.FindViewById<ListView>(Resource.Id.list);
       

@@ -67,20 +67,22 @@
             android:orientation="horizontal" />
         <ImageButton
             android:layout_width="50dp"
-            android:layout_height="match_parent"
+            android:layout_height="45dp"
             android:id="@+id/btnattach"
             android:background="@null"
-            android:src="@drawable/icons_attach25"
+            android:src="@drawable/attach"
             android:padding="10dp"
-            android:scaleType="fitCenter" />
+            android:scaleType="fitCenter"
+            android:tint="#ffffffff" />
         <ImageButton
             android:layout_width="50dp"
             android:layout_height="match_parent"
             android:id="@+id/btnmenu"
             android:background="@null"
-            android:src="@drawable/icons_menu25"
+            android:src="@drawable/vertical_list"
             android:padding="10dp"
-            android:scaleType="fitCenter" />
+            android:scaleType="centerCrop"
+            android:tint="#ffffffff" />
     </LinearLayout>
     <LinearLayout
         android:id="@+id/RevealCollection"

@@ -5,19 +5,19 @@
   <item
      android:id="@+id/menu_location"
      android:enabled="true"
-     android:icon="@drawable/icons_location48"
+     android:icon="@drawable/location"
      app:showAsAction="ifRoom" />
 
   <item
       android:id="@+id/menu_inbox"
       android:enabled="true"
-      android:icon="@drawable/icons_chat30"
+      android:icon="@drawable/chat"
       app:showAsAction="always" />
 
   <item
       android:id="@+id/menu_notification"
       android:enabled="true"
-      android:icon="@drawable/icons_notification32"
+      android:icon="@drawable/notification"
       app:showAsAction="always" />
 
   <item
@@ -29,7 +29,7 @@
   <item
       android:id="@+id/menu_profile"
       android:enabled="true"
-      android:icon="@drawable/account2"
+      android:icon="@drawable/user"
       app:showAsAction="always|withText" />
 
 </menu>

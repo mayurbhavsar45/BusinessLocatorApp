@@ -31,6 +31,7 @@ namespace BusinessLocator.Android
         public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
         {
             View v = inflater.Inflate(Resource.Layout.NotificationFragment, container, false);
+            v.SetLayerType(LayerType.Hardware, null);
             lstSource = new List<NotificationModel>();
             lstview = v.FindViewById<ListView>(Resource.Id.list);
 

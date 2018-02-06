@@ -35,5 +35,8 @@
         android:layout_height="wrap_content"
         android:divider="@null"
         android:dividerHeight="0dp"
+        android:smoothScrollbar="true"
+        android:scrollingCache="false"
+         android:animationCache="false"
         />
 </LinearLayout>
