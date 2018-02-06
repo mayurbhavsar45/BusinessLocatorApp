@@ -32,10 +32,6 @@ namespace BusinessLocator.iOS
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UIButton btnConsumerToProvider { get; set; }
-
-        [Outlet]
-        [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UIButton btnEditProfileImage { get; set; }
 
         [Outlet]
@@ -48,7 +44,19 @@ namespace BusinessLocator.iOS
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UIImageView img_lock_icon { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UIImageView img_provider_icon { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UILabel lblAddress { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UILabel lblConsumerToProvider { get; set; }
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
@@ -108,11 +116,6 @@ namespace BusinessLocator.iOS
                 btnChangePassword = null;
             }
 
-            if (btnConsumerToProvider != null) {
-                btnConsumerToProvider.Dispose ();
-                btnConsumerToProvider = null;
-            }
-
             if (btnEditProfileImage != null) {
                 btnEditProfileImage.Dispose ();
                 btnEditProfileImage = null;
@@ -128,9 +131,24 @@ namespace BusinessLocator.iOS
                 emailLableView = null;
             }
 
+            if (img_lock_icon != null) {
+                img_lock_icon.Dispose ();
+                img_lock_icon = null;
+            }
+
+            if (img_provider_icon != null) {
+                img_provider_icon.Dispose ();
+                img_provider_icon = null;
+            }
+
             if (lblAddress != null) {
                 lblAddress.Dispose ();
                 lblAddress = null;
+            }
+
+            if (lblConsumerToProvider != null) {
+                lblConsumerToProvider.Dispose ();
+                lblConsumerToProvider = null;
             }
 
             if (lblEmail != null) {

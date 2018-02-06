@@ -191,6 +191,9 @@
     <Folder Include="Cells\" />
     <Folder Include="TableSources\" />
     <Folder Include="ViewControllers\MessageController\" />
+    <Folder Include="ViewControllers\ProviderProfileController\" />
+    <Folder Include="ViewControllers\ChangePasswordController\" />
+    <Folder Include="ViewControllers\SettingsController\" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="LaunchScreen.storyboard" />
@@ -263,6 +266,18 @@
     <Compile Include="ViewControllers\MessageController\MessageViewController.designer.cs">
       <DependentUpon>MessageViewController.cs</DependentUpon>
     </Compile>
+    <Compile Include="ViewControllers\ProviderProfileController\ProviderProfileViewController.cs" />
+    <Compile Include="ViewControllers\ProviderProfileController\ProviderProfileViewController.designer.cs">
+      <DependentUpon>ProviderProfileViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewControllers\ChangePasswordController\ChangePasswordViewController.cs" />
+    <Compile Include="ViewControllers\ChangePasswordController\ChangePasswordViewController.designer.cs">
+      <DependentUpon>ChangePasswordViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewControllers\SettingsController\SettingsViewController.cs" />
+    <Compile Include="ViewControllers\SettingsController\SettingsViewController.designer.cs">
+      <DependentUpon>SettingsViewController.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\BusinessLocator.Models\BusinessLocator.Models.csproj">
@@ -312,6 +327,20 @@
     <BundleResource Include="Resources\icon-bungalow-30.png" />
     <BundleResource Include="Resources\lock_open.png" />
     <BundleResource Include="Resources\edit-icon.png" />
+    <BundleResource Include="Resources\icon_box40.png" />
+    <BundleResource Include="Resources\icon_edit25.png" />
+    <BundleResource Include="Resources\camera.png" />
+    <BundleResource Include="Resources\profile-edit.png" />
+    <BundleResource Include="Resources\User-edit-256.png" />
+    <BundleResource Include="Resources\698873-icon-136-document-edit-512.png" />
+    <BundleResource Include="Resources\msg_bubble.png" />
+    <BundleResource Include="Resources\back_arrow.png" />
+    <BundleResource Include="Resources\business.png" />
+    <BundleResource Include="Resources\weed_leaf.png" />
+    <BundleResource Include="Resources\education.png" />
+    <BundleResource Include="Resources\icon-document-30.png" />
+    <BundleResource Include="Resources\icon-star-30.png" />
+    <BundleResource Include="Resources\icon-envelop-30.png" />
   </ItemGroup>
   <ItemGroup>
     <XamarinComponentReference Include="googleiosmaps">

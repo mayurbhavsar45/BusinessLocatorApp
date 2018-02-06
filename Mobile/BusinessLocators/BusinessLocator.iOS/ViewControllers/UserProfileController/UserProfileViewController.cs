@@ -8,6 +8,8 @@ namespace BusinessLocator.iOS
 {
     public partial class UserProfileViewController : UIViewController
     {
+        UIImagePickerController imagePicker;
+
         public UserProfileViewController (IntPtr handle) : base (handle)
         {
         }
@@ -18,11 +20,10 @@ namespace BusinessLocator.iOS
 
             var gradientLayer = new CAGradientLayer();
             gradientLayer.Colors = new[] { UIColor.FromRGB(98,107,186).CGColor, UIColor.FromRGB(57,122,193).CGColor };
-            gradientLayer.Frame = new CGRect(0, 0, ProfileHeaderView.Frame.Width+40, ProfileHeaderView.Frame.Height);
+            gradientLayer.Frame = new CGRect(0, 0, ProfileHeaderView.Frame.Width + 50, ProfileHeaderView.Frame.Height);
             ProfileHeaderView.Layer.InsertSublayer(gradientLayer, 0);
 
             btnBack.Hidden = true;
-
 
             //UIImageView view = new UIImageView()
             //{
@@ -33,7 +34,7 @@ namespace BusinessLocator.iOS
             //View.Add(view);
 
             UIImageView imageView = new UIImageView();
-            imageView.Frame = new CGRect(0, 0, ProfileWall.Frame.Width + 50,ProfileWall.Frame.Height);
+            imageView.Frame = new CGRect(0, 0, ProfileWall.Frame.Width + 50, ProfileWall.Frame.Height + 75);
             imageView.Image = UIImage.FromFile("Polygon_one");
             imageView.ContentMode = UIViewContentMode.ScaleToFill;
             ProfileWall.MaskView = imageView;
@@ -43,7 +44,93 @@ namespace BusinessLocator.iOS
             ProfileImage.Layer.BorderColor = UIColor.White.CGColor;
             ProfileImage.Layer.BorderWidth = 2;
 
+            btnEditProfileImage.TouchUpInside+=(sender, e) => 
+            {
+                try
+                {
+                    imagePicker = new UIImagePickerController();
+                    imagePicker.SourceType = UIImagePickerControllerSourceType.PhotoLibrary;
+                    imagePicker.MediaTypes = UIImagePickerController.AvailableMediaTypes(UIImagePickerControllerSourceType.PhotoLibrary);
+                    imagePicker.FinishedPickingMedia += Handle_FinishedPickingMedia;
+                    imagePicker.Canceled += Handle_Canceled;
+                    NavigationController.PresentModalViewController(imagePicker, true);
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.Message);
+                }
+            };
+
+            btnFilter.TouchUpInside+=(sender, e) => 
+            {
+                SettingsViewController settingsController = this.Storyboard.InstantiateViewController("SettingsViewController") as SettingsViewController;
+                if(settingsController != null)
+                {
+                    this.NavigationController.PushViewController(settingsController, true);
+                }
+             };
+
+            btnChangePassword.TouchUpInside+=(sender, e) => 
+            {
+                //new UIAlertView("Click", "Clicked", null, "Ok", null).Show();
+                ChangePasswordViewController changePasswordController = this.Storyboard.InstantiateViewController("ChangePasswordViewController") as ChangePasswordViewController;
+                if(changePasswordController != null)
+                {
+                    this.NavigationController.PushViewController(changePasswordController, true);
+                }
+            };
         }
 
+        protected void Handle_FinishedPickingMedia(object sender, UIImagePickerMediaPickedEventArgs e)
+        {
+            // determine what was selected, video or image
+            bool isImage = false;
+            switch (e.Info[UIImagePickerController.MediaType].ToString())
+            {
+                case "public.image":
+                    Console.WriteLine("Image selected");
+                    isImage = true;
+                    break;
+                case "public.video":
+                    Console.WriteLine("Video selected");
+                    break;
+            }
+
+            // get common info (shared between images and video)
+            NSUrl referenceURL = e.Info[new NSString("UIImagePickerControllerReferenceURL")] as NSUrl;
+            if (referenceURL != null)
+                Console.WriteLine("Url:" + referenceURL.ToString());
+
+            // if it was an image, get the other image info
+            if (isImage)
+            {
+                // get the original image
+                UIImage originalImage = e.Info[UIImagePickerController.OriginalImage] as UIImage;
+                if (originalImage != null)
+                {
+                    // do something with the image
+                    Console.WriteLine("got the original image");
+                    ProfileImage.Image = originalImage; // display
+                    ProfileWall.Image = originalImage;
+                }
+            }
+            else
+            { 
+                // if it's a video
+                // get video url
+                NSUrl mediaURL = e.Info[UIImagePickerController.MediaURL] as NSUrl;
+                if (mediaURL != null)
+                {
+                    Console.WriteLine(mediaURL.ToString());
+                }
+            }
+            // dismiss the picker
+            imagePicker.DismissModalViewController(true);
+        }
+
+        void Handle_Canceled(object sender, EventArgs e)
+        {
+            imagePicker.DismissModalViewController(true);
+        }
     }
 }
