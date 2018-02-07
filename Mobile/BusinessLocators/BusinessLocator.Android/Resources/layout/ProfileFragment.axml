@@ -38,7 +38,8 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:id="@+id/linearLayout1">
+            android:id="@+id/linearLayout1"
+            >
             <com.github.florent37.diagonallayout.DiagonalLayout
                 android:layout_width="match_parent"
                 android:layout_height="250dp"

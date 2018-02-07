@@ -142,6 +142,7 @@
     <Compile Include="Activities\SignUp\SignUpActivity.cs" />
     <Compile Include="Activities\Splash\SplashActivity.cs" />
     <Compile Include="Adapters\BottomNavigationViewUtils.cs" />
+    <Compile Include="Adapters\InboxAdapter.cs" />
     <Compile Include="Adapters\InboxScreenAdapter.cs" />
     <Compile Include="Adapters\ListviewScreenAdapter.cs" />
     <Compile Include="Adapters\NotificationAdapter.cs" />
@@ -156,6 +157,7 @@
     <Compile Include="Fragments\NotificationFragment.cs" />
     <Compile Include="Fragments\ProfileFragment.cs" />
     <Compile Include="Fragments\ProviderInboxFragment.cs" />
+    <Compile Include="Fragments\ProviderProductFragment.cs" />
     <Compile Include="Fragments\WallsFragment.cs" />
     <Compile Include="Models\Chat.cs" />
     <Compile Include="Models\NotificationModel.cs" />
@@ -261,6 +263,15 @@
       <SubType>Designer</SubType>
     </AndroidResource>
     <AndroidResource Include="Resources\layout\ProviderInboxFragment.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\ProviderProductFragment.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\ProviderProductAddDialog.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\ProviderProductShowDialog.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
   </ItemGroup>
@@ -379,7 +390,7 @@
     <AndroidResource Include="Resources\drawable\icons_searchfilter40.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\user.png" />
+    <AndroidResource Include="Resources\drawable\user5.png" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\icons_wine.png" />
@@ -655,6 +666,12 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable-xxxhdpi\vertical_list.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\add_new.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\sent.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <Import Project="..\packages\Xamarin.Android.Support.Annotations.26.1.0.1\build\MonoAndroid80\Xamarin.Android.Support.Annotations.targets" Condition="Exists('..\packages\Xamarin.Android.Support.Annotations.26.1.0.1\build\MonoAndroid80\Xamarin.Android.Support.Annotations.targets')" />
