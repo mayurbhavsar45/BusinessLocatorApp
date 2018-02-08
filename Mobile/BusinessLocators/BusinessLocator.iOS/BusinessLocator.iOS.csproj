@@ -194,6 +194,9 @@
     <Folder Include="ViewControllers\ProviderProfileController\" />
     <Folder Include="ViewControllers\ChangePasswordController\" />
     <Folder Include="ViewControllers\SettingsController\" />
+    <Folder Include="ViewControllers\ConsumerReviewController\" />
+    <Folder Include="ViewControllers\AvailableProductsController\" />
+    <Folder Include="ViewControllers\ProductsDialogPopupController\" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="LaunchScreen.storyboard" />
@@ -278,6 +281,30 @@
     <Compile Include="ViewControllers\SettingsController\SettingsViewController.designer.cs">
       <DependentUpon>SettingsViewController.cs</DependentUpon>
     </Compile>
+    <Compile Include="Model\ConsumerViewTableItemModel.cs" />
+    <Compile Include="TableSources\ConsumerTableSource.cs" />
+    <Compile Include="Cells\ConsumerCell.cs" />
+    <Compile Include="Cells\ConsumerCell.designer.cs">
+      <DependentUpon>ConsumerCell.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewControllers\ConsumerReviewController\ConsumerReviewViewController.cs" />
+    <Compile Include="ViewControllers\ConsumerReviewController\ConsumerReviewViewController.designer.cs">
+      <DependentUpon>ConsumerReviewViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Model\ProductsItemModel.cs" />
+    <Compile Include="Cells\ProductsCell.cs" />
+    <Compile Include="Cells\ProductsCell.designer.cs">
+      <DependentUpon>ProductsCell.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewControllers\AvailableProductsController\AvailableProductsViewController.cs" />
+    <Compile Include="ViewControllers\AvailableProductsController\AvailableProductsViewController.designer.cs">
+      <DependentUpon>AvailableProductsViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cells\ProductsCollectionViewSource.cs" />
+    <Compile Include="ViewControllers\ProductsDialogPopupController\ProductsDialogPopupViewController.cs" />
+    <Compile Include="ViewControllers\ProductsDialogPopupController\ProductsDialogPopupViewController.designer.cs">
+      <DependentUpon>ProductsDialogPopupViewController.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\BusinessLocator.Models\BusinessLocator.Models.csproj">
@@ -341,6 +368,10 @@
     <BundleResource Include="Resources\icon-document-30.png" />
     <BundleResource Include="Resources\icon-star-30.png" />
     <BundleResource Include="Resources\icon-envelop-30.png" />
+    <BundleResource Include="Resources\product1.jpg" />
+    <BundleResource Include="Resources\product2.jpg" />
+    <BundleResource Include="Resources\product3.jpg" />
+    <BundleResource Include="Resources\product4.jpg" />
   </ItemGroup>
   <ItemGroup>
     <XamarinComponentReference Include="googleiosmaps">

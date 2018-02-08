@@ -10,6 +10,8 @@ namespace BusinessLocator.iOS
 {
     public partial class SignUpViewController : UIViewController
     {
+        CAGradientLayer gradientLayer;
+
         public SignUpViewController (IntPtr handle) : base (handle)
         {
         }
@@ -20,7 +22,7 @@ namespace BusinessLocator.iOS
 
             CGColor[] colors = new CGColor[] { UIColor.FromRGB(98,107,186).CGColor,
                 UIColor.FromRGB(57,122,193).CGColor};
-            CAGradientLayer gradientLayer = new CAGradientLayer();
+            gradientLayer = new CAGradientLayer();
             gradientLayer.Frame = this.View.Bounds;
             gradientLayer.Colors = colors;
             this.View.Layer.InsertSublayer(gradientLayer, 0);
@@ -93,6 +95,16 @@ namespace BusinessLocator.iOS
         {
             base.ViewWillAppear(animated);
             this.NavigationController.NavigationBarHidden = true;
+        }
+
+        public override void WillRotate(UIInterfaceOrientation toInterfaceOrientation, double duration)
+        {
+            gradientLayer.Frame = this.View.Bounds;
+        }
+
+        public override void DidRotate(UIInterfaceOrientation fromInterfaceOrientation)
+        {
+            gradientLayer.Frame = this.View.Bounds;
         }
     }
 }

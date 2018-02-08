@@ -40,20 +40,12 @@ namespace BusinessLocator.iOS
 
                 CALayer profileImageCircle = ProfileImage.Layer;
                 profileImageCircle.CornerRadius = 34;
-                profileImageCircle.BorderColor = UIColor.FromRGB(98, 107, 186).CGColor;
-                profileImageCircle.BorderWidth = 3;
+                //profileImageCircle.BorderColor = UIColor.FromRGB(98, 107, 186).CGColor;
+                //profileImageCircle.BorderWidth = 3;
                 profileImageCircle.MasksToBounds = true;
 
             }
         }
 
-        //public override void LayoutSubviews()
-        //{
-        //    CALayer profileImageCircle = ProfileImage.Layer;
-        //    profileImageCircle.CornerRadius = 34;
-        //    profileImageCircle.BorderColor = UIColor.FromRGB(98, 107, 186).CGColor;
-        //    profileImageCircle.BorderWidth = 3;
-        //    profileImageCircle.MasksToBounds = true;
-        //}
     }
 }
