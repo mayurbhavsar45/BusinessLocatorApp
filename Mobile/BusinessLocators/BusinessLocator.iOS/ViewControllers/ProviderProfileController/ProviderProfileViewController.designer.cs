@@ -72,7 +72,15 @@ namespace BusinessLocator.iOS
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UILabel lblTitle { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UIImageView MarkerIcon { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UIImageView ProviderDisplayPicture { get; set; }
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
@@ -81,10 +89,6 @@ namespace BusinessLocator.iOS
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UIImageView ProviderWallPicture { get; set; }
-
-        [Action ("UIButton95803_TouchUpInside:")]
-        [GeneratedCode ("iOS Designer", "1.0")]
-        partial void UIButton95803_TouchUpInside (UIKit.UIButton sender);
 
         void ReleaseDesignerOutlets ()
         {
@@ -158,9 +162,19 @@ namespace BusinessLocator.iOS
                 lblProviderName = null;
             }
 
+            if (lblTitle != null) {
+                lblTitle.Dispose ();
+                lblTitle = null;
+            }
+
             if (MarkerIcon != null) {
                 MarkerIcon.Dispose ();
                 MarkerIcon = null;
+            }
+
+            if (ProviderDisplayPicture != null) {
+                ProviderDisplayPicture.Dispose ();
+                ProviderDisplayPicture = null;
             }
 
             if (ProviderProfileView != null) {

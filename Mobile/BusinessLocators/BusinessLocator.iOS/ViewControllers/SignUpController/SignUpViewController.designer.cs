@@ -48,6 +48,14 @@ namespace BusinessLocator.iOS
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UILabel lblDescription { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UILabel lblTitle { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UITextField txtEmail { get; set; }
 
         [Outlet]
@@ -102,6 +110,16 @@ namespace BusinessLocator.iOS
             if (btnSignUp != null) {
                 btnSignUp.Dispose ();
                 btnSignUp = null;
+            }
+
+            if (lblDescription != null) {
+                lblDescription.Dispose ();
+                lblDescription = null;
+            }
+
+            if (lblTitle != null) {
+                lblTitle.Dispose ();
+                lblTitle = null;
             }
 
             if (txtEmail != null) {

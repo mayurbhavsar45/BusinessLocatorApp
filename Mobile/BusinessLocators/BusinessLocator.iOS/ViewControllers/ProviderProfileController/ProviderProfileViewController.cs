@@ -21,10 +21,35 @@ namespace BusinessLocator.iOS
             gradientLayer.Frame = new CGRect(0, 0, HeaderView.Frame.Width + 50, HeaderView.Frame.Height);
             HeaderView.Layer.InsertSublayer(gradientLayer, 0);
 
-            btnBack.TouchUpInside +=(sender, e) => 
+            btnBack.TouchUpInside += (sender, e) => 
             {
                 this.NavigationController.PopViewController(true);
             };
+
+            btnReportProvider.TouchUpInside += (sender, e) => 
+            {
+                
+            };
+
+            btnReviewbyOther.TouchUpInside += (sender, e) => 
+            {
+                ConsumerReviewViewController reviewController = this.Storyboard.InstantiateViewController("ConsumerReviewViewController") as ConsumerReviewViewController;
+                if(reviewController != null)
+                {
+                    this.NavigationController.PushViewController(reviewController, true);
+                }
+            };
+
+            btnAvailableProducts.TouchUpInside += (sender, e) => 
+            {
+                AvailableProductsViewController _vc = this.Storyboard.InstantiateViewController("AvailableProductsViewController") as AvailableProductsViewController;
+                if(_vc != null)
+                {
+                    this.NavigationController.PushViewController(_vc, true);
+                }
+            };
         }
+
+
     }
 }
