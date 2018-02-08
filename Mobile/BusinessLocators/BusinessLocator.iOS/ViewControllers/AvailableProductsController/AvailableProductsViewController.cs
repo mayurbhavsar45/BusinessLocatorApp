@@ -29,42 +29,46 @@ namespace BusinessLocator.iOS
                 new ProductsItemModel
                 {
                     Image = "product1.jpg",
-                    Information = "Collection Views allow content to be displayed using arbitrary layouts",
+                    Information = "Calvin Klein One Deodorant Body Spray...",
                     Price = "$40"    
                 },
 
                 new ProductsItemModel
                 {
                     Image = "product2.jpg",
-                    Information = "Collection Views allow content to be displayed using arbitrary layouts",
-                    Price = "$40"
+                    Information = "Narciso Rodriguez L'Eau Eau De Toilette for Her, 100ml",
+                    Price = "$85"
                 },
 
                 new ProductsItemModel
                 {
-                    Image = "product3.jpg",
-                    Information = "Collection Views allow content to be displayed using arbitrary layouts",
-                    Price = "$40"
+                    Image = "product3.png",
+                    Information = "Shiseido Bio performance Lift dynamic Serum, 30ml",
+                    Price = "$70"
                 },
 
                 new ProductsItemModel
                 {
-                    Image = "product4.jpg",
-                    Information = "Collection Views allow content to be displayed using arbitrary layouts",
-                    Price = "$40"
+                    Image = "product6.jpg",
+                    Information = "Lakme Invisible Finish SPF 8 Foundation, Shade 01, 25 ml",
+                    Price = "$50"
                 },
 
                 new ProductsItemModel
                 {
-                    Image = "product1.jpg",
-                    Information = "Collection Views allow content to be displayed using arbitrary layouts",
-                    Price = "$40"
+                    Image = "product7.jpg",
+                    Information = "Lakme Face Magic Souffle, Marble, 30 ml",
+                    Price = "$80"
                 },
             };
 
             ProductsCollectionView.Source = new ProductsCollectionViewSource(this, data);
             ProductsCollectionView.ReloadData();
 
+            btnBack.TouchUpInside += (sender, e) => 
+            {
+                this.NavigationController.PopViewController(true);
+            };
 
         }
 

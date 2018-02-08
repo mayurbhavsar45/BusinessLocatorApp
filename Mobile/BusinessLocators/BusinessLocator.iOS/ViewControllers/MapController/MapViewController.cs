@@ -4,7 +4,7 @@ using UIKit;
 using Google.Maps;
 using CoreGraphics;
 using CoreLocation;
-
+    
 namespace BusinessLocator.iOS
 {
     public partial class MapViewController : UIViewController
@@ -46,7 +46,7 @@ namespace BusinessLocator.iOS
                 Title = "Jim",
                 //Snippet = "Surat, Gujarat",
                 Position = new CLLocationCoordinate2D(21.183549, 72.783175),
-                Map = mapView
+                Map = mapView,
             };
 
             var second_marker = new Marker()
@@ -74,6 +74,7 @@ namespace BusinessLocator.iOS
             };
 
             //Customize Marker
+
             second_marker.Icon = UIImage.FromFile("icon-marker-30");
             fourth_marker.Icon = UIImage.FromFile("marker-pin");
             third_marker.Icon = UIImage.FromFile("icon-marker-30");

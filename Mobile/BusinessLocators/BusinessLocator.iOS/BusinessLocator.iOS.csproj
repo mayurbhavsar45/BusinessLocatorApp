@@ -94,6 +94,9 @@
     <Reference Include="Google.Maps">
       <HintPath>..\packages\Xamarin.Google.iOS.Maps.2.5.0\lib\Xamarin.iOS10\Google.Maps.dll</HintPath>
     </Reference>
+    <Reference Include="PDRating">
+      <HintPath>..\Components\pdreview-2.0.2\lib\ios-unified\PDRating.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Contents.json">
@@ -296,15 +299,15 @@
     <Compile Include="Cells\ProductsCell.designer.cs">
       <DependentUpon>ProductsCell.cs</DependentUpon>
     </Compile>
-    <Compile Include="ViewControllers\AvailableProductsController\AvailableProductsViewController.cs" />
-    <Compile Include="ViewControllers\AvailableProductsController\AvailableProductsViewController.designer.cs">
-      <DependentUpon>AvailableProductsViewController.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Cells\ProductsCollectionViewSource.cs" />
     <Compile Include="ViewControllers\ProductsDialogPopupController\ProductsDialogPopupViewController.cs" />
     <Compile Include="ViewControllers\ProductsDialogPopupController\ProductsDialogPopupViewController.designer.cs">
       <DependentUpon>ProductsDialogPopupViewController.cs</DependentUpon>
     </Compile>
+    <Compile Include="ViewControllers\AvailableProductsController\AvailableProductsViewController.cs" />
+    <Compile Include="ViewControllers\AvailableProductsController\AvailableProductsViewController.designer.cs">
+      <DependentUpon>AvailableProductsViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TableSources\ProductsCollectionViewSource.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\BusinessLocator.Models\BusinessLocator.Models.csproj">
@@ -368,14 +371,25 @@
     <BundleResource Include="Resources\icon-document-30.png" />
     <BundleResource Include="Resources\icon-star-30.png" />
     <BundleResource Include="Resources\icon-envelop-30.png" />
-    <BundleResource Include="Resources\product1.jpg" />
     <BundleResource Include="Resources\product2.jpg" />
-    <BundleResource Include="Resources\product3.jpg" />
     <BundleResource Include="Resources\product4.jpg" />
+    <BundleResource Include="Resources\product3.png" />
+    <BundleResource Include="Resources\product7.jpg" />
+    <BundleResource Include="Resources\product6.jpg" />
+    <BundleResource Include="Resources\product1.jpg" />
+    <BundleResource Include="Resources\product5.png" />
+    <BundleResource Include="Resources\filled.png" />
+    <BundleResource Include="Resources\empty.png" />
+    <BundleResource Include="Resources\chosen.png" />
+    <BundleResource Include="Resources\map-marker-4.png" />
   </ItemGroup>
   <ItemGroup>
     <XamarinComponentReference Include="googleiosmaps">
       <Version>2.5.0.0</Version>
+      <Visible>False</Visible>
+    </XamarinComponentReference>
+    <XamarinComponentReference Include="pdreview">
+      <Version>2.0.2</Version>
       <Visible>False</Visible>
     </XamarinComponentReference>
   </ItemGroup>

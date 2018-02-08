@@ -32,6 +32,10 @@ namespace BusinessLocator.iOS
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UIView PopUpOuterView { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UIView PopUpView { get; set; }
 
         [Outlet]
@@ -66,6 +70,11 @@ namespace BusinessLocator.iOS
             if (lblQuantity != null) {
                 lblQuantity.Dispose ();
                 lblQuantity = null;
+            }
+
+            if (PopUpOuterView != null) {
+                PopUpOuterView.Dispose ();
+                PopUpOuterView = null;
             }
 
             if (PopUpView != null) {
