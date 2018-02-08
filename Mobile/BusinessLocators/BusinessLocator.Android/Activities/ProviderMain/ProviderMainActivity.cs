@@ -44,7 +44,7 @@ namespace BusinessLocator.Android
                     fragment = new ProviderProductFragment();
                     break;
                 case Resource.Id.menu_profile:
-                    fragment = new ProfileFragment();
+                    fragment = new ProviderProfileFragment();
                     break;
             }
             if (fragment == null)

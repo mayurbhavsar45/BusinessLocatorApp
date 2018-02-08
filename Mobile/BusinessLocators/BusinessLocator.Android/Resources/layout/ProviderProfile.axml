@@ -95,7 +95,7 @@
             android:backgroundTint="#4982c6"
             android:layout_centerInParent="true"
             android:paddingTop="20dp"
-            android:numStars="5"
+            android:numStars="4"
             android:stepSize="1" />
     </RelativeLayout>
     <LinearLayout

@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:minWidth="25px"
+            android:minHeight="25px"
+            android:background="@drawable/background">
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/icons_back"
+                android:layout_marginTop="20dp"
+                android:id="@+id/btnback"
+                android:layout_marginLeft="20dp"
+                android:layout_gravity="left"
+                android:background="@null" />
+            <TextView
+                android:text="OTP Verification"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/txttitle"
+                android:textSize="27sp"
+                android:gravity="center_horizontal"
+                android:layout_marginTop="50dp"
+                android:textColor="#ffffff" />
+            <TextView
+                android:text="waiting to automatically detect an SMS send to your mobile number"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/txtsubtitle"
+                android:textColor="#ffffff"
+                android:textSize="11sp"
+                android:gravity="center"
+                android:layout_marginTop="3dp"
+                android:layout_marginLeft="40dip"
+                android:layout_marginRight="40dip"
+                android:lines="2" />
+            <com.goodiebag.pinview.Pinview
+                android:id="@+id/pinview"
+                android:layout_marginTop="50dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:pinBackground="@drawable/example_drawable"
+                app:pinWidth="40dp"
+                app:pinLength="6"
+                android:textColor="#ffffff"
+                app:forceKeyboard="true"
+                app:pinHeight="40dp"
+                app:inputType="number" />
+            <Button
+                android:text="Verify"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/btnchangepwd"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:background="@drawable/rounded_button"
+                android:paddingBottom="12dp"
+                android:paddingTop="12dp"
+                android:textColor="#4684cd"
+                android:textSize="15sp"
+                android:layout_marginTop="30dp"
+                app:textAllCaps="false" />
+            <TextView
+                android:text="Don't recive the otp ?Resend"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/textView1"
+                android:gravity="center"
+                android:textColor="#ffffff"
+                android:layout_marginTop="10dip"
+                android:layout_marginLeft="100dip"
+                android:layout_marginRight="30dip" />
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

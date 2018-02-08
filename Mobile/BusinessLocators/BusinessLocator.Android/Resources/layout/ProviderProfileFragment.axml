@@ -173,7 +173,7 @@
             <TextView
                 android:layout_height="wrap_content"
                 android:layout_width="wrap_content"
-                android:text="Consumer wants to be provider"
+                android:text="My Membership Plan"
                 android:textColor="#4087c7"
                 android:layout_below="@+id/lockicon"
                 android:layout_toRightOf="@id/consumericon"

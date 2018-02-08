@@ -52,10 +52,16 @@
     <AndroidUseSharedRuntime>False</AndroidUseSharedRuntime>
     <AndroidLinkMode>SdkOnly</AndroidLinkMode>
     <EmbedAssembliesIntoApk>True</EmbedAssembliesIntoApk>
+    <AotAssemblies>false</AotAssemblies>
+    <EnableLLVM>false</EnableLLVM>
+    <BundleAssemblies>false</BundleAssemblies>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="DiagonalLayout, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Xam.Plugins.Android.DiagonalLayout.1.0.2\lib\MonoAndroid\DiagonalLayout.dll</HintPath>
+    </Reference>
+    <Reference Include="Pinview, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Pinview.1.0.0\lib\Pinview.dll</HintPath>
     </Reference>
     <Reference Include="Refractored.Controls.CircleImageView, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Refractored.Controls.CircleImageView.1.0.1\lib\MonoAndroid10\Refractored.Controls.CircleImageView.dll</HintPath>
@@ -134,6 +140,7 @@
     <Compile Include="Activities\ForgotPassword\ForgotPasswordActivity.cs" />
     <Compile Include="Activities\Login\LoginActivity.cs" />
     <Compile Include="Activities\Main\MainActivity.cs" />
+    <Compile Include="Activities\OTP Verification\OTPVerificationActivity.cs" />
     <Compile Include="Activities\Product\ProductActivity.cs" />
     <Compile Include="Activities\Provider Profile\ProviderProfileActivity.cs" />
     <Compile Include="Activities\ProviderMain\ProviderMainActivity.cs" />
@@ -141,6 +148,7 @@
     <Compile Include="Activities\Setting\SettingActivity.cs" />
     <Compile Include="Activities\SignUp\SignUpActivity.cs" />
     <Compile Include="Activities\Splash\SplashActivity.cs" />
+    <Compile Include="Activities\Subscription\SubscriptionActivity.cs" />
     <Compile Include="Adapters\BottomNavigationViewUtils.cs" />
     <Compile Include="Adapters\InboxAdapter.cs" />
     <Compile Include="Adapters\InboxScreenAdapter.cs" />
@@ -149,6 +157,7 @@
     <Compile Include="Adapters\ProductAdapter.cs" />
     <Compile Include="Adapters\ProviderInboxAdapter.cs" />
     <Compile Include="Adapters\ReviewConsumerAdapter.cs" />
+    <Compile Include="Adapters\SubscriptionAdapter.cs" />
     <Compile Include="Adapters\ViewPagerAdapter.cs" />
     <Compile Include="Fragments\InboxFragment.cs" />
     <Compile Include="Fragments\ListViewFragment.cs" />
@@ -158,12 +167,14 @@
     <Compile Include="Fragments\ProfileFragment.cs" />
     <Compile Include="Fragments\ProviderInboxFragment.cs" />
     <Compile Include="Fragments\ProviderProductFragment.cs" />
+    <Compile Include="Fragments\ProviderProfileFragment.cs" />
     <Compile Include="Fragments\WallsFragment.cs" />
     <Compile Include="Models\Chat.cs" />
     <Compile Include="Models\NotificationModel.cs" />
     <Compile Include="Models\Person.cs" />
     <Compile Include="Models\Product.cs" />
     <Compile Include="Models\Review.cs" />
+    <Compile Include="Models\MSubscription.cs" />
     <Compile Include="Resources\Resource.Designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -272,6 +283,18 @@
       <SubType>Designer</SubType>
     </AndroidResource>
     <AndroidResource Include="Resources\layout\ProviderProductShowDialog.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\SubscriptionLayout.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\SubscriptionItem.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\ProviderProfileFragment.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\OTPVerification.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
   </ItemGroup>
@@ -509,9 +532,6 @@
     <AndroidResource Include="Resources\drawable\mapbluemarker.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\blueresize.png" />
-  </ItemGroup>
-  <ItemGroup>
     <AndroidResource Include="Resources\drawable\infowindow3.png" />
   </ItemGroup>
   <ItemGroup>
@@ -672,6 +692,44 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\sent.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\back2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-hdpi\verticalmenu.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-mdpi\verticalmenu.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-xhdpi\verticalmenu.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-xxhdpi\verticalmenu.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-xxxhdpi\verticalmenu.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\example_drawable.xml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\back.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\map_popup.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-hdpi\blueresize.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-mdpi\blueresize.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\blueresize.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <Import Project="..\packages\Xamarin.Android.Support.Annotations.26.1.0.1\build\MonoAndroid80\Xamarin.Android.Support.Annotations.targets" Condition="Exists('..\packages\Xamarin.Android.Support.Annotations.26.1.0.1\build\MonoAndroid80\Xamarin.Android.Support.Annotations.targets')" />

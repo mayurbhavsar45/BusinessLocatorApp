@@ -72,24 +72,27 @@
             android:src="@drawable/attach"
             android:padding="10dp"
             android:scaleType="fitCenter"
-            android:tint="#ffffffff" />
+            android:tint="#ffffffff"
+            android:layout_gravity="center" />
         <ImageButton
             android:layout_width="50dp"
-            android:layout_height="match_parent"
+            android:layout_height="43dp"
             android:id="@+id/btnmenu"
             android:background="@null"
             android:src="@drawable/vertical_list"
             android:padding="10dp"
-            android:scaleType="centerCrop"
-            android:tint="#ffffffff" />
+            android:scaleType="fitCenter"
+            android:tint="#ffffffff"
+            android:layout_gravity="center" />
     </LinearLayout>
-    <LinearLayout
+    <RelativeLayout
         android:id="@+id/RevealCollection"
         android:layout_below="@id/linearLayout1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:background="#eaecec">
+        android:background="#eaecec"
+        android:visibility="invisible">
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -159,24 +162,40 @@
                     android:textStyle="bold" />
             </LinearLayout>
         </LinearLayout>
-    </LinearLayout>
+    </RelativeLayout>
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
         android:id="@+id/content"
-        android:gravity="center"
-        android:layout_below="@id/linearLayout1">
+        android:layout_below="@id/linearLayout1"
+        android:minWidth="25px"
+        android:minHeight="25px"
+        android:layout_marginLeft="30dip"
+        android:layout_marginRight="30dip"
+        android:gravity="center">
+        <TextView
+            android:text="You need to purchase a subscription plan to send a message."
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/txtlbl"
+            android:textSize="16dip"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:layout_marginBottom="20dip" />
         <Button
+            android:text="Go to subscription Plan"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Go to subscription plan"
+            android:id="@+id/subbtn"
             android:background="@drawable/roundedbutton_blue"
+            android:textColor="#ffffff"
             android:gravity="center"
-            android:layout_marginLeft="30dp"
-            android:layout_marginRight="30dp"
-            android:layout_gravity="center"
-            android:layout_marginTop="90dp" />
+            android:layout_marginLeft="20dip"
+            android:layout_marginRight="20dip"
+            android:textStyle="bold"
+            app:textAllCaps="false" />
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"

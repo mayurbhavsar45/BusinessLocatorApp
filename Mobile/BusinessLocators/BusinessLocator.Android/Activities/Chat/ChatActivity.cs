@@ -20,7 +20,8 @@ namespace BusinessLocator.Android
         ImageView profile;
         TextView name;
         ImageButton btnback,btnattach;
-        LinearLayout lrevel;
+        Button subscriptionbutton;
+        RelativeLayout lrevel;
         bool hidden = true;
         Animator animator, animate;
 
@@ -61,8 +62,10 @@ namespace BusinessLocator.Android
             profile = FindViewById<ImageView>(Resource.Id.profile);
             btnback = FindViewById<ImageButton>(Resource.Id.btnback);
             name = FindViewById<TextView>(Resource.Id.lblTitle);
-            lrevel = FindViewById<LinearLayout>(Resource.Id.RevealCollection);
+            lrevel = FindViewById<RelativeLayout>(Resource.Id.RevealCollection);
             btnattach= FindViewById<ImageButton>(Resource.Id.btnattach);
+            subscriptionbutton= FindViewById<Button>(Resource.Id.subbtn);
+            subscriptionbutton.Click += Subscriptionbutton_Click;
 
             lrevel.Visibility = ViewStates.Invisible;
 
@@ -74,8 +77,15 @@ namespace BusinessLocator.Android
          
         }
 
+        private void Subscriptionbutton_Click(object sender, EventArgs e)
+        {
+            Intent i = new Intent(this, typeof(SubscriptionActivity));
+            StartActivity(i);
+        }
+
         private void Btnattach_Click(object sender, EventArgs e)
         {
+
             int cx = (lrevel.Left + lrevel.Right);
             int cy = (lrevel.Top);
             int startradius = 0;
