@@ -29,11 +29,20 @@
             android:padding="12dp"
             android:scaleType="fitCenter" />
     </LinearLayout>
-    <ListView
+    <!--<ListView
         android:id="@+id/list"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:divider="@null"
         android:dividerHeight="0dp"
-        />
+        android:smoothScrollbar="true"
+        android:scrollingCache="false"
+         android:animationCache="false"
+        />-->
+
+  <android.support.v7.widget.RecyclerView
+    android:id="@+id/recycle"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:scrollbars="vertical" />
 </LinearLayout>

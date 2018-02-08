@@ -4,25 +4,25 @@
   <item
      android:id="@+id/menu_location"
      android:enabled="true"
-     android:icon="@drawable/icons_location48"
+     android:icon="@drawable/location"
      app:showAsAction="ifRoom" />
 
   <item
       android:id="@+id/menu_inbox"
       android:enabled="true"
-      android:icon="@drawable/icons_chat30"
+      android:icon="@drawable/chat"
       app:showAsAction="always" />
 
   <item
       android:id="@+id/menu_product"
       android:enabled="true"
-      android:icon="@drawable/cloud2"
+      android:icon="@drawable/cloud"
       app:showAsAction="always" />
 
   <item
       android:id="@+id/menu_profile"
       android:enabled="true"
-      android:icon="@drawable/account2"
-      app:showAsAction="always|withText" />
+      android:icon="@drawable/user"
+      app:showAsAction="always" />
 
 </menu>

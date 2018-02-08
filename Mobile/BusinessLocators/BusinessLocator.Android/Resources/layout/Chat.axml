@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:minWidth="25px"
@@ -67,24 +66,26 @@
             android:orientation="horizontal" />
         <ImageButton
             android:layout_width="50dp"
-            android:layout_height="match_parent"
+            android:layout_height="45dp"
             android:id="@+id/btnattach"
             android:background="@null"
-            android:src="@drawable/icons_attach25"
+            android:src="@drawable/attach"
             android:padding="10dp"
-            android:scaleType="fitCenter" />
+            android:scaleType="fitCenter"
+            android:tint="#ffffffff" />
         <ImageButton
             android:layout_width="50dp"
             android:layout_height="match_parent"
             android:id="@+id/btnmenu"
             android:background="@null"
-            android:src="@drawable/icons_menu25"
+            android:src="@drawable/vertical_list"
             android:padding="10dp"
-            android:scaleType="fitCenter" />
+            android:scaleType="centerCrop"
+            android:tint="#ffffffff" />
     </LinearLayout>
     <LinearLayout
         android:id="@+id/RevealCollection"
-        android:layout_below="@id/btnmenu"
+        android:layout_below="@id/linearLayout1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
@@ -159,4 +160,56 @@
             </LinearLayout>
         </LinearLayout>
     </LinearLayout>
-</LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:id="@+id/content"
+        android:gravity="center"
+        android:layout_below="@id/linearLayout1">
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Go to subscription plan"
+            android:background="@drawable/roundedbutton_blue"
+            android:gravity="center"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="90dp" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:id="@+id/bottom"
+        android:background="#f2f2f2"
+        android:layout_alignParentBottom="true">
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="45dp"
+            android:id="@+id/editText1"
+            android:layout_weight="90"
+            android:background="@drawable/rounded_button"
+            android:layout_marginRight="10dp"
+            android:text="hiiiii"
+            android:textColor="#333333"
+            android:textSize="20dip"
+            android:paddingLeft="20dp"
+            android:layout_marginTop="6dp"
+            android:layout_marginLeft="6dp" />
+        <ImageButton
+            android:id="@+id/count"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/icons_sent40"
+            android:background="@drawable/item_count_num"
+            android:layout_marginTop="2dip"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="5dip"
+            android:gravity="center"
+            android:tint="#ffffffff"
+            android:padding="7dp"
+            android:scaleType="center" />
+    </LinearLayout>
+</RelativeLayout>

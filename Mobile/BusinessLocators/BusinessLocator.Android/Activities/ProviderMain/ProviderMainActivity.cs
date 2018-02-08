@@ -40,11 +40,8 @@ namespace BusinessLocator.Android
                 case Resource.Id.menu_inbox:
                     fragment = new ProviderInboxFragment();
                     break;
-                case Resource.Id.menu_notification:
-                    fragment = new NotificationFragment();
-                    break;
                 case Resource.Id.menu_product:
-                    fragment = new WallsFragment();
+                    fragment = new ProviderProductFragment();
                     break;
                 case Resource.Id.menu_profile:
                     fragment = new ProfileFragment();

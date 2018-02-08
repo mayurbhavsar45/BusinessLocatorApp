@@ -23,5 +23,7 @@
         app:itemIconTint="@drawable/nav_item_colors"
         app:itemBackground="@drawable/nav_item_backgroundcolor"
         app:elevation="10dp"
-        app:menu="@menu/provider_bottom_navigation_main" />
+        app:menu="@menu/provider_bottom_navigation_main"
+        app:backgroundTint="#00000000"
+        android:backgroundTint="#00000000" />
 </RelativeLayout>

@@ -59,10 +59,10 @@ namespace BusinessLocator.Android.Adapters
 
             Chat item = this[position];
 
-          //  view.FindViewById<TextView>(Resource.Id.name).Text = item.name;
-          //  view.FindViewById<TextView>(Resource.Id.txtmsg).Text = item.msg;
-         //   view.FindViewById<TextView>(Resource.Id.count).Text = item.count.ToString();
-          //  view.FindViewById<TextView>(Resource.Id.lbltime).Text = item.time;
+           view.FindViewById<TextView>(Resource.Id.name).Text = item.name;
+            view.FindViewById<TextView>(Resource.Id.txtmsg).Text = item.msg;
+         //  view.FindViewById<TextView>(Resource.Id.count).Text = item.count.ToString();
+            view.FindViewById<TextView>(Resource.Id.lbltime).Text = item.time;
             view.FindViewById<ImageView>(Resource.Id.profile).SetImageResource(item.image);
 
             return view;
