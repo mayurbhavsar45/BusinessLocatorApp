@@ -18,6 +18,7 @@ namespace BusinessLocator.iOS
         {
             base.ViewDidLoad();
 
+
             var gradientLayer = new CAGradientLayer();
             gradientLayer.Colors = new[] { UIColor.FromRGB(98, 107, 186).CGColor, UIColor.FromRGB(57, 122, 193).CGColor };
             gradientLayer.Frame = new CGRect(0, 0, HeaderView.Frame.Width + 50, HeaderView.Frame.Height);
@@ -48,7 +49,13 @@ namespace BusinessLocator.iOS
 
             btnReportProvider.TouchUpInside += (sender, e) => 
             {
-                
+                ReportProviderViewController _VC = this.Storyboard.InstantiateViewController("ReportProviderViewController") as ReportProviderViewController;
+                if(_VC!=null)
+                {
+                    _VC.ModalPresentationStyle = UIModalPresentationStyle.OverCurrentContext;
+                    _VC.ModalTransitionStyle = UIModalTransitionStyle.CoverVertical;
+                    this.PresentViewController(_VC, true, null);
+                }
             };
 
             btnReviewbyOther.TouchUpInside += (sender, e) => 

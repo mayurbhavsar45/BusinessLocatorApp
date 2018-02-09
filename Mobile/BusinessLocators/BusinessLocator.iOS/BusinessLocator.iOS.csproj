@@ -200,6 +200,7 @@
     <Folder Include="ViewControllers\ConsumerReviewController\" />
     <Folder Include="ViewControllers\AvailableProductsController\" />
     <Folder Include="ViewControllers\ProductsDialogPopupController\" />
+    <Folder Include="ViewControllers\ReportProviderDialogController\" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="LaunchScreen.storyboard" />
@@ -308,6 +309,10 @@
       <DependentUpon>AvailableProductsViewController.cs</DependentUpon>
     </Compile>
     <Compile Include="TableSources\ProductsCollectionViewSource.cs" />
+    <Compile Include="ViewControllers\ReportProviderDialogController\ReportProviderViewController.cs" />
+    <Compile Include="ViewControllers\ReportProviderDialogController\ReportProviderViewController.designer.cs">
+      <DependentUpon>ReportProviderViewController.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\BusinessLocator.Models\BusinessLocator.Models.csproj">
@@ -382,6 +387,11 @@
     <BundleResource Include="Resources\empty.png" />
     <BundleResource Include="Resources\chosen.png" />
     <BundleResource Include="Resources\map-marker-4.png" />
+    <BundleResource Include="Resources\icon-remove.png" />
+    <BundleResource Include="Resources\icons_camera96.png" />
+    <BundleResource Include="Resources\icons_document100.png" />
+    <BundleResource Include="Resources\icons_picture100.png" />
+    <BundleResource Include="Resources\icons_picture96.png" />
   </ItemGroup>
   <ItemGroup>
     <XamarinComponentReference Include="googleiosmaps">

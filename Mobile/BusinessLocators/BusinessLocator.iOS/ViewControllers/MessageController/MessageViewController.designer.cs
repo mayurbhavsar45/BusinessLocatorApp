@@ -52,6 +52,10 @@ namespace BusinessLocator.iOS
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UIView RevelView { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UIView textSendBorder { get; set; }
 
         [Outlet]
@@ -103,6 +107,11 @@ namespace BusinessLocator.iOS
             if (ProfilePicture != null) {
                 ProfilePicture.Dispose ();
                 ProfilePicture = null;
+            }
+
+            if (RevelView != null) {
+                RevelView.Dispose ();
+                RevelView = null;
             }
 
             if (textSendBorder != null) {
