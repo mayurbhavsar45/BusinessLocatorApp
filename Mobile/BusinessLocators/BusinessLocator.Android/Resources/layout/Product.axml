@@ -11,7 +11,8 @@
         android:layout_height="50dp"
         android:orientation="horizontal"
         android:id="@+id/linearLayout1"
-        android:background="@drawable/background">
+        android:background="@drawable/background"
+        android:gravity="center">
         <ImageButton
             android:layout_width="50dp"
             android:layout_height="match_parent"
@@ -28,10 +29,9 @@
             android:textColor="#ffffff"
             android:layout_weight="1"
             android:textSize="16dp"
-            android:gravity="center_vertical"
             android:textStyle="bold"
             android:text="Products Available"
-            android:paddingLeft="80dp" />
+            android:gravity="center" />
     </LinearLayout>
     <android.support.v7.widget.RecyclerView
         android:id="@+id/recycle"

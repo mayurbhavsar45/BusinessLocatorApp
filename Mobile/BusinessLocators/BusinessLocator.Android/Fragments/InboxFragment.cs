@@ -37,8 +37,8 @@ namespace BusinessLocator.Android.Fragments
             layoutmanager = new LinearLayoutManager(this.Activity);
 
 
-            lstSource.Add(new Chat() { sid = 1, name = "George", msg = "Hiiii,How are u???", time = "4:00 AM", count = 10, image = Resource.Drawable.user2 });
-            lstSource.Add(new Chat() { sid = 2, name = "Hank", msg = "Hellooo", time = "5:00 AM", count = 11, image = Resource.Drawable.user1 });
+            lstSource.Add(new Chat() { sid = 1, name = "George", msg = "Hiiii,How are u???", time = "4:00 AM", count = 10, image = Resource.Drawable.user5 });
+            lstSource.Add(new Chat() { sid = 2, name = "Hank", msg = "Hellooo", time = "5:00 AM", count = 11, image =Resource.Drawable.user5 });
             lstSource.Add(new Chat() { sid = 3, name = "Harry", msg = "303-304,Airen Heights,wore House roadrrrrrrrrrrrrrrrrrrrrrrrrrr", time = "6:00 AM", count = 1, image = Resource.Drawable.user5 });
             lstSource.Add(new Chat() { sid = 4, name = "Henryy", msg = "303-304,Airen Heights,wore House roadrrrrrrrrrrrrrrrrrrrrrrrrrr", time = "6:00 AM", count = 4, image = Resource.Drawable.user5 });
             lstSource.Add(new Chat() { sid = 5, name = "Benjamin", msg = "303-304,Airen Heights,wore House roadrrrrrrrrrrrrrrrrrrrrrrrrrr", time = "6:00 AM", count = 10, image = Resource.Drawable.user5 });

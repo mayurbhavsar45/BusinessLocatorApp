@@ -1,15 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-android:id="@+id/custom_marker_view"
-android:layout_width="wrap_content"
-android:layout_height="wrap_content"
-android:background="@drawable/blueresize">
-
-  <ImageView
-    android:id="@+id/profile_image"
-    android:layout_width="48dp"
-    android:layout_height="48dp"
-    android:layout_gravity="center_horizontal"
-    android:contentDescription="@null"
-    android:src="@drawable/user3" />
-</FrameLayout>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/custom_marker_view"
+    android:layout_width="80dp"
+    android:layout_height="wrap_content">
+    <RelativeLayout
+        android:layout_width="80dp"
+        android:layout_height="95dp"
+        android:backgroundTint="#26c7db"
+        android:background="@drawable/mapbluemarker1" />
+    <refractored.controls.CircleImageView
+        android:id="@+id/user_dp"
+        android:layout_width="75dp"
+        android:layout_height="67dp"
+        app:civ_border_color="#fff"
+        android:layout_alignParentTop="true"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginLeft="1dp"
+        android:layout_marginTop="2dp"
+        android:contentDescription="@null"
+        android:src="@drawable/user1" />
+</RelativeLayout>

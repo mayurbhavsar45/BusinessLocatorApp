@@ -2472,43 +2472,43 @@ namespace BusinessLocator.Android
 			public const int abc_vector_test = 2130837586;
 			
 			// aapt resource value: 0x7f020053
-			public const int account2 = 2130837587;
+			public const int add_new = 2130837587;
 			
 			// aapt resource value: 0x7f020054
-			public const int add_new = 2130837588;
+			public const int attach = 2130837588;
 			
 			// aapt resource value: 0x7f020055
-			public const int attach = 2130837589;
+			public const int avd_hide_password = 2130837589;
+			
+			// aapt resource value: 0x7f0200be
+			public const int avd_hide_password_1 = 2130837694;
+			
+			// aapt resource value: 0x7f0200bf
+			public const int avd_hide_password_2 = 2130837695;
+			
+			// aapt resource value: 0x7f0200c0
+			public const int avd_hide_password_3 = 2130837696;
 			
 			// aapt resource value: 0x7f020056
-			public const int avd_hide_password = 2130837590;
+			public const int avd_show_password = 2130837590;
 			
-			// aapt resource value: 0x7f0200d1
-			public const int avd_hide_password_1 = 2130837713;
+			// aapt resource value: 0x7f0200c1
+			public const int avd_show_password_1 = 2130837697;
 			
-			// aapt resource value: 0x7f0200d2
-			public const int avd_hide_password_2 = 2130837714;
+			// aapt resource value: 0x7f0200c2
+			public const int avd_show_password_2 = 2130837698;
 			
-			// aapt resource value: 0x7f0200d3
-			public const int avd_hide_password_3 = 2130837715;
+			// aapt resource value: 0x7f0200c3
+			public const int avd_show_password_3 = 2130837699;
 			
 			// aapt resource value: 0x7f020057
-			public const int avd_show_password = 2130837591;
-			
-			// aapt resource value: 0x7f0200d4
-			public const int avd_show_password_1 = 2130837716;
-			
-			// aapt resource value: 0x7f0200d5
-			public const int avd_show_password_2 = 2130837717;
-			
-			// aapt resource value: 0x7f0200d6
-			public const int avd_show_password_3 = 2130837718;
+			public const int back = 2130837591;
 			
 			// aapt resource value: 0x7f020058
-			public const int back = 2130837592;
+			public const int back2 = 2130837592;
 			
 			// aapt resource value: 0x7f020059
-			public const int back2 = 2130837593;
+			public const int back_arrow = 2130837593;
 			
 			// aapt resource value: 0x7f02005a
 			public const int Background = 2130837594;
@@ -2601,271 +2601,214 @@ namespace BusinessLocator.Android
 			public const int design_snackbar_background = 2130837623;
 			
 			// aapt resource value: 0x7f020078
-			public const int example_drawable = 2130837624;
+			public const int document = 2130837624;
 			
 			// aapt resource value: 0x7f020079
-			public const int googleg_disabled_color_18 = 2130837625;
+			public const int example_drawable = 2130837625;
 			
 			// aapt resource value: 0x7f02007a
-			public const int googleg_standard_color_18 = 2130837626;
+			public const int filter = 2130837626;
 			
 			// aapt resource value: 0x7f02007b
-			public const int ic_person = 2130837627;
+			public const int googleg_disabled_color_18 = 2130837627;
 			
 			// aapt resource value: 0x7f02007c
-			public const int ic_person_outline_white_24dp = 2130837628;
+			public const int googleg_standard_color_18 = 2130837628;
 			
 			// aapt resource value: 0x7f02007d
 			public const int icon_dropdownarrow = 2130837629;
 			
 			// aapt resource value: 0x7f02007e
-			public const int icons_account = 2130837630;
+			public const int icons_back = 2130837630;
 			
 			// aapt resource value: 0x7f02007f
-			public const int icons_account24 = 2130837631;
+			public const int icons_box40 = 2130837631;
 			
 			// aapt resource value: 0x7f020080
-			public const int icons_acount32 = 2130837632;
+			public const int icons_camera96 = 2130837632;
 			
 			// aapt resource value: 0x7f020081
-			public const int icons_back = 2130837633;
+			public const int icons_chat30 = 2130837633;
 			
 			// aapt resource value: 0x7f020082
-			public const int icons_below24 = 2130837634;
+			public const int icons_chatwhite = 2130837634;
 			
 			// aapt resource value: 0x7f020083
-			public const int icons_box40 = 2130837635;
+			public const int icons_document100 = 2130837635;
 			
 			// aapt resource value: 0x7f020084
-			public const int icons_camera96 = 2130837636;
+			public const int icons_edit25 = 2130837636;
 			
 			// aapt resource value: 0x7f020085
-			public const int icons_chat30 = 2130837637;
+			public const int icons_forward40 = 2130837637;
 			
 			// aapt resource value: 0x7f020086
-			public const int icons_chatwhite = 2130837638;
+			public const int icons_lock40 = 2130837638;
 			
 			// aapt resource value: 0x7f020087
-			public const int icons_docment32 = 2130837639;
+			public const int icons_picture100 = 2130837639;
 			
 			// aapt resource value: 0x7f020088
-			public const int icons_document100 = 2130837640;
+			public const int icons_picture96 = 2130837640;
 			
 			// aapt resource value: 0x7f020089
-			public const int icons_edit25 = 2130837641;
+			public const int icons_sent40 = 2130837641;
 			
 			// aapt resource value: 0x7f02008a
-			public const int icons_filter27 = 2130837642;
+			public const int iconsdocument40 = 2130837642;
 			
 			// aapt resource value: 0x7f02008b
-			public const int icons_filter32 = 2130837643;
+			public const int iconsemailblack = 2130837643;
 			
 			// aapt resource value: 0x7f02008c
-			public const int icons_forward40 = 2130837644;
+			public const int iconsopenbox40 = 2130837644;
 			
 			// aapt resource value: 0x7f02008d
-			public const int icons_location = 2130837645;
+			public const int iconsstar40 = 2130837645;
 			
 			// aapt resource value: 0x7f02008e
-			public const int icons_location48 = 2130837646;
+			public const int item_count_num = 2130837646;
 			
 			// aapt resource value: 0x7f02008f
-			public const int icons_lock40 = 2130837647;
+			public const int launcher_icon = 2130837647;
 			
 			// aapt resource value: 0x7f020090
-			public const int icons_marker24 = 2130837648;
+			public const int location = 2130837648;
 			
 			// aapt resource value: 0x7f020091
-			public const int icons_notification32 = 2130837649;
+			public const int map_popup3 = 2130837649;
 			
 			// aapt resource value: 0x7f020092
-			public const int icons_phone24 = 2130837650;
+			public const int mapbluemarker1 = 2130837650;
 			
 			// aapt resource value: 0x7f020093
-			public const int icons_picture100 = 2130837651;
+			public const int nav_item_backgroundcolor = 2130837651;
 			
 			// aapt resource value: 0x7f020094
-			public const int icons_picture96 = 2130837652;
+			public const int nav_item_colors = 2130837652;
 			
 			// aapt resource value: 0x7f020095
-			public const int icons_search27 = 2130837653;
+			public const int navigation_empty_icon = 2130837653;
 			
 			// aapt resource value: 0x7f020096
-			public const int icons_search32 = 2130837654;
+			public const int notification = 2130837654;
 			
 			// aapt resource value: 0x7f020097
-			public const int icons_searchfilter40 = 2130837655;
+			public const int notification1 = 2130837655;
 			
 			// aapt resource value: 0x7f020098
-			public const int icons_sent40 = 2130837656;
+			public const int notification_action_background = 2130837656;
 			
 			// aapt resource value: 0x7f020099
-			public const int icons_wine = 2130837657;
+			public const int notification_bg = 2130837657;
 			
 			// aapt resource value: 0x7f02009a
-			public const int icons_wine24 = 2130837658;
+			public const int notification_bg_low = 2130837658;
 			
 			// aapt resource value: 0x7f02009b
-			public const int iconsdocument40 = 2130837659;
+			public const int notification_bg_low_normal = 2130837659;
 			
 			// aapt resource value: 0x7f02009c
-			public const int iconsemailblack = 2130837660;
+			public const int notification_bg_low_pressed = 2130837660;
 			
 			// aapt resource value: 0x7f02009d
-			public const int iconsmarkerblack = 2130837661;
+			public const int notification_bg_normal = 2130837661;
 			
 			// aapt resource value: 0x7f02009e
-			public const int iconsnotification20 = 2130837662;
+			public const int notification_bg_normal_pressed = 2130837662;
 			
 			// aapt resource value: 0x7f02009f
-			public const int iconsopenbox40 = 2130837663;
-			
-			// aapt resource value: 0x7f0200a0
-			public const int iconsstar40 = 2130837664;
-			
-			// aapt resource value: 0x7f0200a1
-			public const int infowindow3 = 2130837665;
-			
-			// aapt resource value: 0x7f0200a2
-			public const int item_count_num = 2130837666;
-			
-			// aapt resource value: 0x7f0200a3
-			public const int launcher_icon = 2130837667;
-			
-			// aapt resource value: 0x7f0200a4
-			public const int location = 2130837668;
-			
-			// aapt resource value: 0x7f0200a5
-			public const int map_popup = 2130837669;
-			
-			// aapt resource value: 0x7f0200a6
-			public const int mapbluemarker = 2130837670;
-			
-			// aapt resource value: 0x7f0200a7
-			public const int nav_item_backgroundcolor = 2130837671;
-			
-			// aapt resource value: 0x7f0200a8
-			public const int nav_item_colors = 2130837672;
-			
-			// aapt resource value: 0x7f0200a9
-			public const int navigation_empty_icon = 2130837673;
-			
-			// aapt resource value: 0x7f0200aa
-			public const int notification = 2130837674;
-			
-			// aapt resource value: 0x7f0200ab
-			public const int notification_action_background = 2130837675;
-			
-			// aapt resource value: 0x7f0200ac
-			public const int notification_bg = 2130837676;
-			
-			// aapt resource value: 0x7f0200ad
-			public const int notification_bg_low = 2130837677;
-			
-			// aapt resource value: 0x7f0200ae
-			public const int notification_bg_low_normal = 2130837678;
-			
-			// aapt resource value: 0x7f0200af
-			public const int notification_bg_low_pressed = 2130837679;
-			
-			// aapt resource value: 0x7f0200b0
-			public const int notification_bg_normal = 2130837680;
-			
-			// aapt resource value: 0x7f0200b1
-			public const int notification_bg_normal_pressed = 2130837681;
-			
-			// aapt resource value: 0x7f0200b2
-			public const int notification_icon_background = 2130837682;
-			
-			// aapt resource value: 0x7f0200cf
-			public const int notification_template_icon_bg = 2130837711;
-			
-			// aapt resource value: 0x7f0200d0
-			public const int notification_template_icon_low_bg = 2130837712;
-			
-			// aapt resource value: 0x7f0200b3
-			public const int notification_tile_bg = 2130837683;
-			
-			// aapt resource value: 0x7f0200b4
-			public const int notify_panel_notification_icon_bg = 2130837684;
-			
-			// aapt resource value: 0x7f0200b5
-			public const int phone = 2130837685;
-			
-			// aapt resource value: 0x7f0200b6
-			public const int product1 = 2130837686;
-			
-			// aapt resource value: 0x7f0200b7
-			public const int product2 = 2130837687;
-			
-			// aapt resource value: 0x7f0200b8
-			public const int product3 = 2130837688;
-			
-			// aapt resource value: 0x7f0200b9
-			public const int product4 = 2130837689;
-			
-			// aapt resource value: 0x7f0200ba
-			public const int profile5 = 2130837690;
-			
-			// aapt resource value: 0x7f0200bb
-			public const int rounded_button = 2130837691;
+			public const int notification_icon_background = 2130837663;
 			
 			// aapt resource value: 0x7f0200bc
-			public const int rounded_edittext = 2130837692;
+			public const int notification_template_icon_bg = 2130837692;
 			
 			// aapt resource value: 0x7f0200bd
-			public const int rounded_spinner = 2130837693;
+			public const int notification_template_icon_low_bg = 2130837693;
 			
-			// aapt resource value: 0x7f0200be
-			public const int roundedbutton_blue = 2130837694;
+			// aapt resource value: 0x7f0200a0
+			public const int notification_tile_bg = 2130837664;
 			
-			// aapt resource value: 0x7f0200bf
-			public const int sample_background = 2130837695;
+			// aapt resource value: 0x7f0200a1
+			public const int notify_panel_notification_icon_bg = 2130837665;
 			
-			// aapt resource value: 0x7f0200c0
-			public const int SearchWhite = 2130837696;
+			// aapt resource value: 0x7f0200a2
+			public const int phone = 2130837666;
 			
-			// aapt resource value: 0x7f0200c1
-			public const int sent = 2130837697;
+			// aapt resource value: 0x7f0200a3
+			public const int product1 = 2130837667;
 			
-			// aapt resource value: 0x7f0200c2
-			public const int SplashBackground = 2130837698;
+			// aapt resource value: 0x7f0200a4
+			public const int product2 = 2130837668;
 			
-			// aapt resource value: 0x7f0200c3
-			public const int tooltip_frame_dark = 2130837699;
+			// aapt resource value: 0x7f0200a5
+			public const int product3 = 2130837669;
 			
-			// aapt resource value: 0x7f0200c4
-			public const int tooltip_frame_light = 2130837700;
+			// aapt resource value: 0x7f0200a6
+			public const int product4 = 2130837670;
 			
-			// aapt resource value: 0x7f0200c5
-			public const int user = 2130837701;
+			// aapt resource value: 0x7f0200a7
+			public const int profile5 = 2130837671;
 			
-			// aapt resource value: 0x7f0200c6
-			public const int user1 = 2130837702;
+			// aapt resource value: 0x7f0200a8
+			public const int rounded_button = 2130837672;
 			
-			// aapt resource value: 0x7f0200c7
-			public const int user2 = 2130837703;
+			// aapt resource value: 0x7f0200a9
+			public const int rounded_edittext = 2130837673;
 			
-			// aapt resource value: 0x7f0200c8
-			public const int user3 = 2130837704;
+			// aapt resource value: 0x7f0200aa
+			public const int rounded_spinner = 2130837674;
 			
-			// aapt resource value: 0x7f0200c9
-			public const int user4 = 2130837705;
+			// aapt resource value: 0x7f0200ab
+			public const int roundedbutton_blue = 2130837675;
 			
-			// aapt resource value: 0x7f0200ca
-			public const int user5 = 2130837706;
+			// aapt resource value: 0x7f0200ac
+			public const int sample_background = 2130837676;
 			
-			// aapt resource value: 0x7f0200cb
-			public const int vertical_list = 2130837707;
+			// aapt resource value: 0x7f0200ad
+			public const int search = 2130837677;
 			
-			// aapt resource value: 0x7f0200cc
-			public const int verticalmenu = 2130837708;
+			// aapt resource value: 0x7f0200ae
+			public const int sent = 2130837678;
 			
-			// aapt resource value: 0x7f0200cd
-			public const int weed_leaf = 2130837709;
+			// aapt resource value: 0x7f0200af
+			public const int SplashBackground = 2130837679;
 			
-			// aapt resource value: 0x7f0200ce
-			public const int wine = 2130837710;
+			// aapt resource value: 0x7f0200b0
+			public const int tooltip_frame_dark = 2130837680;
+			
+			// aapt resource value: 0x7f0200b1
+			public const int tooltip_frame_light = 2130837681;
+			
+			// aapt resource value: 0x7f0200b2
+			public const int user = 2130837682;
+			
+			// aapt resource value: 0x7f0200b3
+			public const int user1 = 2130837683;
+			
+			// aapt resource value: 0x7f0200b4
+			public const int user2 = 2130837684;
+			
+			// aapt resource value: 0x7f0200b5
+			public const int user3 = 2130837685;
+			
+			// aapt resource value: 0x7f0200b6
+			public const int user4 = 2130837686;
+			
+			// aapt resource value: 0x7f0200b7
+			public const int user5 = 2130837687;
+			
+			// aapt resource value: 0x7f0200b8
+			public const int vertical_list = 2130837688;
+			
+			// aapt resource value: 0x7f0200b9
+			public const int verticalmenu = 2130837689;
+			
+			// aapt resource value: 0x7f0200ba
+			public const int weed_leaf = 2130837690;
+			
+			// aapt resource value: 0x7f0200bb
+			public const int wine = 2130837691;
 			
 			static Drawable()
 			{
@@ -2964,11 +2907,11 @@ namespace BusinessLocator.Android
 			// aapt resource value: 0x7f0a0036
 			public const int add = 2131361846;
 			
-			// aapt resource value: 0x7f0a00fd
-			public const int address = 2131362045;
+			// aapt resource value: 0x7f0a00fe
+			public const int address = 2131362046;
 			
-			// aapt resource value: 0x7f0a00fc
-			public const int addresslbl = 2131362044;
+			// aapt resource value: 0x7f0a00fd
+			public const int addresslbl = 2131362045;
 			
 			// aapt resource value: 0x7f0a0021
 			public const int adjust_height = 2131361825;
@@ -2985,8 +2928,8 @@ namespace BusinessLocator.Android
 			// aapt resource value: 0x7f0a0042
 			public const int always = 2131361858;
 			
-			// aapt resource value: 0x7f0a0117
-			public const int arrowright = 2131362071;
+			// aapt resource value: 0x7f0a0118
+			public const int arrowright = 2131362072;
 			
 			// aapt resource value: 0x7f0a005f
 			public const int async = 2131361887;
@@ -2997,8 +2940,8 @@ namespace BusinessLocator.Android
 			// aapt resource value: 0x7f0a00ce
 			public const int back = 2131361998;
 			
-			// aapt resource value: 0x7f0a011d
-			public const int backgroundlayout = 2131362077;
+			// aapt resource value: 0x7f0a011f
+			public const int backgroundlayout = 2131362079;
 			
 			// aapt resource value: 0x7f0a0039
 			public const int beginning = 2131361849;
@@ -3027,8 +2970,8 @@ namespace BusinessLocator.Android
 			// aapt resource value: 0x7f0a00cd
 			public const int bottomarrow2 = 2131361997;
 			
-			// aapt resource value: 0x7f0a010a
-			public const int btnAdd = 2131362058;
+			// aapt resource value: 0x7f0a010b
+			public const int btnAdd = 2131362059;
 			
 			// aapt resource value: 0x7f0a00d0
 			public const int btnFilter = 2131362000;
@@ -3048,23 +2991,26 @@ namespace BusinessLocator.Android
 			// aapt resource value: 0x7f0a00bb
 			public const int btnforgot = 2131361979;
 			
-			// aapt resource value: 0x7f0a011f
-			public const int btngo = 2131362079;
+			// aapt resource value: 0x7f0a0121
+			public const int btngo = 2131362081;
 			
 			// aapt resource value: 0x7f0a00d8
 			public const int btnlogin = 2131362008;
 			
+			// aapt resource value: 0x7f0a0119
+			public const int btnlogout = 2131362073;
+			
 			// aapt resource value: 0x7f0a009f
 			public const int btnmenu = 2131361951;
 			
-			// aapt resource value: 0x7f0a011b
-			public const int btnsignup = 2131362075;
+			// aapt resource value: 0x7f0a011d
+			public const int btnsignup = 2131362077;
 			
 			// aapt resource value: 0x7f0a006d
 			public const int buttonPanel = 2131361901;
 			
-			// aapt resource value: 0x7f0a0115
-			public const int buttonSend = 2131362069;
+			// aapt resource value: 0x7f0a0116
+			public const int buttonSend = 2131362070;
 			
 			// aapt resource value: 0x7f0a00c3
 			public const int call = 2131361987;
@@ -3072,8 +3018,8 @@ namespace BusinessLocator.Android
 			// aapt resource value: 0x7f0a00e1
 			public const int cancel_action = 2131362017;
 			
-			// aapt resource value: 0x7f0a0103
-			public const int card = 2131362051;
+			// aapt resource value: 0x7f0a0104
+			public const int card = 2131362052;
 			
 			// aapt resource value: 0x7f0a004e
 			public const int center = 2131361870;
@@ -3102,8 +3048,8 @@ namespace BusinessLocator.Android
 			// aapt resource value: 0x7f0a0099
 			public const int confirmpwd = 2131361945;
 			
-			// aapt resource value: 0x7f0a0101
-			public const int consumericon = 2131362049;
+			// aapt resource value: 0x7f0a0102
+			public const int consumericon = 2131362050;
 			
 			// aapt resource value: 0x7f0a00ae
 			public const int container = 2131361966;
@@ -3123,6 +3069,9 @@ namespace BusinessLocator.Android
 			// aapt resource value: 0x7f0a00ab
 			public const int count = 2131361963;
 			
+			// aapt resource value: 0x7f0a00f9
+			public const int cover = 2131362041;
+			
 			// aapt resource value: 0x7f0a00f8
 			public const int coverprofile = 2131362040;
 			
@@ -3132,8 +3081,8 @@ namespace BusinessLocator.Android
 			// aapt resource value: 0x7f0a0076
 			public const int customPanel = 2131361910;
 			
-			// aapt resource value: 0x7f0a0121
-			public const int custom_marker_view = 2131362081;
+			// aapt resource value: 0x7f0a0123
+			public const int custom_marker_view = 2131362083;
 			
 			// aapt resource value: 0x7f0a0027
 			public const int dark = 2131361831;
@@ -3177,11 +3126,11 @@ namespace BusinessLocator.Android
 			// aapt resource value: 0x7f0a00a6
 			public const int doc2 = 2131361958;
 			
-			// aapt resource value: 0x7f0a00f9
-			public const int edit = 2131362041;
+			// aapt resource value: 0x7f0a00fa
+			public const int edit = 2131362042;
 			
-			// aapt resource value: 0x7f0a0114
-			public const int editMessage = 2131362068;
+			// aapt resource value: 0x7f0a0115
+			public const int editMessage = 2131362069;
 			
 			// aapt resource value: 0x7f0a00aa
 			public const int editText1 = 2131361962;
@@ -3189,20 +3138,20 @@ namespace BusinessLocator.Android
 			// aapt resource value: 0x7f0a0088
 			public const int edit_query = 2131361928;
 			
-			// aapt resource value: 0x7f0a0118
-			public const int eemail = 2131362072;
-			
 			// aapt resource value: 0x7f0a011a
-			public const int egender = 2131362074;
+			public const int eemail = 2131362074;
+			
+			// aapt resource value: 0x7f0a011c
+			public const int egender = 2131362076;
+			
+			// aapt resource value: 0x7f0a00fc
+			public const int email = 2131362044;
+			
+			// aapt resource value: 0x7f0a0110
+			public const int emailbtn = 2131362064;
 			
 			// aapt resource value: 0x7f0a00fb
-			public const int email = 2131362043;
-			
-			// aapt resource value: 0x7f0a010f
-			public const int emailbtn = 2131362063;
-			
-			// aapt resource value: 0x7f0a00fa
-			public const int emaillbl = 2131362042;
+			public const int emaillbl = 2131362043;
 			
 			// aapt resource value: 0x7f0a003a
 			public const int end = 2131361850;
@@ -3243,9 +3192,6 @@ namespace BusinessLocator.Android
 			// aapt resource value: 0x7f0a0051
 			public const int fill_vertical = 2131361873;
 			
-			// aapt resource value: 0x7f0a012b
-			public const int filter = 2131362091;
-			
 			// aapt resource value: 0x7f0a005d
 			public const int @fixed = 2131361885;
 			
@@ -3285,20 +3231,20 @@ namespace BusinessLocator.Android
 			// aapt resource value: 0x7f0a0069
 			public const int image = 2131361897;
 			
-			// aapt resource value: 0x7f0a010c
-			public const int imageView2 = 2131362060;
-			
-			// aapt resource value: 0x7f0a0104
-			public const int imagebg = 2131362052;
+			// aapt resource value: 0x7f0a010d
+			public const int imageView2 = 2131362061;
 			
 			// aapt resource value: 0x7f0a0105
-			public const int imageproduct = 2131362053;
-			
-			// aapt resource value: 0x7f0a0107
-			public const int imagetext = 2131362055;
+			public const int imagebg = 2131362053;
 			
 			// aapt resource value: 0x7f0a0106
-			public const int img = 2131362054;
+			public const int imageproduct = 2131362054;
+			
+			// aapt resource value: 0x7f0a0108
+			public const int imagetext = 2131362056;
+			
+			// aapt resource value: 0x7f0a0107
+			public const int img = 2131362055;
 			
 			// aapt resource value: 0x7f0a00a1
 			public const int imgdoc = 2131361953;
@@ -3321,17 +3267,17 @@ namespace BusinessLocator.Android
 			// aapt resource value: 0x7f0a00ad
 			public const int largeLabel = 2131361965;
 			
-			// aapt resource value: 0x7f0a011c
-			public const int launcher = 2131362076;
+			// aapt resource value: 0x7f0a011e
+			public const int launcher = 2131362078;
 			
 			// aapt resource value: 0x7f0a009d
 			public const int lblTitle = 2131361949;
 			
-			// aapt resource value: 0x7f0a0100
-			public const int lblchangepwd = 2131362048;
+			// aapt resource value: 0x7f0a0101
+			public const int lblchangepwd = 2131362049;
 			
-			// aapt resource value: 0x7f0a0102
-			public const int lblconsumer = 2131362050;
+			// aapt resource value: 0x7f0a0103
+			public const int lblconsumer = 2131362051;
 			
 			// aapt resource value: 0x7f0a00c1
 			public const int lbltime = 2131361985;
@@ -3360,8 +3306,8 @@ namespace BusinessLocator.Android
 			// aapt resource value: 0x7f0a006b
 			public const int list_item = 2131361899;
 			
-			// aapt resource value: 0x7f0a0113
-			public const int ll_send_message = 2131362067;
+			// aapt resource value: 0x7f0a0114
+			public const int ll_send_message = 2131362068;
 			
 			// aapt resource value: 0x7f0a00cb
 			public const int locationimg = 2131361995;
@@ -3369,38 +3315,38 @@ namespace BusinessLocator.Android
 			// aapt resource value: 0x7f0a00cc
 			public const int locationtext = 2131361996;
 			
-			// aapt resource value: 0x7f0a00ff
-			public const int lockicon = 2131362047;
+			// aapt resource value: 0x7f0a0100
+			public const int lockicon = 2131362048;
 			
 			// aapt resource value: 0x7f0a00dc
 			public const int map = 2131362012;
 			
-			// aapt resource value: 0x7f0a0124
-			public const int masked = 2131362084;
+			// aapt resource value: 0x7f0a0126
+			public const int masked = 2131362086;
 			
 			// aapt resource value: 0x7f0a00e3
 			public const int media_actions = 2131362019;
 			
-			// aapt resource value: 0x7f0a0126
-			public const int menu_inbox = 2131362086;
-			
-			// aapt resource value: 0x7f0a0125
-			public const int menu_location = 2131362085;
+			// aapt resource value: 0x7f0a0128
+			public const int menu_inbox = 2131362088;
 			
 			// aapt resource value: 0x7f0a0127
-			public const int menu_notification = 2131362087;
+			public const int menu_location = 2131362087;
+			
+			// aapt resource value: 0x7f0a0129
+			public const int menu_notification = 2131362089;
 			
 			// aapt resource value: 0x7f0a012c
 			public const int menu_product = 2131362092;
 			
-			// aapt resource value: 0x7f0a0129
-			public const int menu_profile = 2131362089;
+			// aapt resource value: 0x7f0a012b
+			public const int menu_profile = 2131362091;
 			
-			// aapt resource value: 0x7f0a0128
-			public const int menu_walls = 2131362088;
+			// aapt resource value: 0x7f0a012a
+			public const int menu_walls = 2131362090;
 			
-			// aapt resource value: 0x7f0a0120
-			public const int message = 2131362080;
+			// aapt resource value: 0x7f0a0122
+			public const int message = 2131362082;
 			
 			// aapt resource value: 0x7f0a003b
 			public const int middle = 2131361851;
@@ -3453,14 +3399,14 @@ namespace BusinessLocator.Android
 			// aapt resource value: 0x7f0a000b
 			public const int parent_matrix = 2131361803;
 			
-			// aapt resource value: 0x7f0a0119
-			public const int password = 2131362073;
+			// aapt resource value: 0x7f0a011b
+			public const int password = 2131362075;
 			
-			// aapt resource value: 0x7f0a010b
-			public const int pdesc = 2131362059;
+			// aapt resource value: 0x7f0a010c
+			public const int pdesc = 2131362060;
 			
-			// aapt resource value: 0x7f0a010d
-			public const int phone = 2131362061;
+			// aapt resource value: 0x7f0a010e
+			public const int phone = 2131362062;
 			
 			// aapt resource value: 0x7f0a00c4
 			public const int phonelabel = 2131361988;
@@ -3474,26 +3420,23 @@ namespace BusinessLocator.Android
 			// aapt resource value: 0x7f0a00f0
 			public const int pinview = 2131362032;
 			
-			// aapt resource value: 0x7f0a0108
-			public const int pname = 2131362056;
-			
 			// aapt resource value: 0x7f0a0109
-			public const int pprice = 2131362057;
+			public const int pname = 2131362057;
+			
+			// aapt resource value: 0x7f0a010a
+			public const int pprice = 2131362058;
 			
 			// aapt resource value: 0x7f0a00f4
 			public const int price = 2131362036;
 			
-			// aapt resource value: 0x7f0a011e
-			public const int pricelbl = 2131362078;
+			// aapt resource value: 0x7f0a0120
+			public const int pricelbl = 2131362080;
 			
-			// aapt resource value: 0x7f0a0112
-			public const int productlayout = 2131362066;
+			// aapt resource value: 0x7f0a0113
+			public const int productlayout = 2131362067;
 			
 			// aapt resource value: 0x7f0a009c
 			public const int profile = 2131361948;
-			
-			// aapt resource value: 0x7f0a0122
-			public const int profile_image = 2131362082;
 			
 			// aapt resource value: 0x7f0a0006
 			public const int progress_circular = 2131361798;
@@ -3510,17 +3453,17 @@ namespace BusinessLocator.Android
 			// aapt resource value: 0x7f0a007f
 			public const int radio = 2131361919;
 			
-			// aapt resource value: 0x7f0a010e
-			public const int ratingBar = 2131362062;
+			// aapt resource value: 0x7f0a010f
+			public const int ratingBar = 2131362063;
 			
 			// aapt resource value: 0x7f0a00bd
 			public const int recycle = 2131361981;
 			
-			// aapt resource value: 0x7f0a0110
-			public const int reportproviderlayout = 2131362064;
-			
 			// aapt resource value: 0x7f0a0111
-			public const int reviewconsumerlayout = 2131362065;
+			public const int reportproviderlayout = 2131362065;
+			
+			// aapt resource value: 0x7f0a0112
+			public const int reviewconsumerlayout = 2131362066;
 			
 			// aapt resource value: 0x7f0a0053
 			public const int right = 2131361875;
@@ -3560,9 +3503,6 @@ namespace BusinessLocator.Android
 			
 			// aapt resource value: 0x7f0a005e
 			public const int scrollable = 2131361886;
-			
-			// aapt resource value: 0x7f0a012a
-			public const int search = 2131362090;
 			
 			// aapt resource value: 0x7f0a008a
 			public const int search_badge = 2131361930;
@@ -3660,8 +3600,8 @@ namespace BusinessLocator.Android
 			// aapt resource value: 0x7f0a0091
 			public const int submit_area = 2131361937;
 			
-			// aapt resource value: 0x7f0a0116
-			public const int switch1 = 2131362070;
+			// aapt resource value: 0x7f0a0117
+			public const int switch1 = 2131362071;
 			
 			// aapt resource value: 0x7f0a002a
 			public const int tabMode = 2131361834;
@@ -3762,17 +3702,20 @@ namespace BusinessLocator.Android
 			// aapt resource value: 0x7f0a00c2
 			public const int user = 2131361986;
 			
+			// aapt resource value: 0x7f0a0124
+			public const int user_dp = 2131362084;
+			
 			// aapt resource value: 0x7f0a0016
 			public const int view_offset_helper = 2131361814;
 			
-			// aapt resource value: 0x7f0a00fe
-			public const int viewpadding = 2131362046;
+			// aapt resource value: 0x7f0a00ff
+			public const int viewpadding = 2131362047;
 			
 			// aapt resource value: 0x7f0a00d2
 			public const int viewpager = 2131362002;
 			
-			// aapt resource value: 0x7f0a0123
-			public const int visible = 2131362083;
+			// aapt resource value: 0x7f0a0125
+			public const int visible = 2131362085;
 			
 			// aapt resource value: 0x7f0a0025
 			public const int wide = 2131361829;
@@ -4150,10 +4093,7 @@ namespace BusinessLocator.Android
 			public const int bottom_navigation_main = 2131623936;
 			
 			// aapt resource value: 0x7f0e0001
-			public const int mainactivitymenu = 2131623937;
-			
-			// aapt resource value: 0x7f0e0002
-			public const int provider_bottom_navigation_main = 2131623938;
+			public const int provider_bottom_navigation_main = 2131623937;
 			
 			static Menu()
 			{

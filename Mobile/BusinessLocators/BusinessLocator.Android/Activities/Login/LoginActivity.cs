@@ -20,6 +20,7 @@ namespace BusinessLocator.Android
     {
         TextView signuplink,forgotpwdlink;
         Button btnlogin;
+        EditText euname,epwd;
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
@@ -27,6 +28,10 @@ namespace BusinessLocator.Android
             signuplink = FindViewById<TextView>(Resource.Id.signuplink);
             forgotpwdlink = FindViewById<TextView>(Resource.Id.forgotpwdlink);
             btnlogin = FindViewById<Button>(Resource.Id.btnlogin);
+            euname = FindViewById<EditText>(Resource.Id.euname);
+            epwd = FindViewById<EditText>(Resource.Id.epwd);
+            euname.Text = "provider@gmail.com";
+            epwd.Text = "provider";
 
             signuplink.Click += Signuplink_Click;
             forgotpwdlink.Click += Forgotpwdlink_Click;
@@ -35,8 +40,19 @@ namespace BusinessLocator.Android
 
         private void Btnlogin_Click(object sender, EventArgs e)
         {
-            Intent i = new Intent(this, typeof(MainActivity));
-            StartActivity(i);
+            if (euname.Text.ToString().Equals("provider@gmail.com") && epwd.Text.ToString().Equals("provider"))
+            {
+                Intent i = new Intent(this, typeof(ProviderMainActivity));
+                StartActivity(i);
+            }
+            else
+            {
+                Intent i = new Intent(this, typeof(MainActivity));
+                StartActivity(i);
+            }
+
+
+
         }
 
         private void Forgotpwdlink_Click(object sender, EventArgs e)

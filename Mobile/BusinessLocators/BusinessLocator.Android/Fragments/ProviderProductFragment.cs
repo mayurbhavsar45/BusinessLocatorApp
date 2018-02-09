@@ -71,6 +71,7 @@ namespace BusinessLocator.Android.Fragments
         private void Adp_ItemClick(object sender, int position)
         {
             Dialog dialog = new Dialog(this.Activity);
+            dialog.RequestWindowFeature((int)WindowFeatures.NoTitle);
             dialog.SetContentView(Resource.Layout.ProviderProductShowDialog);
             dialog.FindViewById<ImageView>(Resource.Id.imageproduct).SetImageResource(lstdata[position].imgid);
             dialog.FindViewById<EditText>(Resource.Id.pname).Text = lstdata[position].title;
@@ -83,6 +84,7 @@ namespace BusinessLocator.Android.Fragments
         private void Btnadd_Click(object sender, EventArgs e)
         {
             Dialog dialog = new Dialog(this.Activity);
+            dialog.RequestWindowFeature((int)WindowFeatures.NoTitle);
             dialog.SetContentView(Resource.Layout.ProviderProductAddDialog);
             productimage=  dialog.FindViewById<ImageView>(Resource.Id.imageproduct);
             productimage.Click += Imagebg_Click;

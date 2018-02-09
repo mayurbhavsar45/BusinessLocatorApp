@@ -17,9 +17,10 @@
             android:layout_height="match_parent"
             android:id="@+id/btnback"
             android:background="@null"
-            android:src="@drawable/icons_back"
+            android:src="@drawable/back_arrow"
             android:padding="10dp"
-            android:scaleType="fitCenter" />
+            android:scaleType="fitCenter"
+            android:tint="#ffffffff" />
         <TextView
             android:textAppearance="?android:attr/textAppearanceSmall"
             android:layout_width="match_parent"

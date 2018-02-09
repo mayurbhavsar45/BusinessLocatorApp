@@ -63,6 +63,7 @@ namespace BusinessLocator.Android
         private void Adp_ItemClick(object sender, int position)
         {
             Dialog dialog = new Dialog(this);
+            dialog.RequestWindowFeature((int)WindowFeatures.NoTitle);
             dialog.SetContentView(Resource.Layout.ProductDialog);
             TextView ptitle = dialog.FindViewById<TextView>(Resource.Id.ptitle);
             TextView price = dialog.FindViewById<TextView>(Resource.Id.price);

@@ -17,8 +17,8 @@
         android:orientation="horizontal"
         android:id="@+id/backgroundlayout"
         android:paddingBottom="10dip"
-        android:paddingRight="5dip"
-        android:paddingLeft="5dip"
+        android:paddingRight="20dip"
+        android:paddingLeft="15dip"
         android:paddingTop="5dip"
         android:background="@drawable/back">
         <TextView

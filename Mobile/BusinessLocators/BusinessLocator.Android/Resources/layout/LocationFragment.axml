@@ -24,21 +24,25 @@
             android:textSize="16dp"
             android:paddingLeft="80dp" />
         <ImageButton
-            android:layout_width="50dp"
-            android:layout_height="match_parent"
+            android:layout_width="47dp"
+            android:layout_height="47dp"
             android:id="@+id/btnSearch"
             android:background="@null"
-            android:src="@drawable/icons_search32"
+            android:src="@drawable/search"
             android:padding="12dp"
-            android:scaleType="fitCenter" />
+            android:scaleType="fitCenter"
+            android:tint="#ffffffff"
+            android:layout_gravity="center" />
         <ImageButton
-            android:layout_width="50dp"
-            android:layout_height="match_parent"
+            android:layout_width="47dp"
+            android:layout_height="47dp"
             android:id="@+id/btnFilter"
             android:background="@null"
-            android:src="@drawable/icons_filter32"
+            android:src="@drawable/filter"
             android:padding="10dp"
-            android:scaleType="fitCenter" />
+            android:scaleType="fitCenter"
+            android:tint="#ffffffff"
+            android:layout_gravity="center" />
     </LinearLayout>
     <android.support.design.widget.TabLayout
         android:id="@+id/sliding_tabs"

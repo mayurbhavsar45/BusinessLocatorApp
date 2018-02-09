@@ -1,20 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
-    android:layout_width="220dp"
-    android:layout_height="130dp"
-    android:background="@drawable/infowindow3">
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@drawable/map_popup3"
+    android:paddingRight="15dp"
+    android:paddingBottom="27dp">
     <LinearLayout
         android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
         <ImageView
             android:src="@drawable/user"
-            android:layout_height="20dp"
+            android:layout_height="15dp"
             android:id="@+id/user"
-            android:layout_width="20dp"
+            android:layout_width="16dp"
             android:layout_marginTop="10dp"
-            android:layout_marginLeft="10dp"
+            android:layout_marginLeft="15dp"
             android:tint="#ff3498db" />
         <TextView
             android:text="Brauce wills"
@@ -23,13 +25,13 @@
             android:layout_height="wrap_content"
             android:id="@+id/name"
             android:layout_marginTop="10dp"
-            android:textSize="11sp" />
+            android:textSize="9sp" />
         <ImageView
             android:src="@drawable/phone"
-            android:layout_width="20dp"
-            android:layout_height="20dp"
+            android:layout_width="16dp"
+            android:layout_height="16dp"
             android:id="@+id/call"
-            android:layout_marginLeft="10dp"
+            android:layout_marginLeft="5dp"
             android:layout_marginTop="10dp"
             android:tint="#ff3498db" />
         <TextView
@@ -39,7 +41,7 @@
             android:layout_height="wrap_content"
             android:id="@+id/phonelabel"
             android:layout_marginTop="10dp"
-            android:textSize="11sp" />
+            android:textSize="9sp" />
     </LinearLayout>
     <LinearLayout
         android:orientation="horizontal"
@@ -48,10 +50,10 @@
         android:paddingLeft="10dp">
         <ImageView
             android:src="@drawable/weed_leaf"
-            android:layout_width="35dp"
-            android:layout_height="35dp"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
             android:id="@+id/bottomarrow"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="7dp"
             android:tint="#ff3498db" />
         <ImageView
             android:src="@drawable/wine"
@@ -59,29 +61,29 @@
             android:layout_height="32dp"
             android:id="@+id/bottle1"
             android:layout_marginLeft="2dp"
-            android:layout_marginTop="12dp"
+            android:layout_marginTop="7dp"
             android:tint="#ff3498db" />
         <ImageView
             android:src="@drawable/weed_leaf"
-            android:layout_width="35dp"
-            android:layout_height="35dp"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
             android:id="@+id/bottomarrow1"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="7dp"
             android:tint="#ff3498db" />
         <ImageView
             android:src="@drawable/wine"
-            android:layout_width="32dp"
-            android:layout_height="32dp"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
             android:id="@+id/bottle2"
             android:layout_marginLeft="2dp"
-            android:layout_marginTop="12dp"
+            android:layout_marginTop="7dp"
             android:tint="#ff3498db" />
         <ImageView
             android:src="@drawable/icons_forward40"
             android:layout_width="20dp"
             android:layout_height="20dp"
             android:id="@+id/forward"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="16dp" />
+            android:layout_marginTop="12dp"
+            android:layout_marginLeft="4dp" />
     </LinearLayout>
 </LinearLayout>

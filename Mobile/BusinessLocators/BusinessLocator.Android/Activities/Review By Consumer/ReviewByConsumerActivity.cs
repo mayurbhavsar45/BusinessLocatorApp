@@ -32,12 +32,14 @@ namespace BusinessLocator.Android
             btnback = FindViewById<ImageButton>(Resource.Id.btnback);
             btnback.Click += Btnback_Click;
             lstSource.Add(new Review() { review = "Hiiii,How are u???", time = "03/1/2018", image = Resource.Drawable.user2 });
-            lstSource.Add(new Review() { review = "Hellooo", time = "02/1/2018", image = Resource.Drawable.user1 });
-            lstSource.Add(new Review() { review = "303-304,Airen Heights,wore House roadrrrrrrrrrrrrrrrrrrrrrrrrrr", time = "6:00 AM", image = Resource.Drawable.user3 });
-            lstSource.Add(new Review() { review = "303-304,Airen Heights,wore House roadrrrrrrrrrrrrrrrrrrrrrrrrrr", time = "6:00 AM", image = Resource.Drawable.user4 });
-            lstSource.Add(new Review() { review = "303-304,Airen Heights,wore House roadrrrrrrrrrrrrrrrrrrrrrrrrrr", time = "6:00 AM",  image = Resource.Drawable.user1 });
-            lstSource.Add(new Review() { review = "303-304,Airen Heights,wore House roadrrrrrrrrrrrrrrrrrrrrrrrrrr", time = "6:00 AM", image = Resource.Drawable.user1 });
-          
+            lstSource.Add(new Review() { review = "Hellooo", time = "02/1/2018", image = Resource.Drawable.user2 });
+            lstSource.Add(new Review() { review = "303-304,Airen Heights,wore House roadrrrrrrrrrrrrrrrrrrrrrrrrrr", time = "6:00 AM", image = Resource.Drawable.user2 });
+            lstSource.Add(new Review() { review = "303-304,Airen Heights,wore House roadrrrrrrrrrrrrrrrrrrrrrrrrrr", time = "6:00 AM", image = Resource.Drawable.user5 });
+            lstSource.Add(new Review() { review = "303-304,Airen Heights,wore House roadrrrrrrrrrrrrrrrrrrrrrrrrrr", time = "6:00 AM",  image = Resource.Drawable.user5 });
+            lstSource.Add(new Review() { review = "303-304,Airen Heights,wore House roadrrrrrrrrrrrrrrrrrrrrrrrrrr", time = "6:00 AM", image = Resource.Drawable.user5 });
+            lstSource.Add(new Review() { review = "303-304,Airen Heights,wore House roadrrrrrrrrrrrrrrrrrrrrrrrrrr", time = "6:00 AM", image = Resource.Drawable.user5 });
+            lstSource.Add(new Review() { review = "303-304,Airen Heights,wore House roadrrrrrrrrrrrrrrrrrrrrrrrrrr", time = "6:00 AM", image = Resource.Drawable.user5 });
+
             adp = new ReviewConsumerAdapter(this, lstSource);
             lstview.Adapter = adp;
         }

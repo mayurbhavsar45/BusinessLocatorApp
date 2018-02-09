@@ -6,7 +6,8 @@
     android:background="@drawable/background">
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="match_parent"
+        android:fillViewport="true">
         <LinearLayout
             android:orientation="vertical"
             android:layout_width="match_parent"
@@ -74,14 +75,12 @@
                 app:textAllCaps="false" />
             <TextView
                 android:text="Don't recive the otp ?Resend"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/textView1"
                 android:gravity="center"
                 android:textColor="#ffffff"
-                android:layout_marginTop="10dip"
-                android:layout_marginLeft="100dip"
-                android:layout_marginRight="30dip" />
+                android:layout_marginTop="20dip" />
         </LinearLayout>
     </ScrollView>
 </LinearLayout>

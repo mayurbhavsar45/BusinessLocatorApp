@@ -12,7 +12,7 @@ using System;
 
 namespace BusinessLocator.Android
 {
-    [Activity(Label = "", Theme = "@style/MyTheme", ConfigurationChanges = ConfigChanges.Orientation | ConfigChanges.ScreenSize, WindowSoftInputMode = SoftInput.StateHidden,MainLauncher =true)]
+    [Activity(Label = "", Theme = "@style/MyTheme", ConfigurationChanges = ConfigChanges.Orientation | ConfigChanges.ScreenSize, WindowSoftInputMode = SoftInput.StateHidden)]
     public class ProviderMainActivity : AppCompatActivity
     {
         BottomNavigationView bottomNavigation;

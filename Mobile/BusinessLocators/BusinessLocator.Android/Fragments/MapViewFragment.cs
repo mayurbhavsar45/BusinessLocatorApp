@@ -56,15 +56,15 @@ namespace BusinessLocator.Android.Fragments
 
             view.Measure(displayMetrics.WidthPixels, displayMetrics.HeightPixels);
 
-            view.Layout(0, 0, 240, 240);
+            view.Layout(0, 0, displayMetrics.WidthPixels, displayMetrics.HeightPixels);
            
             view.BuildDrawingCache();
-            Bitmap bitmap = Bitmap.CreateBitmap(displayMetrics.WidthPixels, displayMetrics.HeightPixels, Bitmap.Config.Argb8888);
-            Bitmap bhalfsize = Bitmap.CreateScaledBitmap(bitmap, bitmap.Width/ 2, bitmap.Height/ 2, false);
-            Canvas canvas = new Canvas(bhalfsize);
+            Bitmap bitmap = Bitmap.CreateBitmap(view.MeasuredWidth, view.MeasuredHeight, Bitmap.Config.Argb8888);
+         //   Bitmap resize = Bitmap.CreateScaledBitmap(bitmap, bitmap.Width/ 2, bitmap.Height/ 2, false);
+            Canvas canvas = new Canvas(bitmap);
             view.Draw(canvas);
 
-            return bhalfsize;
+            return bitmap;
 
         }
 
@@ -90,38 +90,38 @@ namespace BusinessLocator.Android.Fragments
              .SetPosition(latlng)
              .SetIcon(BitmapDescriptorFactory.FromBitmap(bmp)));
 
-              gmap.SetInfoWindowAdapter(this);
-              gmap.SetOnInfoWindowClickListener(this);
+           
 
-       
+
             //Marker m1 = gmap.AddMarker(new MarkerOptions()
             //    .SetPosition(latlng)
             //    .SetTitle("Title1")
             //    .SetSnippet("Snippet1")
             //    .SetIcon(BitmapDescriptorFactory.DefaultMarker(color)));
 
-            //Marker m2 = gmap.AddMarker(new MarkerOptions()
-            //  .SetPosition(latlng2)
-            //  .SetTitle("Title2")
-            //  .SetSnippet("Snippet2")
-            //  .SetIcon(BitmapDescriptorFactory.FromBitmap(bmp)));
-           
+            Marker m2 = gmap.AddMarker(new MarkerOptions()
+              .SetPosition(latlng2)
+              .SetTitle("Title2")
+              .SetSnippet("Snippet2")
+              .SetIcon(BitmapDescriptorFactory.FromBitmap(bmp)));
 
 
-            //Marker m3 = gmap.AddMarker(new MarkerOptions()
-            //  .SetPosition(latlng3)
-            //  .SetTitle("Title3")
-            //  .SetSnippet("Snippet3")
-            //  .SetIcon(BitmapDescriptorFactory.FromBitmap(bmp)));
-           
 
-            //Marker m4 = gmap.AddMarker(new MarkerOptions()
-            // .SetPosition(latlng4)
-            // .SetTitle("Title4")
-            // .SetSnippet("Snippet4s")
-            // .SetIcon(BitmapDescriptorFactory.FromBitmap(bmp)));
-           
+            Marker m3 = gmap.AddMarker(new MarkerOptions()
+              .SetPosition(latlng3)
+              .SetTitle("Title3")
+              .SetSnippet("Snippet3")
+              .SetIcon(BitmapDescriptorFactory.FromBitmap(bmp)));
 
+
+            Marker m4 = gmap.AddMarker(new MarkerOptions()
+             .SetPosition(latlng4)
+             .SetTitle("Title4")
+             .SetSnippet("Snippet4s")
+             .SetIcon(BitmapDescriptorFactory.FromBitmap(bmp)));
+
+            gmap.SetInfoWindowAdapter(this);
+            gmap.SetOnInfoWindowClickListener(this);
 
 
         }
@@ -147,7 +147,7 @@ namespace BusinessLocator.Android.Fragments
         public View GetInfoWindow(Marker marker)
         {
             View view=   LayoutInflater.Inflate(Resource.Layout.InfoWindow, null);
-            view.FindViewById<TextView>(Resource.Id.name).Text = "sweta";
+            //view.FindViewById<TextView>(Resource.Id.name).Text = "sweta";
         
             return view;
 

@@ -18,13 +18,24 @@ namespace BusinessLocator.Android
     public class SettingActivity : AppCompatActivity
     {
         ImageButton btnback;
+        Button btnlogout;
+
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.Setting);
             btnback = FindViewById<ImageButton>(Resource.Id.btnback);
+            btnlogout= FindViewById<Button>(Resource.Id.btnlogout);
             btnback.Click += Btnback_Click;
+            btnlogout.Click += Btnlogout_Click;
         }
+
+        private void Btnlogout_Click(object sender, EventArgs e)
+        {
+            Intent i = new Intent(this, typeof(LoginActivity));
+            StartActivity(i);
+        }
+
         private void Btnback_Click(object sender, EventArgs e)
         {
             Finish();

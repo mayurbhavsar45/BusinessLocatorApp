@@ -22,12 +22,14 @@ namespace BusinessLocator.Android
         ListView lstview;
         List<MSubscription> lstSource;
         SubscriptionAdapter adp;
+        ImageButton btnback;
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.SubscriptionLayout);
             lstSource = new List<MSubscription>();
             lstview = FindViewById<ListView>(Resource.Id.list);
+            btnback = FindViewById<ImageButton>(Resource.Id.btnback);
 
             lstSource.Add(new MSubscription() {  name = "Lorem lpsum is simply dummy text of the printing and typesetting industry.", price="$4.99" });
             lstSource.Add(new MSubscription() { name = "Lorem lpsum is simply dummy text of the printing and typesetting industry.", price = "$4.99" });
@@ -36,7 +38,13 @@ namespace BusinessLocator.Android
 
             adp = new SubscriptionAdapter(this, lstSource);
             lstview.Adapter = adp;
-            // Create your application here
+            btnback.Click += Btnback_Click;
+
+        }
+
+        private void Btnback_Click(object sender, EventArgs e)
+        {
+            Finish();
         }
     }
 }

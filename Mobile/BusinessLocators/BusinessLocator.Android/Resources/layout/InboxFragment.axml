@@ -21,15 +21,17 @@
             android:textSize="16dp"
             android:paddingLeft="60dp" />
         <ImageButton
-            android:layout_width="50dp"
-            android:layout_height="match_parent"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
             android:id="@+id/btnSearch"
             android:background="@null"
-            android:src="@drawable/icons_search32"
+            android:src="@drawable/search"
             android:padding="12dp"
-            android:scaleType="fitCenter" />
+            android:scaleType="fitCenter"
+            android:tint="#ffffffff"
+            android:layout_gravity="center" />
     </LinearLayout>
-    <!--<ListView
+<!--<ListView
         android:id="@+id/list"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -39,10 +41,9 @@
         android:scrollingCache="false"
          android:animationCache="false"
         />-->
-
-  <android.support.v7.widget.RecyclerView
-    android:id="@+id/recycle"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:scrollbars="vertical" />
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recycle"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="vertical" />
 </LinearLayout>
