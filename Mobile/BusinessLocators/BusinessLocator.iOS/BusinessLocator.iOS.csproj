@@ -97,6 +97,18 @@
     <Reference Include="PDRating">
       <HintPath>..\Components\pdreview-2.0.2\lib\ios-unified\PDRating.dll</HintPath>
     </Reference>
+    <Reference Include="System.Net.Http" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.IO.Compression" />
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.10.0.3\lib\netstandard1.3\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Plugin.Connectivity.Abstractions">
+      <HintPath>..\packages\Xam.Plugin.Connectivity.3.1.1\lib\Xamarin.iOS10\Plugin.Connectivity.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Plugin.Connectivity">
+      <HintPath>..\packages\Xam.Plugin.Connectivity.3.1.1\lib\Xamarin.iOS10\Plugin.Connectivity.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Contents.json">
@@ -315,16 +327,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\BusinessLocator.Models\BusinessLocator.Models.csproj">
-      <Project>{B897A29D-CBF2-42F2-BFFD-B6DB5DEA8102}</Project>
-      <Name>BusinessLocator.Models</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\BusinessLocator.Shared\BusinessLocator.Shared.csproj">
-      <Project>{07A10796-5BCF-4604-804A-A2F2DA82C93F}</Project>
-      <Name>BusinessLocator.Shared</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <BundleResource Include="Resources\back_icon.png" />
     <BundleResource Include="Resources\ic_magnifier.png" />
     <BundleResource Include="Resources\ic_person_outline_white_24dp.png" />
@@ -394,14 +396,16 @@
     <BundleResource Include="Resources\icons_picture96.png" />
   </ItemGroup>
   <ItemGroup>
-    <XamarinComponentReference Include="googleiosmaps">
-      <Version>2.5.0.0</Version>
-      <Visible>False</Visible>
-    </XamarinComponentReference>
     <XamarinComponentReference Include="pdreview">
       <Version>2.0.2</Version>
       <Visible>False</Visible>
     </XamarinComponentReference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BusinessLocator.Shared\BusinessLocator.Shared.csproj">
+      <Project>{07A10796-5BCF-4604-804A-A2F2DA82C93F}</Project>
+      <Name>BusinessLocator.Shared</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <Import Project="..\packages\Xamarin.Build.Download.0.4.7\build\Xamarin.Build.Download.targets" Condition="Exists('..\packages\Xamarin.Build.Download.0.4.7\build\Xamarin.Build.Download.targets')" />

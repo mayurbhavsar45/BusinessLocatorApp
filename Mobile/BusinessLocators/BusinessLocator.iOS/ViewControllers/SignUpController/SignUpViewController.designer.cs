@@ -16,10 +16,6 @@ namespace BusinessLocator.iOS
     {
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UIPickerView blPickerView { get; set; }
-
-        [Outlet]
-        [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UIView borderDDL { get; set; }
 
         [Outlet]
@@ -56,6 +52,10 @@ namespace BusinessLocator.iOS
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UIPickerView rolePicker { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UITextField txtEmail { get; set; }
 
         [Outlet]
@@ -72,11 +72,6 @@ namespace BusinessLocator.iOS
 
         void ReleaseDesignerOutlets ()
         {
-            if (blPickerView != null) {
-                blPickerView.Dispose ();
-                blPickerView = null;
-            }
-
             if (borderDDL != null) {
                 borderDDL.Dispose ();
                 borderDDL = null;
@@ -120,6 +115,11 @@ namespace BusinessLocator.iOS
             if (lblTitle != null) {
                 lblTitle.Dispose ();
                 lblTitle = null;
+            }
+
+            if (rolePicker != null) {
+                rolePicker.Dispose ();
+                rolePicker = null;
             }
 
             if (txtEmail != null) {

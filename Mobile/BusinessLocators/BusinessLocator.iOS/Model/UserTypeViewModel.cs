@@ -7,7 +7,9 @@ namespace BusinessLocator.iOS
 {
     internal class UserTypeViewModel : UIPickerViewModel
     {
-        private List<string> _usersList;
+        List<string> _usersList;
+        public string SelectedValue; 
+        public EventHandler ValueChanged;
 
         public UserTypeViewModel(List<string> userslist)
         {
@@ -41,6 +43,13 @@ namespace BusinessLocator.iOS
             lbl.TextAlignment = UITextAlignment.Center;              
             lbl.Text = _usersList[(int)row];              
             return lbl;      
+        }
+
+        public override void Selected(UIPickerView pickerView, nint row, nint component)
+        {
+            var role = _usersList[(int)row];
+            SelectedValue = role;
+            ValueChanged?.Invoke(null, null);
         }
 
     }

@@ -3,6 +3,9 @@ using System;
 using UIKit;
 using CoreGraphics;
 using CoreAnimation;
+using BusinessLocator.Shared.Service;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 
 namespace BusinessLocator.iOS
 {
@@ -160,11 +163,28 @@ namespace BusinessLocator.iOS
 
             btnLogin.TouchUpInside += (sender, e) => 
             {
-                MainViewController mainViewController = this.Storyboard.InstantiateViewController("MainViewController") as MainViewController;
-                if(mainViewController != null)
+                var apiResponse = new ServiceApi().Login(txtUserName.Text, txtPassword.Text);
+                var response = JsonConvert.DeserializeObject<JObject>(apiResponse.Result);
+                try
                 {
-                    this.NavigationController.PushViewController(mainViewController, true);                    
+                    if (response["userName"].ToString() == txtUserName.Text)
+                    {
+                        MainViewController mainViewController = this.Storyboard.InstantiateViewController("MainViewController") as MainViewController;
+                        if (mainViewController != null)
+                        {
+                            this.NavigationController.PushViewController(mainViewController, true);
+                        }
+                    }
+                    else
+                    {
+                        new UIAlertView("Error", "Wrong username/password" + response, null, "OK", null).Show();
+                    }    
                 }
+                catch(Exception ex)
+                {
+                    Console.WriteLine(ex.Message);
+                }
+
             };
 
 
