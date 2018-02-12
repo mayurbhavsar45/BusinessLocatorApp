@@ -11,6 +11,11 @@ using Android.Runtime;
 using Android.Support.V7.App;
 using Android.Views;
 using Android.Widget;
+using BusinessLocator.Shared.Service;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
+using Plugin.Connectivity;
+using AlertDialog = Android.App.AlertDialog;
 
 namespace BusinessLocator.Android
 {
@@ -108,11 +113,37 @@ namespace BusinessLocator.Android
         private void Btnsignup_Click(object sender, EventArgs e)
         {
 
-            Checkvaliduserinput();
-            if (uname.Text != "" && pwd.Text != "" && email.Text != "" && phone.Text != "" && IsValidPassword(pwd.Text) && IsValidUser(uname.Text) && IsValidEmail(email.Text) && IsValidPhone(phone.Text))
+            //Checkvaliduserinput();
+            //if (uname.Text != "" && pwd.Text != "" && email.Text != "" && phone.Text != "" && IsValidPassword(pwd.Text) && IsValidUser(uname.Text) && IsValidEmail(email.Text) && IsValidPhone(phone.Text))
+            //{
+            //    Intent i = new Intent(this, typeof(MainActivity));
+            //    StartActivity(i);
+            //}
+            if (CrossConnectivity.Current.IsConnected)
             {
-                Intent i = new Intent(this, typeof(MainActivity));
-                StartActivity(i);
+                var response = new ServiceApi().Register();
+
+                var error = JsonConvert.DeserializeObject<JObject>(response.Result);
+                if (error["Code"].ToString() == "200")
+                {
+                    AlertDialog.Builder alert = new AlertDialog.Builder(this);
+                    alert.SetMessage("Registration Successfully");
+                    alert.Show();
+                }
+                else
+                {
+                    AlertDialog.Builder alert = new AlertDialog.Builder(this);
+                    alert.SetMessage(error["Message"].ToString());
+                    alert.Show();
+
+                }
+
+            }
+            else
+            {
+                AlertDialog.Builder alert = new AlertDialog.Builder(this);
+                alert.SetMessage("No Internet Connection");
+                alert.Show();
             }
 
 
