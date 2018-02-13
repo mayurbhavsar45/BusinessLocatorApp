@@ -90,6 +90,7 @@ namespace BusinessLocator.iOS
             };
             txtUserName.TintColor = UIColor.Black;
             txtUserName.ClearButtonMode = UITextFieldViewMode.WhileEditing;
+            txtUserName.AutocapitalizationType = UITextAutocapitalizationType.None;
             borderUserName.Add(txtUserName);
 
             borderPassword = new UIView()
@@ -164,29 +165,37 @@ namespace BusinessLocator.iOS
             btnLogin.TouchUpInside += (sender, e) => 
             {
                 var apiResponse = new ServiceApi().Login(txtUserName.Text, txtPassword.Text);
-                var response = JsonConvert.DeserializeObject<JObject>(apiResponse.Result);
+
                 try
                 {
-                    if (response["userName"].ToString() == txtUserName.Text)
+                    if(apiResponse.IsSuccessStatusCode)
                     {
+                        var data = apiResponse.Content.ReadAsStringAsync();
+                        var response = JsonConvert.DeserializeObject<JObject>(data.Result);
+
                         MainViewController mainViewController = this.Storyboard.InstantiateViewController("MainViewController") as MainViewController;
                         if (mainViewController != null)
                         {
                             this.NavigationController.PushViewController(mainViewController, true);
-                        }
+                        }    
                     }
                     else
                     {
-                        new UIAlertView("Error", "Wrong username/password" + response, null, "OK", null).Show();
-                    }    
+                        var data = apiResponse.Content.ReadAsStringAsync();
+                        var response = JsonConvert.DeserializeObject<JObject>(data.Result);
+
+                        var error = response["error_description"].ToString();
+
+                        var errorAlertController = UIAlertController.Create("Error", error, UIAlertControllerStyle.Alert);
+                        errorAlertController.AddAction(UIAlertAction.Create("OK", UIAlertActionStyle.Destructive, null));
+                        PresentViewController(errorAlertController, true, null);
+                    }
                 }
                 catch(Exception ex)
                 {
                     Console.WriteLine(ex.Message);
                 }
-
             };
-
 
         }
 

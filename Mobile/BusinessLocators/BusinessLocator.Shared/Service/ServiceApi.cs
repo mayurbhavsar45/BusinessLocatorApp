@@ -19,7 +19,7 @@ namespace BusinessLocator.Shared.Service
     {
         #region Account Login/Regiser
       
-        public Task<string> Login(string username, string password)
+        public HttpResponseMessage Login(string username, string password)
         {
             HttpClient client = new HttpClient(new NativeMessageHandler())
             {
@@ -34,15 +34,17 @@ namespace BusinessLocator.Shared.Service
 
             var response = client.PostAsync(APIURL + "/token", new FormUrlEncodedContent(vals)).Result;
 
-            var stringContent = response.Content.ReadAsStringAsync();
-            return stringContent;
+            return response;
 
         }
        
-        public HttpResponseMessage Register(string username, string email, string mobilenumber, string password, string role)
+        public HttpResponseMessage Register(string username, string email, string mobilenumber, string password, string role, double latitude, double longitude)
         {
            
-            HttpClient client = new HttpClient(new NativeMessageHandler()) { BaseAddress = new Uri(APIURL) };
+            HttpClient client = new HttpClient(new NativeMessageHandler()) 
+            { 
+                BaseAddress = new Uri(APIURL) 
+            };
 
             var vals = new List<KeyValuePair<string, string>>();
             vals.Add(new KeyValuePair<string, string>("SiteID", "1"));
@@ -62,8 +64,8 @@ namespace BusinessLocator.Shared.Service
             vals.Add(new KeyValuePair<string, string>("UserRole", role));
             vals.Add(new KeyValuePair<string, string>("RoleIcon", "abc"));
             vals.Add(new KeyValuePair<string, string>("Password", password));
-            vals.Add(new KeyValuePair<string, string>("Longitude", "21.166359"));
-            vals.Add(new KeyValuePair<string, string>("Lattitude", "73.5645054"));
+            vals.Add(new KeyValuePair<string, string>("Longitude", latitude.ToString()));
+            vals.Add(new KeyValuePair<string, string>("Lattitude", longitude.ToString()));
 
             var response = client.PostAsync(APIURL + "/api/Account/Register", new FormUrlEncodedContent(vals)).Result;
 

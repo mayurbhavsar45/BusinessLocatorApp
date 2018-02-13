@@ -14,7 +14,8 @@ namespace BusinessLocator.iOS
 {
     public partial class SignUpViewController : UIViewController
     {
-         CAGradientLayer gradientLayer;
+        CAGradientLayer gradientLayer;
+        double lat, lng;
 
         public SignUpViewController (IntPtr handle) : base (handle)
         {
@@ -97,17 +98,28 @@ namespace BusinessLocator.iOS
             {
                 if (CrossConnectivity.Current.IsConnected)
                 {
-                    var apiResponse = new ServiceApi().Register(txtUserName.Text,txtEmail.Text,txtMobileNumber.Text,txtPassword.Text,picker.SelectedValue);
+                    var apiResponse = new ServiceApi().Register(txtUserName.Text,txtEmail.Text,txtMobileNumber.Text,txtPassword.Text,picker.SelectedValue, lat, lng);
 
                     if(apiResponse.IsSuccessStatusCode)
                     {
                         var data = apiResponse.Content.ReadAsStringAsync();
                         var response = JsonConvert.DeserializeObject<JObject>(data.Result);
-                        new UIAlertView("Success Alert", "You're registerd successfully!", null, "OK", null).Show();
+
+                        this.NavigationController.PopViewController(true);
+
+                        var okAlertController = UIAlertController.Create("Alert", "Registration successfull", UIAlertControllerStyle.Alert);
+                        okAlertController.AddAction(UIAlertAction.Create("OK", UIAlertActionStyle.Destructive, null));
+                        PresentViewController(okAlertController, true, null);
                     }
                     else
                     {
-                        new UIAlertView("Error Alert", "Wrong Password!", null, "OK", null).Show();
+                        var data = apiResponse.Content.ReadAsStringAsync();
+                        var response = JsonConvert.DeserializeObject<JObject>(data.Result);
+                        var error = response["Message"].ToString();
+
+                        var errorAlertController = UIAlertController.Create("Error", error, UIAlertControllerStyle.Alert);
+                        errorAlertController.AddAction(UIAlertAction.Create("OK", UIAlertActionStyle.Destructive, null));
+                        PresentViewController(errorAlertController, true, null);
                     }
 
                     //var response_code = JsonConvert.DeserializeObject<JObject>(apiResponse.Result);
@@ -132,7 +144,9 @@ namespace BusinessLocator.iOS
                 }
                 else
                 {
-                    new UIAlertView("Connection Alert", "Network not available", null, "OK", null).Show();
+                    var networkAlertController = UIAlertController.Create("Alert", "Network not available", UIAlertControllerStyle.Alert);
+                    networkAlertController.AddAction(UIAlertAction.Create("OK", UIAlertActionStyle.Destructive, null));
+                    PresentViewController(networkAlertController, true, null);
                 }
             };
         }
@@ -152,5 +166,7 @@ namespace BusinessLocator.iOS
         {
             gradientLayer.Frame = this.View.Bounds;
         }
+
+       
     }
 }
