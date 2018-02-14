@@ -2,7 +2,6 @@
 using ModernHttpClient;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
-using Plugin.Connectivity;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -12,6 +11,7 @@ using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 using System.Diagnostics;
+using Plugin.Connectivity;
 
 namespace BusinessLocator.Shared.Service
 {
@@ -75,6 +75,49 @@ namespace BusinessLocator.Shared.Service
         }
 
      
+        public async Task<TokenResponse> RefreshToken(string refreshToken)
+        {
+            TokenResponse results = null;
+            HttpClient client = new HttpClient(new NativeMessageHandler()) { BaseAddress = new Uri(APIURL) };
+
+            var vals = new List<KeyValuePair<string, string>>();
+            vals.Add(new KeyValuePair<string, string>("refresh_token", refreshToken));
+            vals.Add(new KeyValuePair<string, string>("client_id", "self"));
+            vals.Add(new KeyValuePair<string, string>("grant_type", "refresh_token"));
+         
+            if (CrossConnectivity.Current.IsConnected)
+            {
+                var response = client.PostAsync(APIURL + "/token", new FormUrlEncodedContent(vals)).Result;
+
+                var content = await response.Content.ReadAsStringAsync();
+                if (!response.IsSuccessStatusCode)
+                {
+                    var error = JsonConvert.DeserializeObject<JObject>(content);
+                    throw new WebException(error["error"].ToString());
+                }
+                results = JsonConvert.DeserializeObject<TokenResponse>(content);
+                LocalStorage.SaveLogin(results);
+            }
+            else
+            {
+                throw new Exception("No internet connection.");
+            }
+
+            if (results == null)
+            {
+                throw new NullReferenceException("Results should not be null");
+            }
+
+            return results;
+        }
+
+        public async Task<User> GetMyUser()
+        {
+            var response = await Get<User>("/api/users/MyUser", new Dictionary<string, object>() { });
+            LocalStorage.UpdateUser(response);
+            return response;
+        }
+
 
 
         #endregion

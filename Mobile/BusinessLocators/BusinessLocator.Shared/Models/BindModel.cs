@@ -13,7 +13,6 @@ namespace BusinessLocator.Shared.Models
         public string expires_in { get; set; }
         public string refresh_token { get; set; }
         public string userName { get; set; }
-        public string issued { get; set; }
-        public string expires { get; set; }
+        public string roleName { get; set; }
     }
 }
