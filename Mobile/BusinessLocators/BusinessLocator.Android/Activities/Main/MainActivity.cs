@@ -63,6 +63,11 @@ namespace BusinessLocator.Android
                .Replace(Resource.Id.content_frame, fragment)
                .Commit();
         }
+        public override void OnBackPressed()
+        {
+            base.OnBackPressed();
+            Finish();
+        }
     }
 }
 

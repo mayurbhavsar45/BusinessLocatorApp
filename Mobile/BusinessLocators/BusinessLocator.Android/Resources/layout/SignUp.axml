@@ -126,7 +126,7 @@
                 android:layout_marginTop="30dp"
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="20dp"
-                android:id="@+id/egender"
+                android:id="@+id/erole"
                 android:gravity="top|left"
                 android:paddingLeft="30dp"
                 android:paddingBottom="12dp"

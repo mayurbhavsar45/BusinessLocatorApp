@@ -11,6 +11,9 @@ using Android.Runtime;
 using Android.Support.V7.App;
 using Android.Views;
 using Android.Widget;
+using Plugin.Settings;
+using AlertDialog = Android.Support.V7.App.AlertDialog;
+
 
 namespace BusinessLocator.Android
 {
@@ -32,8 +35,24 @@ namespace BusinessLocator.Android
 
         private void Btnlogout_Click(object sender, EventArgs e)
         {
-            Intent i = new Intent(this, typeof(LoginActivity));
-            StartActivity(i);
+        
+            //Intent i = new Intent(this, typeof(LoginActivity));
+
+            new AlertDialog.Builder(this)
+                   .SetTitle("Logout")
+                   .SetMessage("Are you sure you want to logout?")
+                   .SetPositiveButton("Logout", (sv, e1) => Logout())
+                   .SetNegativeButton("Cancel", (sv, e1) => { })
+                   .Show();
+   
+        }
+
+        private void Logout()
+        {
+            CrossSettings.Current.Clear();
+            StartActivity(typeof(LoginActivity));
+            Finish();
+
         }
 
         private void Btnback_Click(object sender, EventArgs e)
