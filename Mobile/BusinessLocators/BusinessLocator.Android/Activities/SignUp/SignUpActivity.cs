@@ -23,14 +23,14 @@ using System.Threading.Tasks;
 namespace BusinessLocator.Android
 {
     [Activity(Label = "SignUpActivity", Theme = "@style/MyTheme", ConfigurationChanges = ConfigChanges.Orientation | ConfigChanges.ScreenSize, WindowSoftInputMode = SoftInput.StateHidden)]
-    public class SignUpActivity : AppCompatActivity,ILocationListener
+    public class SignUpActivity : AppCompatActivity, ILocationListener
     {
         ImageButton btnback;
         EditText uname, email, pwd, phone;
         Button btnsignup;
         LocationManager service;
         Spinner role;
-        Location _currentLocation,location;
+        Location _currentLocation, location;
         string provider;
         double latitude;
         double longitude;
@@ -43,8 +43,8 @@ namespace BusinessLocator.Android
             pwd = FindViewById<EditText>(Resource.Id.password);
             uname = FindViewById<EditText>(Resource.Id.euname);
             phone = FindViewById<EditText>(Resource.Id.ephone);
-            role= FindViewById<Spinner>(Resource.Id.erole);
-         
+            role = FindViewById<Spinner>(Resource.Id.erole);
+
             btnsignup = FindViewById<Button>(Resource.Id.btnsignup);
             btnsignup.Click += Btnsignup_Click;
             btnback.Click += Btnback_Click;
@@ -52,15 +52,15 @@ namespace BusinessLocator.Android
             provider = service.GetBestProvider(new Criteria(), false);
             enableGPS();
             //Location location = service.GetLastKnownLocation(provider);
-           // location.Accuracy = (float)Accuracy.High;
+            // location.Accuracy = (float)Accuracy.High;
 
             //InitializeLocationManager();
         }
 
-       
+
         void enableGPS()
         {
-          
+
             Boolean enabled = service.IsProviderEnabled(provider);
 
             if (!enabled)
@@ -69,7 +69,8 @@ namespace BusinessLocator.Android
                 alert.SetTitle("Location Services Not Active");
 
                 alert.SetMessage("Please enable Location Services and GPS");
-                alert.SetPositiveButton("Ok", (c, ev) => {
+                alert.SetPositiveButton("Ok", (c, ev) =>
+                {
                     StartActivity(new Intent(Settings.ActionLocationSourceSettings));
                 });
                 alert.Show();
@@ -158,73 +159,75 @@ namespace BusinessLocator.Android
             return false;
         }
 
-        private  void Btnsignup_Click(object sender, EventArgs e)
+        private void Btnsignup_Click(object sender, EventArgs e)
         {
-         
-            if (location == null)
+
+            //if (location == null)
+            //{
+            //    //  new AlertDialog.Builder(this).SetTitle("Error").SetMessage("Please check your connection ,try after some time").SetNeutralButton("Ok", (se, ev) => { }).Show();
+            //    latitude = 0;
+            //    longitude = 0;
+            //}
+            //else
+            //{
+            Checkvaliduserinput();
+            if (uname.Text != "" && pwd.Text != "" && email.Text != "" && phone.Text != "" && IsValidPassword(pwd.Text) && IsValidUser(uname.Text) && IsValidEmail(email.Text) && IsValidPhone(phone.Text))
             {
-                new AlertDialog.Builder(this).SetTitle("Error").SetMessage("Please check your connection ,try after some time").SetNeutralButton("Ok", (se, ev) => { }).Show();
-            }
-            else
-            {
-                Checkvaliduserinput();
-                if (uname.Text != "" && pwd.Text != "" && email.Text != "" && phone.Text != "" && IsValidPassword(pwd.Text) && IsValidUser(uname.Text) && IsValidEmail(email.Text) && IsValidPhone(phone.Text))
+                //Intent i = new Intent(this, typeof(MainActivity));
+                //  StartActivity(i);
+
+                latitude = 0;
+                longitude = 0;
+
+
+                if (CrossConnectivity.Current.IsConnected)
                 {
-                    //Intent i = new Intent(this, typeof(MainActivity));
-                    //  StartActivity(i);
 
-                    latitude = location.Latitude;
-                    longitude = location.Longitude;
-
-
-                    if (CrossConnectivity.Current.IsConnected)
+                    var response = new ServiceApi().Register(uname.Text, email.Text, phone.Text, pwd.Text, role.SelectedItem.ToString(), latitude, longitude);
+                    if (response.IsSuccessStatusCode)
                     {
-          
-                        var response = new ServiceApi().Register(uname.Text, email.Text, phone.Text, pwd.Text, role.SelectedItem.ToString(), latitude, longitude);
-                        if (response.IsSuccessStatusCode)
-                        {
-                            var success = response.Content.ReadAsStringAsync();
-                            var s = JsonConvert.DeserializeObject<JObject>(success.Result);
-                            new AlertDialog.Builder(this).SetTitle("Success").SetMessage(s["Message"].ToString()).SetNeutralButton("Ok", (se, ev) => { }).Show();
-                        }
-                        else
-                        {
-                            var sv = response.Content.ReadAsStringAsync();
-                            var error = JsonConvert.DeserializeObject<JObject>(sv.Result);
-                            string errors = "";
-                            errors = error["Message"].ToString();
-
-                            //if (error["modelstate"] != null)
-                            //{
-                            //    foreach (var err in error["ModelState"])
-                            //    {
-                            //        errors += err.Values().FirstOrDefault() + "\n";
-                            //    }
-                            //}
-
-
-                            //errors = errors.Trim();
-                            new AlertDialog.Builder(this).SetTitle("Error").SetMessage(errors.ToString()).SetNeutralButton("Ok", (se, ev) => { }).Show();
-
-                        }
-
+                        var success = response.Content.ReadAsStringAsync();
+                        var s = JsonConvert.DeserializeObject<JObject>(success.Result);
+                        new AlertDialog.Builder(this).SetTitle("Success").SetMessage(s["Message"].ToString()).SetNeutralButton("Ok", (se, ev) => { }).Show();
                     }
                     else
                     {
-                        new AlertDialog.Builder(this).SetTitle("Error").SetMessage("No Internet Connection").SetNeutralButton("Ok", (s, ev) => { }).Show();
+                        var sv = response.Content.ReadAsStringAsync();
+                        var error = JsonConvert.DeserializeObject<JObject>(sv.Result);
+                        string errors = "";
+                        errors = error["Message"].ToString();
+
+                        //if (error["modelstate"] != null)
+                        //{
+                        //    foreach (var err in error["ModelState"])
+                        //    {
+                        //        errors += err.Values().FirstOrDefault() + "\n";
+                        //    }
+                        //}
+
+
+                        //errors = errors.Trim();
+                        new AlertDialog.Builder(this).SetTitle("Error").SetMessage(errors.ToString()).SetNeutralButton("Ok", (se, ev) => { }).Show();
+
                     }
 
-
-
+                }
+                else
+                {
+                    new AlertDialog.Builder(this).SetTitle("Error").SetMessage("No Internet Connection").SetNeutralButton("Ok", (s, ev) => { }).Show();
                 }
 
 
 
+                //}
+
+
+
 
 
 
             }
-        
+
 
 
 
@@ -251,21 +254,21 @@ namespace BusinessLocator.Android
                     deviceAddress.AppendLine(address.GetAddressLine(i));
                 }
                 Toast.MakeText(this, deviceAddress.ToString(), ToastLength.Short).Show();
-              
-               // _addressText.Text = deviceAddress.ToString();
+
+                // _addressText.Text = deviceAddress.ToString();
             }
             else
             {
                 Toast.MakeText(this, "Unable to determine the address. Try again in a few minutes.", ToastLength.Short).Show();
-              //  _addressText.Text = "Unable to determine the address. Try again in a few minutes.";
+                //  _addressText.Text = "Unable to determine the address. Try again in a few minutes.";
             }
         }
-      
+
 
         public async void OnLocationChanged(Location location)
         {
             _currentLocation = location;
-            if(_currentLocation==null)
+            if (_currentLocation == null)
             {
                 new AlertDialog.Builder(this).SetTitle("Error").SetMessage("Try Again").SetNeutralButton("Ok", (s, ev) => { }).Show();
             }
@@ -273,7 +276,7 @@ namespace BusinessLocator.Android
             {
                 Address address = await ReverseGeocodeCurrentLocation();
                 DisplayAddress(address);
-                Toast.MakeText(this,"Location Changed   "+ _currentLocation.Latitude.ToString() + " " + _currentLocation.Longitude.ToString(), ToastLength.Short).Show();
+                Toast.MakeText(this, "Location Changed   " + _currentLocation.Latitude.ToString() + " " + _currentLocation.Longitude.ToString(), ToastLength.Short).Show();
             }
 
         }
@@ -290,7 +293,7 @@ namespace BusinessLocator.Android
 
         public void OnStatusChanged(string provider, [GeneratedEnum] Availability status, Bundle extras)
         {
-           // throw new NotImplementedException();
+            // throw new NotImplementedException();
         }
     }
 }

@@ -11,10 +11,13 @@ using Android.Runtime;
 using Android.Support.V7.App;
 using Android.Views;
 using Android.Widget;
+using BusinessLocator.Shared;
+using BusinessLocator.Shared.Models;
 using BusinessLocator.Shared.Service;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using Plugin.Connectivity;
+using Plugin.Settings;
 using AlertDialog = Android.App.AlertDialog;
 
 namespace BusinessLocator.Android
@@ -34,8 +37,8 @@ namespace BusinessLocator.Android
             btnlogin = FindViewById<Button>(Resource.Id.btnlogin);
             euname = FindViewById<EditText>(Resource.Id.euname);
             epwd = FindViewById<EditText>(Resource.Id.epwd);
-            euname.Text = "provider@gmail.com";
-            epwd.Text = "provider";
+            euname.Text = "swetavanjara2017@gmail.com";
+            epwd.Text = "Sweta@123";
 
             signuplink.Click += Signuplink_Click;
             forgotpwdlink.Click += Forgotpwdlink_Click;
@@ -61,7 +64,18 @@ namespace BusinessLocator.Android
                 if (response.IsSuccessStatusCode)
                 {
                     var success = response.Content.ReadAsStringAsync();
-                    var s = JsonConvert.DeserializeObject<JObject>(success.Result);
+                    var s = JsonConvert.DeserializeObject<TokenResponse>(success.Result);
+                    LocalStorage.SaveLogin(s);
+
+                    var role = CrossSettings.Current.GetValueOrDefault("RoleName","");
+                    if (role.Equals("Provider"))
+                    {
+                        StartActivity(new Intent(this, typeof(ProviderMainActivity)));
+                    }
+                    else
+                    {
+                        StartActivity(new Intent(this, typeof(MainActivity)));
+                    }
 
                 }
                 else

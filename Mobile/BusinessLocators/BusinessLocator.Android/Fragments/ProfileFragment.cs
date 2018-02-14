@@ -15,13 +15,13 @@ using Uri = Android.Net.Uri;
 
 using Com.Github.Florent37.Diagonallayout;
 using Fragment = Android.Support.V4.App.Fragment;
-
+using Plugin.Settings;
 
 namespace BusinessLocator.Android
 {
     public class ProfileFragment : Fragment
     {
-        TextView lblpwd, lblconsumer;
+        TextView lblpwd, lblconsumer, lblName;
         ImageButton btnfilter, edit;
         ImageView profileimage, coverimage;
         Uri imageuri;
@@ -43,6 +43,11 @@ namespace BusinessLocator.Android
 
             lblpwd = v.FindViewById<TextView>(Resource.Id.lblchangepwd);
             lblconsumer = v.FindViewById<TextView>(Resource.Id.lblconsumer);
+
+            lblName = v.FindViewById<TextView>(Resource.Id.name);
+
+            lblName.Text = CrossSettings.Current.GetValueOrDefault("UserName", "");
+
             lblpwd.Click += Lblpwd_Click;
             btnfilter.Click += Btnfilter_Click;
             edit.Click += Edit_Click;

@@ -111,15 +111,6 @@ namespace BusinessLocator.Shared.Service
             return results;
         }
 
-        public async Task<User> GetMyUser()
-        {
-            var response = await Get<User>("/api/users/MyUser", new Dictionary<string, object>() { });
-            LocalStorage.UpdateUser(response);
-            return response;
-        }
-
-
-
         #endregion
     }
 }
