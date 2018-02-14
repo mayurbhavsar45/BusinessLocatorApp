@@ -14,4 +14,14 @@ namespace BusinessLocator.Shared.Models
         public string userName { get; set; }
         public string roleName { get; set; }
     }
+    public class MapListView
+    {
+        public string UserID { get; set; }
+        public string DisplayName { get; set; }
+        public string Address1 { get; set; }
+        public string PhoneNumber { get; set; }
+        public string Image { get; set; }
+        public double Longitude { get; set; }
+        public double Lattitude { get; set; }
+    }
 }

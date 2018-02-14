@@ -13,6 +13,9 @@ using Android.Widget;
 using BusinessLocator.Android.Models;
 using BusinessLocator.Android.Adapters;
 using Fragment = Android.Support.V4.App.Fragment;
+using BusinessLocator.Shared.Service;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 
 namespace BusinessLocator.Android.Fragments
 {
@@ -31,6 +34,10 @@ namespace BusinessLocator.Android.Fragments
         public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
         {
             View v= inflater.Inflate(Resource.Layout.ListViewFragment, container, false);
+
+            var api = new ServiceApi().GetLocation("", "", "");
+           // var a= api.Content.ReadAsStringAsync();
+         var result=   JsonConvert.DeserializeObject<JObject>(a.Result);
             lstSource = new List<Person>();
             lstview = v.FindViewById<ListView>(Resource.Id.list);
             lstSource.Add(new Person() { sid = 1, name = "Bruce wills", address = "303-304,Airen Heights,wore House road", image = Resource.Drawable.user2, phone = "9362-265-214" });
