@@ -6,6 +6,9 @@ using CoreAnimation;
 using BusinessLocator.Shared.Service;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
+using BusinessLocator.Shared;
+using BusinessLocator.Shared.Models;
+using Plugin.Settings;
 
 namespace BusinessLocator.iOS
 {
@@ -142,6 +145,8 @@ namespace BusinessLocator.iOS
             btnSignUp.SetTitleColor(UIColor.White, UIControlState.Normal);
             View.Add(btnSignUp);
 
+            txtUserName.Text = "swetavanjara2017@gmail.com";
+            txtPassword.Text = "Sweta@123";
 
             //Buttons Click Evetns
             btnForgotPassword.TouchUpInside += (sender, e) => 
@@ -171,13 +176,25 @@ namespace BusinessLocator.iOS
                     if(apiResponse.IsSuccessStatusCode)
                     {
                         var data = apiResponse.Content.ReadAsStringAsync();
-                        var response = JsonConvert.DeserializeObject<JObject>(data.Result);
+                        var response = JsonConvert.DeserializeObject<TokenResponse>(data.Result);
+                        LocalStorage.SaveLogin(response);
 
-                        MainViewController mainViewController = this.Storyboard.InstantiateViewController("MainViewController") as MainViewController;
-                        if (mainViewController != null)
+                        var role = CrossSettings.Current.GetValueOrDefault("RoleName", "");
+
+                        if(role.Equals("Consumer"))
                         {
-                            this.NavigationController.PushViewController(mainViewController, true);
-                        }    
+                            MainViewController mainViewController = this.Storyboard.InstantiateViewController("MainViewController") as MainViewController;
+                            if (mainViewController != null)
+                            {
+                                this.NavigationController.PushViewController(mainViewController, true);
+                            }        
+                        }
+                        else
+                        {
+                            var errorAlertController = UIAlertController.Create("Error", "In Progeress", UIAlertControllerStyle.Alert);
+                            errorAlertController.AddAction(UIAlertAction.Create("OK", UIAlertActionStyle.Destructive, null));
+                            PresentViewController(errorAlertController, true, null);
+                        }
                     }
                     else
                     {

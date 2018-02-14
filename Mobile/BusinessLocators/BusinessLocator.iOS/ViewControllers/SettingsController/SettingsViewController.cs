@@ -3,6 +3,7 @@ using System;
 using UIKit;
 using CoreAnimation;
 using CoreGraphics;
+using Plugin.Settings;
 
 namespace BusinessLocator.iOS
 {
@@ -29,13 +30,22 @@ namespace BusinessLocator.iOS
                 this.NavigationController.PopViewController(true);
             };
 
-            btnLogout.TouchUpInside+=(sender, e) => 
+            btnLogout.TouchUpInside += (sender, e) => 
             {
-                ProviderProfileViewController providerController = this.Storyboard.InstantiateViewController("ProviderProfileViewController") as ProviderProfileViewController;
-                if (providerController != null)
+                var controller = UIAlertController.Create("Confirm", "Are you sure you want to logout?", UIAlertControllerStyle.Alert);
+                controller.AddAction(UIAlertAction.Create("Cancel", UIAlertActionStyle.Default, (obj) => { }));
+                controller.AddAction(UIAlertAction.Create("Logout", UIAlertActionStyle.Default, (obj) =>
                 {
-                    this.NavigationController.PushViewController(providerController, true);
-                }
+                    CrossSettings.Current.Clear();
+                    NavigationController.PopToRootViewController(true);
+                }));
+
+                PresentViewController(controller, true, null);
+                //ProviderProfileViewController providerController = this.Storyboard.InstantiateViewController("ProviderProfileViewController") as ProviderProfileViewController;
+                //if (providerController != null)
+                //{
+                //    this.NavigationController.PushViewController(providerController, true);
+                //}
              };
         }
     }

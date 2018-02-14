@@ -3,6 +3,7 @@ using System;
 using UIKit;
 using CoreAnimation;
 using CoreGraphics;
+using Plugin.Settings;
 
 namespace BusinessLocator.iOS
 {
@@ -43,6 +44,9 @@ namespace BusinessLocator.iOS
             ProfileImage.Layer.MasksToBounds = true;
             ProfileImage.Layer.BorderColor = UIColor.White.CGColor;
             ProfileImage.Layer.BorderWidth = 2;
+
+            //Set values from Api
+            lblName.Text = CrossSettings.Current.GetValueOrDefault("UserName", "");
 
             btnEditProfileImage.TouchUpInside+=(sender, e) => 
             {
