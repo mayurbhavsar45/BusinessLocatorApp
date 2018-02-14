@@ -19,43 +19,61 @@ namespace BusinessLocator.Shared.Service
     {
         #region Account Login/Regiser
       
-        public Task<string> Register()
+        public HttpResponseMessage Register(string username, string email,string mobilenumber,string password,string role,double latitude,double longitude)
         {
            
             HttpClient c = new HttpClient(new NativeMessageHandler()) { BaseAddress = new Uri(APIURL) };
 
             var vals = new List<KeyValuePair<string, string>>();
             vals.Add(new KeyValuePair<string, string>("SiteID", "1"));
-            vals.Add(new KeyValuePair<string, string>("DisplayName", "heer1233"));
-            vals.Add(new KeyValuePair<string, string>("FirstName", "testFirstName"));
-            vals.Add(new KeyValuePair<string, string>("LastName", "testLastNAme"));
+            vals.Add(new KeyValuePair<string, string>("DisplayName", username));
+            vals.Add(new KeyValuePair<string, string>("FirstName", username));
+            vals.Add(new KeyValuePair<string, string>("LastName", "patel"));
             vals.Add(new KeyValuePair<string, string>("Address1", "songhar"));
             vals.Add(new KeyValuePair<string, string>("Address2", "Kamrej"));
             vals.Add(new KeyValuePair<string, string>("City", "Surat"));
             vals.Add(new KeyValuePair<string, string>("State", "Gujarat"));
             vals.Add(new KeyValuePair<string, string>("ZipCode", "394670"));
-            vals.Add(new KeyValuePair<string, string>("PhoneNumber", "800061555"));
-            vals.Add(new KeyValuePair<string, string>("Email", "hee111rgoyani@gmail.com"));
+            vals.Add(new KeyValuePair<string, string>("PhoneNumber", mobilenumber));
+            vals.Add(new KeyValuePair<string, string>("Email", email));
             vals.Add(new KeyValuePair<string, string>("WebSite", "www.gmail.com"));
-            vals.Add(new KeyValuePair<string, string>("Description","Testing Demo"));
-            vals.Add(new KeyValuePair<string, string>("Image", "csguyegdu"));
-            vals.Add(new KeyValuePair<string, string>("UserRole", "Testing"));
-            vals.Add(new KeyValuePair<string, string>("RoleIcon", "cdfdf"));
-            vals.Add(new KeyValuePair<string, string>("Password", "15Mca@156"));
-            vals.Add(new KeyValuePair<string, string>("Longitude", "21.166359"));
-            vals.Add(new KeyValuePair<string, string>("Lattitude", "73.5645054"));
+            vals.Add(new KeyValuePair<string, string>("Description", "Testing Demo"));
+            vals.Add(new KeyValuePair<string, string>("Image", "abc"));
+            vals.Add(new KeyValuePair<string, string>("UserRole", role));
+            vals.Add(new KeyValuePair<string, string>("RoleIcon", "abc"));
+            vals.Add(new KeyValuePair<string, string>("Password", password));
+            vals.Add(new KeyValuePair<string, string>("Longitude", latitude.ToString()));
+            vals.Add(new KeyValuePair<string, string>("Lattitude", longitude.ToString()));
 
-            
-            
+
+
             var response = c.PostAsync(APIURL + "/api/Account/Register", new FormUrlEncodedContent(vals)).Result;
+            return response;
+           
+           // var stringContent = response.Content.ReadAsStringAsync();
+          //  return stringContent;
+          
 
-            var stringContent = response.Content.ReadAsStringAsync();
-            return stringContent;
-        
+        }
+        public HttpResponseMessage Login(string username, string password)
+        {
+
+            HttpClient c = new HttpClient(new NativeMessageHandler()) { BaseAddress = new Uri(APIURL) };
+
+            var vals = new List<KeyValuePair<string, string>>();
+            vals.Add(new KeyValuePair<string, string>("username", username));
+            vals.Add(new KeyValuePair<string, string>("password", password));
+            vals.Add(new KeyValuePair<string, string>("grant_type", "password"));
+
+            var response = c.PostAsync(APIURL + "/token", new FormUrlEncodedContent(vals)).Result;
+            return response;
+
+            // var stringContent = response.Content.ReadAsStringAsync();
+            //  return stringContent;
 
         }
 
-     
+
 
 
         #endregion

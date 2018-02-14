@@ -3141,9 +3141,6 @@ namespace BusinessLocator.Android
 			// aapt resource value: 0x7f0a011a
 			public const int eemail = 2131362074;
 			
-			// aapt resource value: 0x7f0a011c
-			public const int egender = 2131362076;
-			
 			// aapt resource value: 0x7f0a00fc
 			public const int email = 2131362044;
 			
@@ -3170,6 +3167,9 @@ namespace BusinessLocator.Android
 			
 			// aapt resource value: 0x7f0a00d6
 			public const int epwd = 2131362006;
+			
+			// aapt resource value: 0x7f0a011c
+			public const int erole = 2131362076;
 			
 			// aapt resource value: 0x7f0a00d5
 			public const int euname = 2131362005;
