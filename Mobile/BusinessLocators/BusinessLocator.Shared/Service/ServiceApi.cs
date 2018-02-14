@@ -2,7 +2,6 @@
 using ModernHttpClient;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
-using Plugin.Connectivity;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -12,17 +11,40 @@ using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 using System.Diagnostics;
+using Plugin.Connectivity;
 
 namespace BusinessLocator.Shared.Service
 {
-    public class ServiceApi:ServiceApiBase
+    public class ServiceApi : ServiceApiBase
     {
         #region Account Login/Regiser
       
-        public HttpResponseMessage Register(string username, string email,string mobilenumber,string password,string role,double latitude,double longitude)
+        public HttpResponseMessage Login(string username, string password)
+        {
+            HttpClient client = new HttpClient(new NativeMessageHandler())
+            {
+                BaseAddress = new Uri(APIURL)
+            };
+
+            var vals = new List<KeyValuePair<string, string>>();
+            vals.Add(new KeyValuePair<string, string>("grant_type", "password"));
+            vals.Add(new KeyValuePair<string, string>("username", username));
+            vals.Add(new KeyValuePair<string, string>("password", password));
+
+
+            var response = client.PostAsync(APIURL + "/token", new FormUrlEncodedContent(vals)).Result;
+
+            return response;
+
+        }
+       
+        public HttpResponseMessage Register(string username, string email, string mobilenumber, string password, string role, double latitude, double longitude)
         {
            
-            HttpClient c = new HttpClient(new NativeMessageHandler()) { BaseAddress = new Uri(APIURL) };
+            HttpClient client = new HttpClient(new NativeMessageHandler()) 
+            { 
+                BaseAddress = new Uri(APIURL) 
+            };
 
             var vals = new List<KeyValuePair<string, string>>();
             vals.Add(new KeyValuePair<string, string>("SiteID", "1"));
@@ -37,7 +59,7 @@ namespace BusinessLocator.Shared.Service
             vals.Add(new KeyValuePair<string, string>("PhoneNumber", mobilenumber));
             vals.Add(new KeyValuePair<string, string>("Email", email));
             vals.Add(new KeyValuePair<string, string>("WebSite", "www.gmail.com"));
-            vals.Add(new KeyValuePair<string, string>("Description", "Testing Demo"));
+            vals.Add(new KeyValuePair<string, string>("Description","Testing Demo"));
             vals.Add(new KeyValuePair<string, string>("Image", "abc"));
             vals.Add(new KeyValuePair<string, string>("UserRole", role));
             vals.Add(new KeyValuePair<string, string>("RoleIcon", "abc"));
@@ -45,34 +67,56 @@ namespace BusinessLocator.Shared.Service
             vals.Add(new KeyValuePair<string, string>("Longitude", latitude.ToString()));
             vals.Add(new KeyValuePair<string, string>("Lattitude", longitude.ToString()));
 
+            var response = client.PostAsync(APIURL + "/api/Account/Register", new FormUrlEncodedContent(vals)).Result;
 
-
-            var response = c.PostAsync(APIURL + "/api/Account/Register", new FormUrlEncodedContent(vals)).Result;
+            //var stringContent = response.Content.ReadAsStringAsync();
+            //return stringContent;
             return response;
-           
-           // var stringContent = response.Content.ReadAsStringAsync();
-          //  return stringContent;
-          
-
         }
-        public HttpResponseMessage Login(string username, string password)
-        {
 
-            HttpClient c = new HttpClient(new NativeMessageHandler()) { BaseAddress = new Uri(APIURL) };
+     
+        public async Task<TokenResponse> RefreshToken(string refreshToken)
+        {
+            TokenResponse results = null;
+            HttpClient client = new HttpClient(new NativeMessageHandler()) { BaseAddress = new Uri(APIURL) };
 
             var vals = new List<KeyValuePair<string, string>>();
-            vals.Add(new KeyValuePair<string, string>("username", username));
-            vals.Add(new KeyValuePair<string, string>("password", password));
-            vals.Add(new KeyValuePair<string, string>("grant_type", "password"));
+            vals.Add(new KeyValuePair<string, string>("refresh_token", refreshToken));
+            vals.Add(new KeyValuePair<string, string>("client_id", "self"));
+            vals.Add(new KeyValuePair<string, string>("grant_type", "refresh_token"));
+         
+            if (CrossConnectivity.Current.IsConnected)
+            {
+                var response = client.PostAsync(APIURL + "/token", new FormUrlEncodedContent(vals)).Result;
 
-            var response = c.PostAsync(APIURL + "/token", new FormUrlEncodedContent(vals)).Result;
-            return response;
+                var content = await response.Content.ReadAsStringAsync();
+                if (!response.IsSuccessStatusCode)
+                {
+                    var error = JsonConvert.DeserializeObject<JObject>(content);
+                    throw new WebException(error["error"].ToString());
+                }
+                results = JsonConvert.DeserializeObject<TokenResponse>(content);
+                LocalStorage.SaveLogin(results);
+            }
+            else
+            {
+                throw new Exception("No internet connection.");
+            }
 
-            // var stringContent = response.Content.ReadAsStringAsync();
-            //  return stringContent;
+            if (results == null)
+            {
+                throw new NullReferenceException("Results should not be null");
+            }
 
+            return results;
         }
 
+        public async Task<User> GetMyUser()
+        {
+            var response = await Get<User>("/api/users/MyUser", new Dictionary<string, object>() { });
+            LocalStorage.UpdateUser(response);
+            return response;
+        }
 
 
 

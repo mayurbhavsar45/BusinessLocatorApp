@@ -3,6 +3,9 @@ using System;
 using UIKit;
 using CoreGraphics;
 using CoreAnimation;
+using BusinessLocator.Shared.Service;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 
 namespace BusinessLocator.iOS
 {
@@ -87,6 +90,7 @@ namespace BusinessLocator.iOS
             };
             txtUserName.TintColor = UIColor.Black;
             txtUserName.ClearButtonMode = UITextFieldViewMode.WhileEditing;
+            txtUserName.AutocapitalizationType = UITextAutocapitalizationType.None;
             borderUserName.Add(txtUserName);
 
             borderPassword = new UIView()
@@ -160,13 +164,38 @@ namespace BusinessLocator.iOS
 
             btnLogin.TouchUpInside += (sender, e) => 
             {
-                MainViewController mainViewController = this.Storyboard.InstantiateViewController("MainViewController") as MainViewController;
-                if(mainViewController != null)
+                var apiResponse = new ServiceApi().Login(txtUserName.Text, txtPassword.Text);
+
+                try
                 {
-                    this.NavigationController.PushViewController(mainViewController, true);                    
+                    if(apiResponse.IsSuccessStatusCode)
+                    {
+                        var data = apiResponse.Content.ReadAsStringAsync();
+                        var response = JsonConvert.DeserializeObject<JObject>(data.Result);
+
+                        MainViewController mainViewController = this.Storyboard.InstantiateViewController("MainViewController") as MainViewController;
+                        if (mainViewController != null)
+                        {
+                            this.NavigationController.PushViewController(mainViewController, true);
+                        }    
+                    }
+                    else
+                    {
+                        var data = apiResponse.Content.ReadAsStringAsync();
+                        var response = JsonConvert.DeserializeObject<JObject>(data.Result);
+
+                        var error = response["error_description"].ToString();
+
+                        var errorAlertController = UIAlertController.Create("Error", error, UIAlertControllerStyle.Alert);
+                        errorAlertController.AddAction(UIAlertAction.Create("OK", UIAlertActionStyle.Destructive, null));
+                        PresentViewController(errorAlertController, true, null);
+                    }
+                }
+                catch(Exception ex)
+                {
+                    Console.WriteLine(ex.Message);
                 }
             };
-
 
         }
 

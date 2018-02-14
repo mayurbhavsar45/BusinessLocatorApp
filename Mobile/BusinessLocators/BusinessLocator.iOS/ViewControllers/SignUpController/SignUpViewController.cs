@@ -5,12 +5,17 @@ using CoreGraphics;
 using CoreAnimation;
 using System.Collections.Generic;
 using System.Drawing;
+using BusinessLocator.Shared.Service;
+using Plugin.Connectivity;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 
 namespace BusinessLocator.iOS
 {
     public partial class SignUpViewController : UIViewController
     {
         CAGradientLayer gradientLayer;
+        double lat, lng;
 
         public SignUpViewController (IntPtr handle) : base (handle)
         {
@@ -20,12 +25,18 @@ namespace BusinessLocator.iOS
         {
             base.ViewDidLoad();
 
-            CGColor[] colors = new CGColor[] { UIColor.FromRGB(98,107,186).CGColor,
-                UIColor.FromRGB(57,122,193).CGColor};
+            //CGColor[] colors = new CGColor[] { UIColor.FromRGB(98,107,186).CGColor,
+            //    UIColor.FromRGB(57,122,193).CGColor};
+            //gradientLayer = new CAGradientLayer();
+            //gradientLayer.Frame = this.View.Bounds;
+            //gradientLayer.Colors = colors;
+            //this.View.Layer.InsertSublayer(gradientLayer, 0);
+
             gradientLayer = new CAGradientLayer();
+            gradientLayer.Colors = new[] { UIColor.FromRGB(98, 107, 186).CGColor, UIColor.FromRGB(57, 122, 193).CGColor };
             gradientLayer.Frame = this.View.Bounds;
-            gradientLayer.Colors = colors;
-            this.View.Layer.InsertSublayer(gradientLayer, 0);
+            View.Layer.InsertSublayer(gradientLayer, 0);
+
 
             //Set Placeholder Text Color
             txtUserName.AttributedPlaceholder = new NSAttributedString("Username", null, UIColor.White);
@@ -63,18 +74,20 @@ namespace BusinessLocator.iOS
                 "Are you", "Provider", "Consumer"
             };
 
-            blPickerView.Model = new UserTypeViewModel(list);
-            blPickerView.ShowSelectionIndicator = true;
-            //UserTypeViewModel picker_model;
-            //picker_model = new UserTypeViewModel(list);
-            //blPickerView.Model = picker_model;
+            var picker = new UserTypeViewModel(list);
+            rolePicker.Model = picker;
+            rolePicker.ShowSelectionIndicator = true;
+            //picker.ValueChanged+=(sender, e) => 
+            //{
+            //    var val = picker.SelectedValue;
+            //};
 
             //Pickerview Custom Appearance
             var layer = new CALayer();
-            layer.Frame = new CGRect(15, 15, blPickerView.Frame.Width - 30, blPickerView.Frame.Height - 30);
+            layer.Frame = new CGRect(15, 15, rolePicker.Frame.Width - 30, rolePicker.Frame.Height - 30);
             layer.CornerRadius = 10;
             layer.BackgroundColor = UIColor.White.CGColor;
-            blPickerView.Layer.Mask = layer;
+            rolePicker.Layer.Mask = layer;
 
             btnBack.TouchUpInside += (sender, e) => 
             {
@@ -83,10 +96,57 @@ namespace BusinessLocator.iOS
 
             btnSignUp.TouchUpInside +=(sender, e) => 
             {
-                MainViewController mainViewController = this.Storyboard.InstantiateViewController("MainViewController") as MainViewController;
-                if(mainViewController!=null)
+                if (CrossConnectivity.Current.IsConnected)
                 {
-                    this.NavigationController.PushViewController(mainViewController, true);    
+                    var apiResponse = new ServiceApi().Register(txtUserName.Text,txtEmail.Text,txtMobileNumber.Text,txtPassword.Text,picker.SelectedValue, lat, lng);
+
+                    if(apiResponse.IsSuccessStatusCode)
+                    {
+                        var data = apiResponse.Content.ReadAsStringAsync();
+                        var response = JsonConvert.DeserializeObject<JObject>(data.Result);
+
+                        this.NavigationController.PopViewController(true);
+
+                        var okAlertController = UIAlertController.Create("Alert", "Registration successfull", UIAlertControllerStyle.Alert);
+                        okAlertController.AddAction(UIAlertAction.Create("OK", UIAlertActionStyle.Destructive, null));
+                        PresentViewController(okAlertController, true, null);
+                    }
+                    else
+                    {
+                        var data = apiResponse.Content.ReadAsStringAsync();
+                        var response = JsonConvert.DeserializeObject<JObject>(data.Result);
+                        var error = response["Message"].ToString();
+
+                        var errorAlertController = UIAlertController.Create("Error", error, UIAlertControllerStyle.Alert);
+                        errorAlertController.AddAction(UIAlertAction.Create("OK", UIAlertActionStyle.Destructive, null));
+                        PresentViewController(errorAlertController, true, null);
+                    }
+
+                    //var response_code = JsonConvert.DeserializeObject<JObject>(apiResponse.Result);
+                    //if(response_code["Code"].ToString() == "200")
+                    //{
+                    //    this.NavigationController.PopViewController(true);
+                    //    new UIAlertView("Success Alert", "You're registerd successfully!", null, "OK", null).Show();
+                    //}
+                    //else if(response_code["Message"].ToString() == "The request is invalid.")
+                    //{
+                    //    new UIAlertView("Error Alert", "Wrong Password!", null, "OK", null).Show();
+                    //}
+                    //else
+                    //{
+                    //    new UIAlertView("Error Alert", "Registration fail!", null, "OK", null).Show();
+                    //}
+                    //MainViewController mainViewController = this.Storyboard.InstantiateViewController("MainViewController") as MainViewController;
+                    //if (mainViewController != null)
+                    //{
+                    //    this.NavigationController.PushViewController(mainViewController, true);
+                    //}
+                }
+                else
+                {
+                    var networkAlertController = UIAlertController.Create("Alert", "Network not available", UIAlertControllerStyle.Alert);
+                    networkAlertController.AddAction(UIAlertAction.Create("OK", UIAlertActionStyle.Destructive, null));
+                    PresentViewController(networkAlertController, true, null);
                 }
             };
         }
@@ -106,5 +166,7 @@ namespace BusinessLocator.iOS
         {
             gradientLayer.Frame = this.View.Bounds;
         }
+
+       
     }
 }

@@ -4,7 +4,8 @@ using UIKit;
 using Google.Maps;
 using CoreGraphics;
 using CoreLocation;
-    
+
+
 namespace BusinessLocator.iOS
 {
     public partial class MapViewController : UIViewController

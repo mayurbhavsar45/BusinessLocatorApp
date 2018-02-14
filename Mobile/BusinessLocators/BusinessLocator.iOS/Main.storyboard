@@ -382,7 +382,7 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="blPickerView" destination="T6U-mJ-aSM" id="name-outlet-T6U-mJ-aSM"/>
+                        <outlet property="rolePicker" destination="T6U-mJ-aSM" id="name-outlet-T6U-mJ-aSM"/>
                         <outlet property="borderDDL" destination="Aci-ED-bSV" id="name-outlet-Aci-ED-bSV"/>
                         <outlet property="borderEmail" destination="HIF-al-3U3" id="name-outlet-HIF-al-3U3"/>
                         <outlet property="borderMobileNumber" destination="9Ve-yT-5Sq" id="name-outlet-9Ve-yT-5Sq"/>
