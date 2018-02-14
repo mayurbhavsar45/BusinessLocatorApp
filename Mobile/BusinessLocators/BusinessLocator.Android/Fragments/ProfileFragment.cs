@@ -16,12 +16,15 @@ using Uri = Android.Net.Uri;
 using Com.Github.Florent37.Diagonallayout;
 using Fragment = Android.Support.V4.App.Fragment;
 using Plugin.Settings;
+using BusinessLocator.Shared.Service;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 
 namespace BusinessLocator.Android
 {
     public class ProfileFragment : Fragment
     {
-        TextView lblpwd, lblconsumer, lblName;
+        TextView lblpwd, lblconsumer, lblName,lbladdress,lblphone,lblemail;
         ImageButton btnfilter, edit;
         ImageView profileimage, coverimage;
         Uri imageuri;
@@ -34,8 +37,9 @@ namespace BusinessLocator.Android
 
         public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
         {
-            View v=inflater.Inflate(Resource.Layout.ProfileFragment, container, false);
-            btnfilter= v.FindViewById<ImageButton>(Resource.Id.btnFilter);
+            View v = inflater.Inflate(Resource.Layout.ProfileFragment, container, false);
+          
+            btnfilter = v.FindViewById<ImageButton>(Resource.Id.btnFilter);
             edit = v.FindViewById<ImageButton>(Resource.Id.edit);
             profileimage = v.FindViewById<ImageView>(Resource.Id.profile);
             coverimage = v.FindViewById<ImageView>(Resource.Id.cover);
@@ -44,14 +48,29 @@ namespace BusinessLocator.Android
             lblpwd = v.FindViewById<TextView>(Resource.Id.lblchangepwd);
             lblconsumer = v.FindViewById<TextView>(Resource.Id.lblconsumer);
 
-            lblName = v.FindViewById<TextView>(Resource.Id.name);
+         
+            lbladdress = v.FindViewById<TextView>(Resource.Id.address);
+            lblphone = v.FindViewById<TextView>(Resource.Id.number);
+            lblemail = v.FindViewById<TextView>(Resource.Id.email);
 
-            lblName.Text = CrossSettings.Current.GetValueOrDefault("UserName", "");
+            lblName = v.FindViewById<TextView>(Resource.Id.name);
+            var api = new ServiceApi().GetConsumerProfile();
+            if (api.IsSuccessStatusCode)
+            {
+                var response = api.Content.ReadAsStringAsync();
+                var result = JsonConvert.DeserializeObject<JObject>(response.Result);
+
+                lblName.Text = result["DisplayName"].ToString();
+                lblphone.Text = result["PhoneNumber"].ToString();
+                lbladdress.Text = result["City"].ToString();
+                lblemail.Text = result["eMailAddress"].ToString();
+
+            }
 
             lblpwd.Click += Lblpwd_Click;
             btnfilter.Click += Btnfilter_Click;
             edit.Click += Edit_Click;
-             return v ;    
+            return v;
         }
 
         private void Edit_Click(object sender, EventArgs e)
@@ -61,7 +80,7 @@ namespace BusinessLocator.Android
             //imageIntent.SetType("image/*");
             //imageIntent.SetAction(Intent.ActionGetContent);
             StartActivityForResult(
-                Intent.CreateChooser(imageIntent, "Select photo"),2);
+                Intent.CreateChooser(imageIntent, "Select photo"), 2);
         }
 
         public override void OnActivityResult(int requestCode, int resultCode, Intent data)
@@ -78,7 +97,7 @@ namespace BusinessLocator.Android
                     //    imgproductsymbol.Visibility = ViewStates.Gone;
                     //     imgtextlbl.Visibility = ViewStates.Gone;
 
-                   // Toast.MakeText(this.Activity, data.Data.ToString(), ToastLength.Short).Show();
+                    // Toast.MakeText(this.Activity, data.Data.ToString(), ToastLength.Short).Show();
 
                 }
             }
@@ -97,6 +116,6 @@ namespace BusinessLocator.Android
             StartActivity(i);
         }
 
-        
+
     }
 }

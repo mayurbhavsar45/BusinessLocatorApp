@@ -20,11 +20,7 @@ namespace BusinessLocator.Android
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
-
-            // Set our view from the "main" layout resource
             SetContentView(Resource.Layout.Main);
-           // Toast.MakeText(this, "hello", ToastLength.Short).Show();
-
             bottomNavigation = FindViewById<BottomNavigationView>(Resource.Id.bottom_navigation);
             bottomNavigation.SetShiftMode(false, false);
             bottomNavigation.NavigationItemSelected += BottomNavigation_NavigationItemSelected;

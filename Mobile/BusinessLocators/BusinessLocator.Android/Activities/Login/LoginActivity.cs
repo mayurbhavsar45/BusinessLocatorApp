@@ -19,6 +19,7 @@ using Newtonsoft.Json.Linq;
 using Plugin.Connectivity;
 using Plugin.Settings;
 using AlertDialog = Android.App.AlertDialog;
+using ProgressDialog = Android.App.ProgressDialog;
 
 namespace BusinessLocator.Android
 {
@@ -28,6 +29,7 @@ namespace BusinessLocator.Android
         TextView signuplink,forgotpwdlink;
         Button btnlogin;
         EditText euname,epwd;
+        ProgressDialog progress = null;
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
@@ -39,7 +41,6 @@ namespace BusinessLocator.Android
             epwd = FindViewById<EditText>(Resource.Id.epwd);
             euname.Text = "swetavanjara2017@gmail.com";
             epwd.Text = "Sweta@123";
-
             signuplink.Click += Signuplink_Click;
             forgotpwdlink.Click += Forgotpwdlink_Click;
             btnlogin.Click += Btnlogin_Click;
@@ -47,20 +48,12 @@ namespace BusinessLocator.Android
 
         private void Btnlogin_Click(object sender, EventArgs e)
         {
-            //if (euname.Text.ToString().Equals("provider@gmail.com") && epwd.Text.ToString().Equals("provider"))
-            //{
-            //    Intent i = new Intent(this, typeof(ProviderMainActivity));
-            //    StartActivity(i);
-            //}
-            //else
-            //{
-            //    Intent i = new Intent(this, typeof(MainActivity));
-            //    StartActivity(i);
-            //}
-
             if (CrossConnectivity.Current.IsConnected)
             {
+                //ShowDialog();
+
                 var response = new ServiceApi().Login(euname.Text,epwd.Text);
+               
                 if (response.IsSuccessStatusCode)
                 {
                     var success = response.Content.ReadAsStringAsync();
@@ -100,8 +93,20 @@ namespace BusinessLocator.Android
         private void Signuplink_Click(object sender, System.EventArgs e)
         {
            Intent i = new Intent(this, typeof(SignUpActivity));
-            StartActivity(i);
-
+           StartActivity(i);
+        }
+        void ShowDialog()
+        {
+            progress = new ProgressDialog(this);
+            progress.Indeterminate = true;
+            progress.SetProgressStyle(ProgressDialogStyle.Spinner);
+            progress.SetMessage("Please wait...");
+            progress.SetCancelable(false);
+            progress.Show();
+        }
+        void HideDialog()
+        {
+            progress.Dismiss();
         }
 
     }
