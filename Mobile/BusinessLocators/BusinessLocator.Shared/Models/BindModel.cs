@@ -6,7 +6,32 @@ using System.Threading.Tasks;
 
 namespace BusinessLocator.Shared.Models
 {
-   public class TokenResponse
+    public class LoginModel
+    {
+        public string username { get; set; }
+        public string password { get; set; }
+        public string grant_type { get; set; }
+    }
+
+    public class UserRegistrationBindingModel
+    {
+        public int SiteId { get; set; }
+        public string DisplayName { get; set; }
+        public string PhoneNumber { get; set; }
+        public string Email { get; set; }
+        public string UserRole { get; set; }
+        public string Password { get; set; }
+        public double Longitude { get; set; }
+        public double Lattitude { get; set; }
+
+        public UserRegistrationBindingModel()
+        {
+            SiteId = 1;
+        }
+
+    }
+
+    public class AccessTokenResponse
     {
         public string access_token { get; set; }
         public string token_type { get; set; }
@@ -14,6 +39,12 @@ namespace BusinessLocator.Shared.Models
         public string userName { get; set; }
         public string roleName { get; set; }
     }
+
+    public static class GlobalConfiguration
+    {
+        public static int SiteId = 1;
+    }
+
     public class MapListView
     {
         public string UserID { get; set; }
@@ -24,4 +55,7 @@ namespace BusinessLocator.Shared.Models
         public double Longitude { get; set; }
         public double Lattitude { get; set; }
     }
+   
+
+
 }

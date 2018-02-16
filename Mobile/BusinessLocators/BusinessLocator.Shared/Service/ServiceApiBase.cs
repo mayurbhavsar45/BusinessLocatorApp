@@ -5,6 +5,14 @@ using System.Linq;
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
+using Plugin.Settings;
+using Plugin.Connectivity;
+using System.Net;
+using System.Net.Http.Headers;
+using Polly;
+using System.IO;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 
 namespace BusinessLocator.Shared.Service
 {
@@ -20,9 +28,7 @@ namespace BusinessLocator.Shared.Service
             {
                 BaseAddress = new Uri(APIURL)
             };
-
-          
         }
-
+      
     }
 }

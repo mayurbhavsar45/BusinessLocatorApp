@@ -2942,6 +2942,107 @@
             </objects>
             <point key="canvasLocation" x="1845.6" y="2070.315"/>
         </scene>
+        <scene sceneID="148100">
+            <objects>
+                <viewController id="148101" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="148096"/>
+                        <viewControllerLayoutGuide type="bottom" id="148097"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="148102">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" id="148103" image="icon-chat-bubble-30.png">
+                        <inset key="imageInsets" minX="0.0" minY="6" maxX="0.0" maxY="-6"/>
+                    </tabBarItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="148104" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2878" y="2521"/>
+        </scene>
+        <scene sceneID="148105">
+            <objects>
+                <viewController id="148106" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="148098"/>
+                        <viewControllerLayoutGuide type="bottom" id="148099"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="148107">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" id="148108" image="icon-marker-30.png">
+                        <inset key="imageInsets" minX="0.0" minY="6" maxX="0.0" maxY="-6"/>
+                    </tabBarItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="148109" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2877" y="1783"/>
+        </scene>
+        <scene sceneID="148110">
+            <objects>
+                <tabBarController id="148111" sceneMemberID="viewController" customClass="ProviderMainViewController" storyboardIdentifier="ProviderMainViewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="148114">
+                        <rect key="frame" x="0.0" y="618" width="375" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="148106" kind="relationship" relationship="viewControllers" id="148112"/>
+                        <segue destination="148101" kind="relationship" relationship="viewControllers" id="148113"/>
+                        <segue id="150071" destination="150014" kind="relationship" relationship="viewControllers"/>
+                        <segue id="150147" destination="150021" kind="relationship" relationship="viewControllers"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="148115" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2347" y="2838"/>
+        </scene>
+        <scene sceneID="150013">
+            <objects>
+                <viewController id="150014" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="150011"/>
+                        <viewControllerLayoutGuide type="bottom" id="150012"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="150015">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" id="150070" image="Icon-cloud.png">
+                        <inset key="imageInsets" minX="0.0" minY="12" maxX="0.0" maxY="-6"/>
+                    </tabBarItem>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="150016" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2879" y="3247"/>
+        </scene>
+        <scene sceneID="150020">
+            <objects>
+                <viewController id="150021" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="150018"/>
+                        <viewControllerLayoutGuide type="bottom" id="150019"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="150022">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" id="150146" image="icon-user-male-30.png">
+                        <inset key="imageInsets" minX="0.0" minY="6" maxX="0.0" maxY="-6"/>
+                    </tabBarItem>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="150023" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2880" y="3974"/>
+        </scene>
     </scenes>
     <resources>
         <image name="Filter.png" width="42" height="42"/>
@@ -3011,5 +3112,6 @@
         <image name="chosen.png" width="200" height="190"/>
         <image name="map-marker-4.png" width="512" height="512"/>
         <image name="icons_picture100.png" width="100" height="100"/>
+        <image name="Icon-cloud.png" width="58" height="58"/>
     </resources>
 </document>

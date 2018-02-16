@@ -10,6 +10,7 @@ using BusinessLocator.Shared;
 using BusinessLocator.Shared.Models;
 using Plugin.Settings;
 
+
 namespace BusinessLocator.iOS
 {
     public partial class LoginViewController : UIViewController
@@ -145,8 +146,8 @@ namespace BusinessLocator.iOS
             btnSignUp.SetTitleColor(UIColor.White, UIControlState.Normal);
             View.Add(btnSignUp);
 
-            txtUserName.Text = "swetavanjara2017@gmail.com";
-            txtPassword.Text = "Sweta@123";
+            txtUserName.Text = "divyesh.bhatt23@gmail.com";
+            txtPassword.Text = "Divyesh@123";
 
             //Buttons Click Evetns
             btnForgotPassword.TouchUpInside += (sender, e) => 
@@ -170,24 +171,21 @@ namespace BusinessLocator.iOS
             btnLogin.TouchUpInside += (sender, e) => 
             {
                 var apiResponse = new ServiceApi().Login(txtUserName.Text, txtPassword.Text);
-
                 try
                 {
                     if(apiResponse.IsSuccessStatusCode)
                     {
                         var data = apiResponse.Content.ReadAsStringAsync();
-                        var response = JsonConvert.DeserializeObject<TokenResponse>(data.Result);
+                        var response = JsonConvert.DeserializeObject<AccessTokenResponse>(data.Result);
                         LocalStorage.SaveLogin(response);
-
                         var role = CrossSettings.Current.GetValueOrDefault("RoleName", "");
-
                         if(role.Equals("Consumer"))
                         {
                             MainViewController mainViewController = this.Storyboard.InstantiateViewController("MainViewController") as MainViewController;
                             if (mainViewController != null)
                             {
                                 this.NavigationController.PushViewController(mainViewController, true);
-                            }        
+                            }   
                         }
                         else
                         {
@@ -200,7 +198,6 @@ namespace BusinessLocator.iOS
                     {
                         var data = apiResponse.Content.ReadAsStringAsync();
                         var response = JsonConvert.DeserializeObject<JObject>(data.Result);
-
                         var error = response["error_description"].ToString();
 
                         var errorAlertController = UIAlertController.Create("Error", error, UIAlertControllerStyle.Alert);

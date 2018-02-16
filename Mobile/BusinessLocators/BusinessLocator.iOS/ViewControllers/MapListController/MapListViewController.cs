@@ -5,6 +5,9 @@ using System.Collections.Generic;
 using BusinessLocator.iOS.Model;
 using CoreAnimation;
 using CoreGraphics;
+using BusinessLocator.Shared.Service;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 
 namespace BusinessLocator.iOS
 {

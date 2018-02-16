@@ -105,11 +105,11 @@ namespace BusinessLocator.iOS
                         var data = apiResponse.Content.ReadAsStringAsync();
                         var response = JsonConvert.DeserializeObject<JObject>(data.Result);
 
-                        this.NavigationController.PopViewController(true);
-
                         var okAlertController = UIAlertController.Create("Alert", "Registration successfull", UIAlertControllerStyle.Alert);
                         okAlertController.AddAction(UIAlertAction.Create("OK", UIAlertActionStyle.Destructive, null));
                         PresentViewController(okAlertController, true, null);
+
+                        this.NavigationController.PopViewController(true);
                     }
                     else
                     {

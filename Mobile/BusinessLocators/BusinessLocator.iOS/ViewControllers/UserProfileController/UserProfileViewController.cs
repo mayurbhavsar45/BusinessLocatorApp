@@ -4,6 +4,9 @@ using UIKit;
 using CoreAnimation;
 using CoreGraphics;
 using Plugin.Settings;
+using BusinessLocator.Shared.Service;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 
 namespace BusinessLocator.iOS
 {
@@ -46,7 +49,48 @@ namespace BusinessLocator.iOS
             ProfileImage.Layer.BorderWidth = 2;
 
             //Set values from Api
-            lblName.Text = CrossSettings.Current.GetValueOrDefault("UserName", "");
+            //lblName.Text = CrossSettings.Current.GetValueOrDefault("UserName", "");
+
+            var apiResponse = new ServiceApi().GetConsumerProfile();
+            if (apiResponse.IsSuccessStatusCode)
+            {
+                var response = apiResponse.Content.ReadAsStringAsync();
+                var result = JsonConvert.DeserializeObject<JObject>(response.Result);
+
+                lblName.Text = result["DisplayName"].ToString();
+                lblMobileNumber.Text = result["PhoneNumber"].ToString();
+                addressLabel.Text = result["City"].ToString();
+                lblEmail.Text = result["eMailAddress"].ToString();
+            }
+            else
+            {
+                var data = apiResponse.Content.ReadAsStringAsync();
+                var response = JsonConvert.DeserializeObject<JObject>(data.Result);
+                var error = response["error_description"].ToString();
+
+                var errorAlertController = UIAlertController.Create("Error", error, UIAlertControllerStyle.Alert);
+                errorAlertController.AddAction(UIAlertAction.Create("OK", UIAlertActionStyle.Destructive, null));
+                PresentViewController(errorAlertController, true, null);
+            }
+
+            btnFilter.TouchUpInside += (sender, e) =>
+            {
+                SettingsViewController settingsController = this.Storyboard.InstantiateViewController("SettingsViewController") as SettingsViewController;
+                if (settingsController != null)
+                {
+                    this.NavigationController.PushViewController(settingsController, true);
+                }
+            };
+
+            btnChangePassword.TouchUpInside += (sender, e) =>
+            {
+                //new UIAlertView("Click", "Clicked", null, "Ok", null).Show();
+                ChangePasswordViewController changePasswordController = this.Storyboard.InstantiateViewController("ChangePasswordViewController") as ChangePasswordViewController;
+                if (changePasswordController != null)
+                {
+                    this.NavigationController.PushViewController(changePasswordController, true);
+                }
+            };
 
             btnEditProfileImage.TouchUpInside+=(sender, e) => 
             {
@@ -65,24 +109,7 @@ namespace BusinessLocator.iOS
                 }
             };
 
-            btnFilter.TouchUpInside+=(sender, e) => 
-            {
-                SettingsViewController settingsController = this.Storyboard.InstantiateViewController("SettingsViewController") as SettingsViewController;
-                if(settingsController != null)
-                {
-                    this.NavigationController.PushViewController(settingsController, true);
-                }
-             };
 
-            btnChangePassword.TouchUpInside+=(sender, e) => 
-            {
-                //new UIAlertView("Click", "Clicked", null, "Ok", null).Show();
-                ChangePasswordViewController changePasswordController = this.Storyboard.InstantiateViewController("ChangePasswordViewController") as ChangePasswordViewController;
-                if(changePasswordController != null)
-                {
-                    this.NavigationController.PushViewController(changePasswordController, true);
-                }
-            };
         }
 
         protected void Handle_FinishedPickingMedia(object sender, UIImagePickerMediaPickedEventArgs e)

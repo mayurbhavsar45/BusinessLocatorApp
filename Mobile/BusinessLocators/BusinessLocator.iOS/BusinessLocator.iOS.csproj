@@ -219,6 +219,7 @@
     <Folder Include="ViewControllers\AvailableProductsController\" />
     <Folder Include="ViewControllers\ProductsDialogPopupController\" />
     <Folder Include="ViewControllers\ReportProviderDialogController\" />
+    <Folder Include="ViewControllers\ProviderView\" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="LaunchScreen.storyboard" />
@@ -332,6 +333,10 @@
       <DependentUpon>ReportProviderViewController.cs</DependentUpon>
     </Compile>
     <Compile Include="Helpers\Settings.cs" />
+    <Compile Include="ViewControllers\ProviderView\ProviderMainViewController.cs" />
+    <Compile Include="ViewControllers\ProviderView\ProviderMainViewController.designer.cs">
+      <DependentUpon>ProviderMainViewController.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\back_icon.png" />
@@ -401,6 +406,7 @@
     <BundleResource Include="Resources\icons_document100.png" />
     <BundleResource Include="Resources\icons_picture100.png" />
     <BundleResource Include="Resources\icons_picture96.png" />
+    <BundleResource Include="Resources\Icon-cloud.png" />
   </ItemGroup>
   <ItemGroup>
     <XamarinComponentReference Include="pdreview">

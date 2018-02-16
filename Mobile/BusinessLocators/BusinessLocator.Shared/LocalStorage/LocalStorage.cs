@@ -11,7 +11,7 @@ namespace BusinessLocator.Shared
     {
         public LocalStorage() { }
        
-        public static void SaveLogin(TokenResponse Result)
+        public static void SaveLogin(AccessTokenResponse Result)
         {
             CrossSettings.Current.AddOrUpdateValue("AccessToken", Result.access_token);
             CrossSettings.Current.AddOrUpdateValue("TokenType", Result.token_type);
