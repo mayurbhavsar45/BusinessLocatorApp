@@ -9,7 +9,7 @@ using Newtonsoft.Json.Linq;
 using BusinessLocator.Shared;
 using BusinessLocator.Shared.Models;
 using Plugin.Settings;
-
+using Mobile.Extensions.iOS.Extensions;
 
 namespace BusinessLocator.iOS
 {
@@ -170,45 +170,17 @@ namespace BusinessLocator.iOS
 
             btnLogin.TouchUpInside += (sender, e) => 
             {
-                var apiResponse = new ServiceApi().Login(txtUserName.Text, txtPassword.Text);
-                try
-                {
-                    if(apiResponse.IsSuccessStatusCode)
-                    {
-                        var data = apiResponse.Content.ReadAsStringAsync();
-                        var response = JsonConvert.DeserializeObject<AccessTokenResponse>(data.Result);
-                        LocalStorage.SaveLogin(response);
-                        var role = CrossSettings.Current.GetValueOrDefault("RoleName", "");
-                        if(role.Equals("Consumer"))
-                        {
-                            MainViewController mainViewController = this.Storyboard.InstantiateViewController("MainViewController") as MainViewController;
-                            if (mainViewController != null)
-                            {
-                                this.NavigationController.PushViewController(mainViewController, true);
-                            }   
-                        }
-                        else
-                        {
-                            var errorAlertController = UIAlertController.Create("Error", "In Progeress", UIAlertControllerStyle.Alert);
-                            errorAlertController.AddAction(UIAlertAction.Create("OK", UIAlertActionStyle.Destructive, null));
-                            PresentViewController(errorAlertController, true, null);
-                        }
-                    }
-                    else
-                    {
-                        var data = apiResponse.Content.ReadAsStringAsync();
-                        var response = JsonConvert.DeserializeObject<JObject>(data.Result);
-                        var error = response["error_description"].ToString();
+                var apiCall = new ServiceApi().Login(txtUserName.Text, txtPassword.Text);
+                apiCall.HandleError(null, true);
 
-                        var errorAlertController = UIAlertController.Create("Error", error, UIAlertControllerStyle.Alert);
-                        errorAlertController.AddAction(UIAlertAction.Create("OK", UIAlertActionStyle.Destructive, null));
-                        PresentViewController(errorAlertController, true, null);
-                    }
-                }
-                catch(Exception ex)
+                apiCall.OnSucess((result) =>
                 {
-                    Console.WriteLine(ex.Message);
-                }
+                    MainViewController mainViewController = this.Storyboard.InstantiateViewController("MainViewController") as MainViewController;
+                    if (mainViewController != null)
+                    {
+                        this.NavigationController.PushViewController(mainViewController, true);
+                    } 
+                });
             };
 
         }

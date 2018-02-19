@@ -7,6 +7,7 @@ using Plugin.Settings;
 using BusinessLocator.Shared.Service;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
+using Mobile.Extensions.iOS.Extensions;
 
 namespace BusinessLocator.iOS
 {
@@ -52,6 +53,15 @@ namespace BusinessLocator.iOS
             //lblName.Text = CrossSettings.Current.GetValueOrDefault("UserName", "");
 
             var apiResponse = new ServiceApi().GetConsumerProfile();
+            //var apiResponse = new ServiceApi().GetUserProfile();
+            //apiResponse.HandleError(null, true);
+            //apiResponse.OnSucess(response => 
+            //{
+            //    var result = JsonConvert.DeserializeObject<JObject>(response.ToString());
+            //    lblName.Text = result["DisplayName"].ToString();
+            //    //lblMobileNumber.Text = "9857957921";
+            //});
+
             if (apiResponse.IsSuccessStatusCode)
             {
                 var response = apiResponse.Content.ReadAsStringAsync();
@@ -59,7 +69,7 @@ namespace BusinessLocator.iOS
 
                 lblName.Text = result["DisplayName"].ToString();
                 lblMobileNumber.Text = result["PhoneNumber"].ToString();
-                addressLabel.Text = result["City"].ToString();
+                addressLabel.Text = "B/5/128, Willson Tower, LA";//result["City"].ToString();
                 lblEmail.Text = result["eMailAddress"].ToString();
             }
             else

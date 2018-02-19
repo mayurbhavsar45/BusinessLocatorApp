@@ -9,13 +9,15 @@ using BusinessLocator.Shared.Service;
 using Plugin.Connectivity;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
+using Mobile.Extensions.iOS.Extensions;
 
 namespace BusinessLocator.iOS
 {
     public partial class SignUpViewController : UIViewController
     {
         CAGradientLayer gradientLayer;
-        double lat, lng;
+        double lat = 0; 
+        double lng = 0;
 
         public SignUpViewController (IntPtr handle) : base (handle)
         {
@@ -96,58 +98,17 @@ namespace BusinessLocator.iOS
 
             btnSignUp.TouchUpInside +=(sender, e) => 
             {
-                if (CrossConnectivity.Current.IsConnected)
+                
+                var apiCall = new ServiceApi().Register(txtUserName.Text,txtEmail.Text,txtMobileNumber.Text,txtPassword.Text, picker.SelectedValue, lat, lng);
+                apiCall.HandleError(null, true);
+
+                apiCall.OnSucess((result)=>
                 {
-                    var apiResponse = new ServiceApi().Register(txtUserName.Text,txtEmail.Text,txtMobileNumber.Text,txtPassword.Text,picker.SelectedValue, lat, lng);
+                    var okAlertController = UIAlertController.Create("Alert", "Registration successfull", UIAlertControllerStyle.Alert);
+                    okAlertController.AddAction(UIAlertAction.Create("OK", UIAlertActionStyle.Destructive, null));
+                    PresentViewController(okAlertController, true, null);
+                });
 
-                    if(apiResponse.IsSuccessStatusCode)
-                    {
-                        var data = apiResponse.Content.ReadAsStringAsync();
-                        var response = JsonConvert.DeserializeObject<JObject>(data.Result);
-
-                        var okAlertController = UIAlertController.Create("Alert", "Registration successfull", UIAlertControllerStyle.Alert);
-                        okAlertController.AddAction(UIAlertAction.Create("OK", UIAlertActionStyle.Destructive, null));
-                        PresentViewController(okAlertController, true, null);
-
-                        this.NavigationController.PopViewController(true);
-                    }
-                    else
-                    {
-                        var data = apiResponse.Content.ReadAsStringAsync();
-                        var response = JsonConvert.DeserializeObject<JObject>(data.Result);
-                        var error = response["Message"].ToString();
-
-                        var errorAlertController = UIAlertController.Create("Error", error, UIAlertControllerStyle.Alert);
-                        errorAlertController.AddAction(UIAlertAction.Create("OK", UIAlertActionStyle.Destructive, null));
-                        PresentViewController(errorAlertController, true, null);
-                    }
-
-                    //var response_code = JsonConvert.DeserializeObject<JObject>(apiResponse.Result);
-                    //if(response_code["Code"].ToString() == "200")
-                    //{
-                    //    this.NavigationController.PopViewController(true);
-                    //    new UIAlertView("Success Alert", "You're registerd successfully!", null, "OK", null).Show();
-                    //}
-                    //else if(response_code["Message"].ToString() == "The request is invalid.")
-                    //{
-                    //    new UIAlertView("Error Alert", "Wrong Password!", null, "OK", null).Show();
-                    //}
-                    //else
-                    //{
-                    //    new UIAlertView("Error Alert", "Registration fail!", null, "OK", null).Show();
-                    //}
-                    //MainViewController mainViewController = this.Storyboard.InstantiateViewController("MainViewController") as MainViewController;
-                    //if (mainViewController != null)
-                    //{
-                    //    this.NavigationController.PushViewController(mainViewController, true);
-                    //}
-                }
-                else
-                {
-                    var networkAlertController = UIAlertController.Create("Alert", "Network not available", UIAlertControllerStyle.Alert);
-                    networkAlertController.AddAction(UIAlertAction.Create("OK", UIAlertActionStyle.Destructive, null));
-                    PresentViewController(networkAlertController, true, null);
-                }
             };
         }
 
