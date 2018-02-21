@@ -114,27 +114,10 @@ namespace BusinessLocator.Shared.Service
        
         #region Profile
 
-        //public async Task GetUserProfile()
-        //{
-        //    await Get("/api/User/GetProfile/", new Dictionary<string, object>());
-        //}
-
-
-        public HttpResponseMessage GetConsumerProfile()
+        public async Task<UserProfileModel> GetUserProfile()
         {
-            HttpClient client = new HttpClient(new NativeMessageHandler())
-            {
-                BaseAddress = new Uri(APIURL)
-            };
-
-            var access_token = CrossSettings.Current.GetValueOrDefault("AccessToken", "");
-            client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", access_token);
-            var response = client.GetAsync(APIURL + "/api/User/GetProfile").Result;
-
-            return response;
+            return await Get<UserProfileModel>("/api/User/GetProfile/", new Dictionary<string, object>());
         }
-
-
 
         #endregion
 
@@ -173,8 +156,16 @@ namespace BusinessLocator.Shared.Service
 
             return listItems;
 
-
         }
+
+
+        public async Task<UserProfileModel> GetUserLocation(double lat, double lng, string role, string search = null)
+        {
+            var url = "/api/User/GetUserByLocation/" + lat +"/" + lng + "/" + role + "/1/10/" + search;
+            return await Get<UserProfileModel>(url, new Dictionary<string, object>());
+            //return await Get<UserProfileModel>("/api/User/GetUserByLocation/", new Dictionary<string, object>(){ {"Lattitude", lat}, {"Longitude", lng}, {"role", role}});
+        }
+
 
         #endregion
 

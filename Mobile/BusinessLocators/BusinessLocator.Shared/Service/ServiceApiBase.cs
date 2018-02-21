@@ -30,6 +30,57 @@ namespace BusinessLocator.Shared.Service
             };
         }
       
+        protected async Task<T> Get<T>(string route, Dictionary<string, object> values)
+        {
+            var accessToken = CrossSettings.Current.GetValueOrDefault("AccessToken", "");
+            if (CrossConnectivity.Current.IsConnected)
+            {
+                HttpClient client = new HttpClient(new NativeMessageHandler()) { BaseAddress = new Uri(APIURL) };
+                string queryString = "?";
+                foreach (var item in values)
+                {
+                    if (queryString != "?")
+                    {
+                        queryString += "&";
+                    }
+                    queryString += item.Key + "=" + WebUtility.UrlEncode(item.Value.ToString());
+                }
+                if (!string.IsNullOrEmpty(accessToken))
+                {
+                    client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", accessToken);
+                }
+                var result = client.GetAsync(APIURL + route + queryString);
+                var message = await Policy
+                .Handle<WebException>().Or<IOException>()
+                .WaitAndRetryAsync(retryCount: 2, sleepDurationProvider: retryAttempt => TimeSpan.FromSeconds(Math.Pow(2, retryAttempt)))
+                .ExecuteAsync(async () => await result);
+
+                string content = await message.Content.ReadAsStringAsync();
+                string output = content.Replace("\\", "");
+                if (!message.IsSuccessStatusCode)
+                {
+                    bool status = IsJson(output);
+                    if (status)
+                    {
+                        var error = JsonConvert.DeserializeObject<JObject>(output);
+
+                        try
+                        {
+                            var err = error["Message"].ToString();
+                            throw new WebException(err);
+                        }
+                        catch (NullReferenceException ex)
+                        { }
+                    }
+                }
+                return JsonConvert.DeserializeObject<T>(output);
+            }
+            else
+            {
+                throw new Exception("No internet connection.");
+            }
+        }
+
         protected async Task Get(string route, Dictionary<string, object> values)
         {
             var accessToken = CrossSettings.Current.GetValueOrDefault("AccessToken", "");
@@ -72,7 +123,6 @@ namespace BusinessLocator.Shared.Service
                         { }
                     }
                 }
-                var success = JsonConvert.DeserializeObject<JObject>(content);
             }
             else
             {

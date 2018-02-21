@@ -8,6 +8,7 @@ using BusinessLocator.Shared.Service;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using Mobile.Extensions.iOS.Extensions;
+using BusinessLocator.Shared.Models;
 
 namespace BusinessLocator.iOS
 {
@@ -49,39 +50,8 @@ namespace BusinessLocator.iOS
             ProfileImage.Layer.BorderColor = UIColor.White.CGColor;
             ProfileImage.Layer.BorderWidth = 2;
 
-            //Set values from Api
+            //Set from CrossSettings classs / Session Variable
             //lblName.Text = CrossSettings.Current.GetValueOrDefault("UserName", "");
-
-            var apiResponse = new ServiceApi().GetConsumerProfile();
-            //var apiResponse = new ServiceApi().GetUserProfile();
-            //apiResponse.HandleError(null, true);
-            //apiResponse.OnSucess(response => 
-            //{
-            //    var result = JsonConvert.DeserializeObject<JObject>(response.ToString());
-            //    lblName.Text = result["DisplayName"].ToString();
-            //    //lblMobileNumber.Text = "9857957921";
-            //});
-
-            if (apiResponse.IsSuccessStatusCode)
-            {
-                var response = apiResponse.Content.ReadAsStringAsync();
-                var result = JsonConvert.DeserializeObject<JObject>(response.Result);
-
-                lblName.Text = result["DisplayName"].ToString();
-                lblMobileNumber.Text = result["PhoneNumber"].ToString();
-                addressLabel.Text = "B/5/128, Willson Tower, LA";//result["City"].ToString();
-                lblEmail.Text = result["eMailAddress"].ToString();
-            }
-            else
-            {
-                var data = apiResponse.Content.ReadAsStringAsync();
-                var response = JsonConvert.DeserializeObject<JObject>(data.Result);
-                var error = response["error_description"].ToString();
-
-                var errorAlertController = UIAlertController.Create("Error", error, UIAlertControllerStyle.Alert);
-                errorAlertController.AddAction(UIAlertAction.Create("OK", UIAlertActionStyle.Destructive, null));
-                PresentViewController(errorAlertController, true, null);
-            }
 
             btnFilter.TouchUpInside += (sender, e) =>
             {
@@ -119,7 +89,22 @@ namespace BusinessLocator.iOS
                 }
             };
 
+            //Make Call to API
+            GetProfileData();
+        }
 
+        public void GetProfileData()
+        {
+            var apiResponse = new ServiceApi().GetUserProfile();
+            apiResponse.HandleError(null, true);
+            apiResponse.OnSucess(response =>
+            {
+                var result = response.Result;
+                lblName.Text = result.DisplayName;
+                lblMobileNumber.Text = result.PhoneNumber;
+                addressLabel.Text = "B/5/128, Willson Tower, LA";
+                lblEmail.Text = result.eMailAddress;
+            });
         }
 
         protected void Handle_FinishedPickingMedia(object sender, UIImagePickerMediaPickedEventArgs e)

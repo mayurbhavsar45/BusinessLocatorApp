@@ -4,13 +4,19 @@ using UIKit;
 using Google.Maps;
 using CoreGraphics;
 using CoreLocation;
-
+using BusinessLocator.Shared.Service;
+using Plugin.Settings;
+using Mobile.Extensions.iOS.Extensions;
+using System.Collections.Generic;
+using BusinessLocator.Shared.Models;
 
 namespace BusinessLocator.iOS
 {
     public partial class MapViewController : UIViewController
     {
         MapView mapView;
+        //public static string role = CrossSettings.Current.GetValueOrDefault("RoleName", "");
+        //string searchText = "TestConsumer";
 
         public MapViewController (IntPtr handle) : base (handle)
         {
@@ -19,6 +25,23 @@ namespace BusinessLocator.iOS
         public override void ViewDidLoad()
         {
             base.ViewDidLoad();
+
+            GetData();
+        }
+
+
+        public void GetData()
+        {
+            string role = CrossSettings.Current.GetValueOrDefault("RoleName", "");
+            string searchText = "TestConsumer";
+
+            var apiCall = new ServiceApi().GetUserLocation(21.17024, 72.831062, role, searchText);
+
+            apiCall.HandleError(null, true);
+            apiCall.OnSucess(response =>
+            {
+                new UIAlertView("Action", "Api called", null, "OK", null).Show();
+            });
         }
 
         public override void ViewWillAppear(bool animated)
@@ -29,6 +52,8 @@ namespace BusinessLocator.iOS
         public override void LoadView()
         {
             base.LoadView();
+
+
 
             var camera = CameraPosition.FromCamera(latitude: 21.183549,
                                                    longitude: 72.783175,
@@ -81,6 +106,12 @@ namespace BusinessLocator.iOS
             third_marker.Icon = UIImage.FromFile("icon-marker-30");
 
             View = mapView;
+
+
+
+
+
+
         }
 
     }
