@@ -13,7 +13,7 @@ using BusinessLocator.Shared.Models;
 
 namespace BusinessLocator.iOS
 {
-    public partial class MapListViewController : UIViewController
+    public partial class MapListViewController : BaseViewController
     {
         
         public MapListViewController (IntPtr handle) : base (handle)
@@ -24,69 +24,50 @@ namespace BusinessLocator.iOS
         {
             base.ViewDidLoad();
 
-            var listItems = new List<LocationsListViewItemModel> 
-            {
-                new LocationsListViewItemModel
-                {
-                    Image = "user1.jpg",
-                    Name = "Bruce Willis",
-                    Location = "303-304, Airen Heights",
-                    MobileNumber = "9362-265-214"
-                },
-
-                new LocationsListViewItemModel
-                {
-                    Image = "user2.jpg",
-                    Name = "Jim Carry",
-                    Location = "303-304, Airen Heights",
-                    MobileNumber = "9362-265-214"
-                },
-
-                new LocationsListViewItemModel
-                {
-                    Image = "user3.png",
-                    Name = "Dwayn Smith",
-                    Location = "303-304, Airen Heights",
-                    MobileNumber = "9362-265-214"
-                },
-
-                new LocationsListViewItemModel
-                {
-                    Image = "user4.jpg",
-                    Name = "Jack Maa",
-                    Location = "303-304, Airen Heights",
-                    MobileNumber = "9362-265-214"
-                }
-            };
-
-            UsersTableView.Source = new UsersTableViewSource(listItems);
-
-            UsersTableView.RowHeight =  UITableView.AutomaticDimension;
-            UsersTableView.SeparatorColor = UIColor.Clear;
-            UsersTableView.EstimatedRowHeight = 50f;
-            UsersTableView.ReloadData();
-
             string role = "";
             string searchText = "";
+            LoadingScreen.Show();
 
-            var apiCall = new ServiceApi().GetLocation(21.17024, 72.831062, searchText, role);
+            var apiCall = new ServiceApi().GetUserLocation(21.17024, 72.831062, searchText, role);
 
-                
-                //var source = response.Result;
-                UsersTableView.Source = new UsersTableViewSource(source);
+            apiCall.HandleError(null,true);
+            apiCall.OnSucess(response =>
+            {
+                LoadingScreen.Hide();
 
+                List<UserProfileModel> data = new List<UserProfileModel>();
+
+                for (var i = 0; i < response.Result.RecordList.Count;i++)
+                {
+                    
+                    var result = response.Result.RecordList[i];
+                    data.Add(new UserProfileModel
+                    {
+                        DisplayName = result.DisplayName,
+                        PhoneNumber = result.PhoneNumber,
+                        Image = result.Image,
+                        Address1 = result.Address1
+                    });
+                }
+
+                //foreach(var item in response.Result.RecordList)
+                //{
+                //    data.Add(new UserProfileModel
+                //    {
+                //        DisplayName = item.DisplayName,
+                //        PhoneNumber = item.PhoneNumber,
+                //        Image = item.Image,
+                //        Address1 = item.Address1
+                //    });
+                //}
+
+                UsersTableView.Source = new UsersTableViewSource(data);
                 UsersTableView.RowHeight = UITableView.AutomaticDimension;
                 UsersTableView.SeparatorColor = UIColor.Clear;
                 UsersTableView.EstimatedRowHeight = 50f;
                 UsersTableView.ReloadData();
-
-                //new UIAlertView("Action", "Api called", null, "OK", null).Show();
-          
-
+            });
         }
-
-
-
 
         public override void ViewWillAppear(bool animated)
         {

@@ -3,6 +3,8 @@ using System;
 using UIKit;
 using BusinessLocator.iOS.Model;
 using CoreAnimation;
+using BusinessLocator.Shared.Models;
+using System.IO;
 
 namespace BusinessLocator.iOS
 {
@@ -19,12 +21,13 @@ namespace BusinessLocator.iOS
             this.cellID = cellID;
         }
 
-        public void UpdateCell(LocationsListViewItemModel data)
+        public void UpdateCell(UserProfileModel data)
         {
             ProfileImage.Image = UIImage.FromFile(data.Image);
-            lblName.Text = data.Name;
-            lblMobileNumber.Text = data.MobileNumber;
-            lblAddress.Text = data.Location;
+            //ProfileImage.Image = UIImage.FromFile("user1.jpg");
+            lblName.Text = data.DisplayName;
+            lblMobileNumber.Text = data.PhoneNumber;
+            lblAddress.Text = data.Address1;
         }
 
         public override void LayoutSubviews()
@@ -34,7 +37,6 @@ namespace BusinessLocator.iOS
             profileImageCircle.MasksToBounds = true;
             //profileImageCircle.BorderColor = UIColor.FromRGB(98, 107, 186).CGColor;
             //profileImageCircle.BorderWidth = 3;
-
         }
     }
 }

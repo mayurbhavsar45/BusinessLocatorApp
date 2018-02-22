@@ -13,6 +13,7 @@ using Polly;
 using System.IO;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
+using BusinessLocator.Shared.Models;
 
 namespace BusinessLocator.Shared.Service
 {

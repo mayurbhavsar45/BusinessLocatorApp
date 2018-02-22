@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using BusinessLocator.iOS.Model;
+using BusinessLocator.Shared.Models;
 using Foundation;
 using UIKit;
 
@@ -9,9 +10,8 @@ namespace BusinessLocator.iOS
     public class UsersTableViewSource : UITableViewSource 
     {
         public static NSString CellID = new NSString("UserCell");
-        private List<LocationsListViewItemModel> _items;
-
-        public UsersTableViewSource(List<LocationsListViewItemModel> items)
+        List<UserProfileModel> _items;
+        public UsersTableViewSource(List<UserProfileModel> items)
         {
             this._items = items;
         }
@@ -38,7 +38,7 @@ namespace BusinessLocator.iOS
 
         public override void RowSelected(UITableView tableView, NSIndexPath indexPath)
         {
-            var selected_row =  _items[indexPath.Row].Name;
+            var selected_row =  _items[indexPath.Row].DisplayName;
             new UIAlertView("Alert","You've Selected: " + selected_row,null,"Ok", null).Show();
             tableView.DeselectRow(indexPath, true);
         }

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="213">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
@@ -162,7 +162,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1059" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-273.2" y="-1121.244"/>
+            <point key="canvasLocation" x="-273.19999999999999" y="-1121.2439999999999"/>
         </scene>
         <!--Sign Up View Controller-->
         <scene sceneID="3104">
@@ -400,7 +400,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3107" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-272.8" y="333.2834"/>
+            <point key="canvasLocation" x="-272.80000000000001" y="333.28339999999997"/>
         </scene>
         <!--Chat View Controller-->
         <scene sceneID="5689">
@@ -569,7 +569,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5693" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="716" y="-837.0315"/>
+            <point key="canvasLocation" x="716" y="-837.03150000000005"/>
         </scene>
         <!--Location View Controller-->
         <scene sceneID="5694">
@@ -722,7 +722,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5698" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="708" y="-1627.736"/>
+            <point key="canvasLocation" x="708" y="-1627.7360000000001"/>
         </scene>
         <!--Main View Controller-->
         <scene sceneID="5699">
@@ -905,7 +905,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6977" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="716" y="-118.2909"/>
+            <point key="canvasLocation" x="716" y="-118.29089999999999"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="7099">
@@ -1198,7 +1198,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7109" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="714.4" y="1348.876"/>
+            <point key="canvasLocation" x="714.39999999999998" y="1348.876"/>
         </scene>
         <!--Map View Controller-->
         <scene sceneID="9752">
@@ -1430,7 +1430,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9923" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1381.6" y="-837.0315"/>
+            <point key="canvasLocation" x="1381.5999999999999" y="-837.03150000000005"/>
         </scene>
         <!--Message View Controller-->
         <scene sceneID="20877">
@@ -2041,7 +2041,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="62022" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="714.4" y="2070.315"/>
+            <point key="canvasLocation" x="714.39999999999998" y="2070.3150000000001"/>
         </scene>
         <!--Provider Profile View Controller-->
         <scene sceneID="84191">
@@ -2632,7 +2632,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="108629" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1837.6" y="2840.33"/>
+            <point key="canvasLocation" x="1837.5999999999999" y="2840.3299999999999"/>
         </scene>
         <!--Products Dialog Popup View Controller-->
         <scene sceneID="121474">
@@ -2940,7 +2940,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="132656" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1845.6" y="2070.315"/>
+            <point key="canvasLocation" x="1845.5999999999999" y="2070.3150000000001"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="148100">
@@ -3094,7 +3094,7 @@
                                         </constraints>
                                     </view>
                                 </subviews>
-                                <color key="backgroundColor" customColorSpace="sRGB" colorSpace="calibratedRGB" red="0.43529411764705883" green="0.43529411764705883" blue="0.43529411764705883" alpha="1"/>
+                                <color key="backgroundColor" red="0.43529411764705883" green="0.43529411764705883" blue="0.43529411764705883" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstItem="biG-6d-1Ew" firstAttribute="leading" secondItem="yqY-SD-9W8" secondAttribute="leading" id="91c-Di-uZO"/>
                                     <constraint firstItem="biG-6d-1Ew" firstAttribute="centerY" secondItem="yqY-SD-9W8" secondAttribute="centerY" constant="2.5" id="Ct4-W1-NhS"/>
@@ -3122,7 +3122,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="165811" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-967.2" y="332.3838"/>
+            <point key="canvasLocation" x="-967.20000000000005" y="332.38380000000001"/>
         </scene>
     </scenes>
     <resources>
@@ -3160,40 +3160,5 @@
         <image name="send_message.png" width="200" height="200"/>
         <image name="user1.jpg" width="1280" height="1707"/>
         <image name="user2.jpg" width="474" height="474"/>
-        <image name="ic_magnifier.png" width="48" height="48"/>
-        <image name="ic_person_outline_white_24dp.png" width="24" height="24"/>
-        <image name="chat-tab-icon.png" width="30" height="30"/>
-        <image name="notification_tab_icon.png" width="30" height="30"/>
-        <image name="marker.png" width="40" height="40"/>
-        <image name="marker-pin.png" width="40" height="40"/>
-        <image name="user3.png" width="800" height="1072"/>
-        <image name="user4.jpg" width="600" height="407"/>
-        <image name="right_arrow.png" width="30" height="30"/>
-        <image name="twitter-mask.png" width="512" height="512"/>
-        <image name="Polygon_one.png" width="500" height="353"/>
-        <image name="Polygon_Shape.png" width="1197" height="661"/>
-        <image name="icon-unlock-30.png" width="30" height="30"/>
-        <image name="icon-bungalow-30.png" width="30" height="30"/>
-        <image name="edit-icon.png" width="512" height="512"/>
-        <image name="icon_box40.png" width="40" height="40"/>
-        <image name="camera.png" width="1024" height="1024"/>
-        <image name="profile-edit.png" width="200" height="200"/>
-        <image name="User-edit-256.png" width="256" height="256"/>
-        <image name="698873-icon-136-document-edit-512.png" width="512" height="512"/>
-        <image name="msg_bubble.png" width="768" height="768"/>
-        <image name="back_arrow.png" width="768" height="768"/>
-        <image name="weed_leaf.png" width="768" height="768"/>
-        <image name="product4.jpg" width="588" height="343"/>
-        <image name="product3.png" width="320" height="188"/>
-        <image name="product7.jpg" width="450" height="300"/>
-        <image name="product6.jpg" width="820" height="461"/>
-        <image name="product1.jpg" width="400" height="300"/>
-        <image name="product5.png" width="400" height="443"/>
-        <image name="filled.png" width="200" height="190"/>
-        <image name="empty.png" width="200" height="190"/>
-        <image name="chosen.png" width="200" height="190"/>
-        <image name="map-marker-4.png" width="512" height="512"/>
-        <image name="icons_picture100.png" width="100" height="100"/>
-        <image name="interface.png" width="512" height="512"/>
     </resources>
 </document>

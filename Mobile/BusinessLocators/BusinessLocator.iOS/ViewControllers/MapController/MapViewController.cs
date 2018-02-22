@@ -26,7 +26,7 @@ namespace BusinessLocator.iOS
         {
             base.ViewDidLoad();
 
-            GetData();
+            //GetData();
         }
 
 

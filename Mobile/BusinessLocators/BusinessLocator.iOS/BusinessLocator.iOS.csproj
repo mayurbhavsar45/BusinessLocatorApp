@@ -226,6 +226,8 @@
     <Folder Include="ViewControllers\ProductsDialogPopupController\" />
     <Folder Include="ViewControllers\ReportProviderDialogController\" />
     <Folder Include="ViewControllers\ProviderView\" />
+    <Folder Include="ViewControllers\LoadController\" />
+    <Folder Include="ViewControllers\BaseController\" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="LaunchScreen.storyboard" />
@@ -343,11 +345,11 @@
     <Compile Include="ViewControllers\ProviderView\ProviderMainViewController.designer.cs">
       <DependentUpon>ProviderMainViewController.cs</DependentUpon>
     </Compile>
-    <Compile Include="LoadingScreenViewController.cs" />
-    <Compile Include="LoadingScreenViewController.designer.cs">
+    <Compile Include="ViewControllers\LoadController\LoadingScreenViewController.cs" />
+    <Compile Include="ViewControllers\LoadController\LoadingScreenViewController.designer.cs">
       <DependentUpon>LoadingScreenViewController.cs</DependentUpon>
     </Compile>
-    <Compile Include="BaseViewController.cs" />
+    <Compile Include="ViewControllers\BaseController\BaseViewController.cs" />
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\back_icon.png" />

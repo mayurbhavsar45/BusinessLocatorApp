@@ -124,51 +124,11 @@ namespace BusinessLocator.Shared.Service
 
         #region Location 
 
-        public List<UserProfileModel> GetLocation(double lat, double lng, string search = null, string role = null)
+        public async Task<ResponseWrapper<UserProfileModel>> GetUserLocation(double lat, double lng, string search = null, string role = null)
         {
-            var listItems = new List<UserProfileModel>();
-            HttpClient client = new HttpClient(new NativeMessageHandler())
-            {
-                BaseAddress = new Uri(APIURL)
-            };
             var url = "/api/User/GetUserByLocation/" + lat + "/" + lng + "/1/10/" + search + "/" + role;
-
-            //Dictionary<string, object> test = new Dictionary<string, object>
-            //{
-
-            //    { "Lattitude", lat },
-            //    { "Longitude", lng },
-            //    { "role", role },
-            //    {"startindex",startindex },
-            //    {"endindex",endindex }
-
-            //};
-            //string latitude = lat.ToString();
-            //var access_token = CrossSettings.Current.GetValueOrDefault("AccessToken", "");
-            //client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", access_token);
-            //client.GetAsync(APIURL + "/api/User/GetUserByLocation/21.17024/72.831062/Provider/1/10",);
-
-            //var response = client.GetAsync(APIURL + "/api/User/GetUserByLocation/" + lat + "/" + lng + "/" + role + "/1/10").Result;
-            //var s = response.Content.ReadAsStringAsync();
-            //var i = JsonConvert.DeserializeObject<MapListView>(s.Result);
-            //listItems = JsonConvert.DeserializeObject<List<MapListView>>(s.Result);
-
-            var response =  Get<UserProfileModel>(url, new Dictionary<string, object>()).Result;
-
-            listItems = JsonConvert.DeserializeObject<List<UserProfileModel>>(response.ToString());
-
-            return listItems;
-
+            return await Get<ResponseWrapper<UserProfileModel>>(url, new Dictionary<string, object>());
         }
-
-
-        public async Task<UserProfileModel> GetUserLocation(double lat, double lng, string search = null, string role = null)
-        {
-            var url = "/api/User/GetUserByLocation/" + lat +"/" + lng +  "/1/10/" + search + "/" + role;
-            return await Get<UserProfileModel>(url, new Dictionary<string, object>());
-            //return await Get<UserProfileModel>("/api/User/GetUserByLocation/", new Dictionary<string, object>(){ {"Lattitude", lat}, {"Longitude", lng}, {"role", role}});
-        }
-
 
         #endregion
 

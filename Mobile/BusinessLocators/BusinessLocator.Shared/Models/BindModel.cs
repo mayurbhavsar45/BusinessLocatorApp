@@ -56,6 +56,50 @@ namespace BusinessLocator.Shared.Models
         public double Lattitude { get; set; }
     }
    
+
+    //public class UserProfileModel
+    //{
+    //    public string UserID { get; set; }
+    //    public int SiteID { get; set; }
+    //    public string DisplayName { get; set; }
+    //    public string FirstName { get; set; }
+    //    public string LastName { get; set; }
+    //    public string Address1 { get; set; }
+    //    public string Address2 { get; set; }
+    //    public string City { get; set; }
+    //    public string State { get; set; }
+    //    public string ZipCode { get; set; }
+    //    public string PhoneNumber { get; set; }
+    //    public string eMailAddress { get; set; }
+    //    public string WebSite { get; set; }
+    //    public string Description { get; set; }
+    //    public string Image { get; set; }
+    //    public double Rating { get; set; }
+    //    public string RoleName { get; set; }
+    //    public string RoleId { get; set; }
+    //    public double Longitude { get; set; }
+    //    public double Lattitude { get; set; }
+    //}
+
+    //public class UserProfileWrapper
+    //{
+    //    public List<UserProfileModel> RecordList { get; set; }
+    //    public int TotalRecords { get; set; }
+    //    public string ReturnCode { get; set; }
+    //    public string ReturnMsg { get; set; }
+    //    public string ReturnValue { get; set; }
+    //}
+
+
+    public class ResponseWrapper<T>
+    {
+        public List<T> RecordList { get; set; }
+        public int TotalRecords { get; set; }
+        public string ReturnCode { get; set; }
+        public string ReturnMsg { get; set; }
+        public string ReturnValue { get; set; }
+    }
+
     public class UserProfileModel
     {
         public string UserID { get; set; }
@@ -73,6 +117,8 @@ namespace BusinessLocator.Shared.Models
         public string WebSite { get; set; }
         public string Description { get; set; }
         public string Image { get; set; }
+        public double Rating { get; set; }
+        public string RoleName { get; set; }
         public string RoleId { get; set; }
         public double Longitude { get; set; }
         public double Lattitude { get; set; }
