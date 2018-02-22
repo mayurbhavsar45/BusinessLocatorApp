@@ -10,6 +10,7 @@ using Plugin.Connectivity;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using Mobile.Extensions.iOS.Extensions;
+using System.Text.RegularExpressions;
 
 namespace BusinessLocator.iOS
 {
@@ -91,6 +92,42 @@ namespace BusinessLocator.iOS
             layer.BackgroundColor = UIColor.White.CGColor;
             rolePicker.Layer.Mask = layer;
 
+
+            //Validations 
+            //txtUserName.EditingDidEnd += (sender, e) => 
+            //{
+            //    if(((UITextField)sender).Text.Length <= 0)
+            //    {
+            //        InvokeOnMainThread(()=>
+            //        {
+            //            borderUserName.Layer.BorderColor = UIColor.Red.CGColor;
+            //            txtUserName.AttributedPlaceholder = new NSAttributedString("Username is required", null, UIColor.Yellow);
+            //        });
+            //    }
+            //    else
+            //    {
+            //        borderUserName.Layer.BorderColor = UIColor.Green.CGColor;
+            //    }
+            //};
+
+            //txtEmail.EditingDidEnd += (sender, e) => 
+            //{
+            //    if(((UITextField)sender).Text.Length > 0)
+            //    {
+            //        if(!Regex.Match(txtEmail.Text, @"^([\w\.\-]+)@([\w\-]+)((\.(\w){2,3})+)$").Success)
+            //        {
+            //            borderEmail.Layer.BorderColor = UIColor.Red.CGColor;
+            //            txtEmail.AttributedPlaceholder = new NSAttributedString("Please enter valid email id", null, UIColor.Yellow);
+            //        }
+            //        else
+            //        {
+            //            borderEmail.Layer.BorderColor = UIColor.Green.CGColor;
+            //            txtEmail.Placeholder = "";
+            //        }
+            //    }
+            //};
+
+
             btnBack.TouchUpInside += (sender, e) => 
             {
                 this.NavigationController.PopViewController(true);
@@ -98,17 +135,15 @@ namespace BusinessLocator.iOS
 
             btnSignUp.TouchUpInside +=(sender, e) => 
             {
-                
-                var apiCall = new ServiceApi().Register(txtUserName.Text,txtEmail.Text,txtMobileNumber.Text,txtPassword.Text, picker.SelectedValue, lat, lng);
+                var apiCall = new ServiceApi().Register(txtUserName.Text, txtEmail.Text, txtMobileNumber.Text, txtPassword.Text, picker.SelectedValue, lat, lng);
                 apiCall.HandleError(null, true);
 
-                apiCall.OnSucess((result)=>
+                apiCall.OnSucess((result) =>
                 {
                     var okAlertController = UIAlertController.Create("Alert", "Registration successfull", UIAlertControllerStyle.Alert);
                     okAlertController.AddAction(UIAlertAction.Create("OK", UIAlertActionStyle.Destructive, null));
                     PresentViewController(okAlertController, true, null);
                 });
-
             };
         }
 

@@ -8,11 +8,14 @@ using CoreGraphics;
 using BusinessLocator.Shared.Service;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
+using Mobile.Extensions.iOS.Extensions;
+using BusinessLocator.Shared.Models;
 
 namespace BusinessLocator.iOS
 {
     public partial class MapListViewController : UIViewController
     {
+        
         public MapListViewController (IntPtr handle) : base (handle)
         {
         }
@@ -63,7 +66,27 @@ namespace BusinessLocator.iOS
             UsersTableView.EstimatedRowHeight = 50f;
             UsersTableView.ReloadData();
 
+            string role = "";
+            string searchText = "";
+
+            var apiCall = new ServiceApi().GetLocation(21.17024, 72.831062, searchText, role);
+
+                
+                //var source = response.Result;
+                UsersTableView.Source = new UsersTableViewSource(source);
+
+                UsersTableView.RowHeight = UITableView.AutomaticDimension;
+                UsersTableView.SeparatorColor = UIColor.Clear;
+                UsersTableView.EstimatedRowHeight = 50f;
+                UsersTableView.ReloadData();
+
+                //new UIAlertView("Action", "Api called", null, "OK", null).Show();
+          
+
         }
+
+
+
 
         public override void ViewWillAppear(bool animated)
         {

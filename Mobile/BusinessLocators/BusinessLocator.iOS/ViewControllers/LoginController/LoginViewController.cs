@@ -10,10 +10,11 @@ using BusinessLocator.Shared;
 using BusinessLocator.Shared.Models;
 using Plugin.Settings;
 using Mobile.Extensions.iOS.Extensions;
+using Mobile.Extensions.iOS.ViewControllers;
 
 namespace BusinessLocator.iOS
 {
-    public partial class LoginViewController : UIViewController
+    public partial class LoginViewController : BaseViewController
     {
         UILabel lblBusinessLocator, lblBusinessRequirement, lblWelcome, lblInformation;
         UITextField txtUserName, txtPassword;
@@ -170,16 +171,21 @@ namespace BusinessLocator.iOS
 
             btnLogin.TouchUpInside += (sender, e) => 
             {
+                LoadingScreen.Show();
                 var apiCall = new ServiceApi().Login(txtUserName.Text, txtPassword.Text);
-                apiCall.HandleError(null, true);
+              
+                apiCall.HandleError(LoadingScreen);
 
                 apiCall.OnSucess((result) =>
                 {
-                    MainViewController mainViewController = this.Storyboard.InstantiateViewController("MainViewController") as MainViewController;
-                    if (mainViewController != null)
-                    {
-                        this.NavigationController.PushViewController(mainViewController, true);
-                    } 
+                    LoadingScreen.Hide();
+                    var controller = Storyboard.InstantiateViewController<MainViewController>();
+                    NavigationController.PushViewController(controller, true);
+                    //MainViewController mainViewController = this.Storyboard.InstantiateViewController("MainViewController") as MainViewController;
+                    //if (mainViewController != null)
+                    //{
+                    //    this.NavigationController.PushViewController(mainViewController, true);
+                    //} 
                 });
             };
 

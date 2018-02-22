@@ -343,6 +343,11 @@
     <Compile Include="ViewControllers\ProviderView\ProviderMainViewController.designer.cs">
       <DependentUpon>ProviderMainViewController.cs</DependentUpon>
     </Compile>
+    <Compile Include="LoadingScreenViewController.cs" />
+    <Compile Include="LoadingScreenViewController.designer.cs">
+      <DependentUpon>LoadingScreenViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BaseViewController.cs" />
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\back_icon.png" />
@@ -413,6 +418,7 @@
     <BundleResource Include="Resources\icons_picture100.png" />
     <BundleResource Include="Resources\icons_picture96.png" />
     <BundleResource Include="Resources\Icon-cloud.png" />
+    <BundleResource Include="Resources\interface.png" />
   </ItemGroup>
   <ItemGroup>
     <XamarinComponentReference Include="pdreview">

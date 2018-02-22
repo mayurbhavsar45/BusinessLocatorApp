@@ -32,10 +32,11 @@ namespace BusinessLocator.iOS
 
         public void GetData()
         {
-            string role = CrossSettings.Current.GetValueOrDefault("RoleName", "");
-            string searchText = "TestConsumer";
+            //string role = CrossSettings.Current.GetValueOrDefault("RoleName", "");
+            string role = "";
+            string searchText = "";
 
-            var apiCall = new ServiceApi().GetUserLocation(21.17024, 72.831062, role, searchText);
+            var apiCall = new ServiceApi().GetUserLocation(21.17024, 72.831062, searchText, role);
 
             apiCall.HandleError(null, true);
             apiCall.OnSucess(response =>

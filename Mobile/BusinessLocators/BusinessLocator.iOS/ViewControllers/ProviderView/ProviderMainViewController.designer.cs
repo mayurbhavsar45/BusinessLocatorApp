@@ -14,5 +14,8 @@ namespace BusinessLocator.iOS
     [Register ("ProviderMainViewController")]
     partial class ProviderMainViewController
     {
+        void ReleaseDesignerOutlets ()
+        {
+        }
     }
 }
