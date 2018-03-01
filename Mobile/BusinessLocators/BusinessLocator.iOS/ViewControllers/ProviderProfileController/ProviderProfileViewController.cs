@@ -9,6 +9,13 @@ namespace BusinessLocator.iOS
 {
     public partial class ProviderProfileViewController : UIViewController
     {
+        public string Name { get; set; }
+        public string Image { get; set; }
+        public string MobileNumber { get; set; }
+        public string EmailID { get; set; }
+        public string Addres { get; set; }
+        public int Rating { get; set; }
+
         PDRatingView ratingView;
         public ProviderProfileViewController (IntPtr handle) : base (handle)
         {
@@ -34,13 +41,24 @@ namespace BusinessLocator.iOS
                                                 filledImage: UIImage.FromFile("chosen"),//filled
                                                 chosenImage: UIImage.FromFile("chosen"));
             // Create the view.
-            decimal averageRating = 2.50m;
+            decimal averageRating = Rating;
             decimal halfRoundedRating = Math.Round(averageRating * 2m, MidpointRounding.AwayFromZero) / 2m;
             decimal wholeRoundedRating = Math.Round(averageRating, MidpointRounding.AwayFromZero);
-            ratingView = new PDRatingView(new CoreGraphics.CGRect(130, lblProviderMobileNo.Frame.Top + lblProviderMobileNo.Frame.Height-30, lblProviderMobileNo.Bounds.Width+10, 100), ratingConfig, averageRating);
+            ratingView = new PDRatingView(new CGRect(155, lblProviderMobileNo.Frame.Top + lblProviderMobileNo.Frame.Height-30, lblProviderMobileNo.Bounds.Width+10, 100), ratingConfig, averageRating);
 
             ratingView.AverageRating = wholeRoundedRating;
             View.Add(ratingView);
+
+            var imageBytes = Convert.FromBase64String(Image);
+            var imageData = NSData.FromArray(imageBytes);
+            var UserImage = UIImage.LoadFromData(imageData);
+
+            ProviderDisplayPicture.Image = UserImage;
+            ProviderWallPicture.Image = UserImage;
+            lblProviderName.Text = Name;
+            lblProviderMobileNo.Text = MobileNumber;
+            lblEmailId.Text = EmailID;
+            lblAddress.Text = Addres;
 
             btnBack.TouchUpInside += (sender, e) => 
             {

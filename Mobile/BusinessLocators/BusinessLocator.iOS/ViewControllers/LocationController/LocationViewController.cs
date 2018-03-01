@@ -37,14 +37,21 @@ namespace BusinessLocator.iOS
             AddChildViewController(listViewController);
             controllers.Add(listViewController);
 
+
+            IndicatorView.Hidden = true;
+            btnMapView.BackgroundColor = UIColor.Yellow;
             btnMapView.TouchUpInside +=(sender, e) => 
             {
                 ScrollToPosition(0);
+                btnListView.BackgroundColor = UIColor.White;
+                btnMapView.BackgroundColor = UIColor.Yellow;
             };
 
             btnListView.TouchUpInside+=(sender, e) => 
             {
                 ScrollToPosition(1);
+                btnListView.BackgroundColor = UIColor.Yellow;
+                btnMapView.BackgroundColor = UIColor.White;
             };
 
             var source = new CustomCollectionSource<UIViewController>(controllers, GetCell);

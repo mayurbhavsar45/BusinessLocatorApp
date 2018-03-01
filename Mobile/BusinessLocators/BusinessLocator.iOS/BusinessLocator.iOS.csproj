@@ -106,12 +106,6 @@
     <Reference Include="Plugin.Connectivity">
       <HintPath>..\packages\Xam.Plugin.Connectivity.3.1.1\lib\Xamarin.iOS10\Plugin.Connectivity.dll</HintPath>
     </Reference>
-    <Reference Include="Plugin.Settings.Abstractions">
-      <HintPath>..\packages\Xam.Plugins.Settings.3.1.1\lib\Xamarin.iOS10\Plugin.Settings.Abstractions.dll</HintPath>
-    </Reference>
-    <Reference Include="Plugin.Settings">
-      <HintPath>..\packages\Xam.Plugins.Settings.3.1.1\lib\Xamarin.iOS10\Plugin.Settings.dll</HintPath>
-    </Reference>
     <Reference Include="Mobile.Extensions">
       <HintPath>..\Common Library\Mobile.Extensions.dll</HintPath>
     </Reference>
@@ -120,6 +114,12 @@
     </Reference>
     <Reference Include="Newtonsoft.Json">
       <HintPath>..\packages\Newtonsoft.Json.11.0.1\lib\netstandard2.0\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Plugin.Settings.Abstractions">
+      <HintPath>..\packages\Xam.Plugins.Settings.2.5.4\lib\Xamarin.iOS10\Plugin.Settings.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Plugin.Settings">
+      <HintPath>..\packages\Xam.Plugins.Settings.2.5.4\lib\Xamarin.iOS10\Plugin.Settings.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -204,6 +204,12 @@
     <ImageAsset Include="Resources\Media.xcassets\AppIcon.appiconset\ItunesArtwork%402x.png">
       <Visible>false</Visible>
     </ImageAsset>
+    <ImageAsset Include="Resources\Media.xcassets\Icon_Back.imageset\Contents.json" />
+    <ImageAsset Include="Resources\Media.xcassets\Icon_Back.imageset\back_icon.png" />
+    <ImageAsset Include="Resources\Media.xcassets\ICON_Location_Tab.imageset\Contents.json" />
+    <ImageAsset Include="Resources\Media.xcassets\ICON_Chat_Tab.imageset\Contents.json" />
+    <ImageAsset Include="Resources\Media.xcassets\ICON_Notification_Tab.imageset\Contents.json" />
+    <ImageAsset Include="Resources\Media.xcassets\ICON_Profile_Tab.imageset\Contents.json" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\" />
@@ -228,10 +234,16 @@
     <Folder Include="ViewControllers\ProviderView\" />
     <Folder Include="ViewControllers\LoadController\" />
     <Folder Include="ViewControllers\BaseController\" />
+    <Folder Include="Resources\Media.xcassets\Icon_Back.imageset\" />
+    <Folder Include="Resources\Media.xcassets\ICON_Location_Tab.imageset\" />
+    <Folder Include="Resources\Media.xcassets\ICON_Chat_Tab.imageset\" />
+    <Folder Include="Resources\Media.xcassets\ICON_Notification_Tab.imageset\" />
+    <Folder Include="Resources\Media.xcassets\ICON_Profile_Tab.imageset\" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="LaunchScreen.storyboard" />
     <InterfaceDefinition Include="Main.storyboard" />
+    <InterfaceDefinition Include="View\CustomView.xib" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Info.plist" />
@@ -340,7 +352,6 @@
     <Compile Include="ViewControllers\ReportProviderDialogController\ReportProviderViewController.designer.cs">
       <DependentUpon>ReportProviderViewController.cs</DependentUpon>
     </Compile>
-    <Compile Include="Helpers\Settings.cs" />
     <Compile Include="ViewControllers\ProviderView\ProviderMainViewController.cs" />
     <Compile Include="ViewControllers\ProviderView\ProviderMainViewController.designer.cs">
       <DependentUpon>ProviderMainViewController.cs</DependentUpon>
@@ -350,6 +361,10 @@
       <DependentUpon>LoadingScreenViewController.cs</DependentUpon>
     </Compile>
     <Compile Include="ViewControllers\BaseController\BaseViewController.cs" />
+    <Compile Include="Helpers\Settings.cs" />
+    <Compile Include="View\CustomView.cs" />
+    <Compile Include="View\CustomView.designer.cs" />
+    <Compile Include="CommonClass.cs" />
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\back_icon.png" />
@@ -421,6 +436,10 @@
     <BundleResource Include="Resources\icons_picture96.png" />
     <BundleResource Include="Resources\Icon-cloud.png" />
     <BundleResource Include="Resources\interface.png" />
+    <BundleResource Include="Resources\bl_loader_icon.png" />
+    <BundleResource Include="Resources\info_window.png" />
+    <BundleResource Include="Resources\weed-leaf.png" />
+    <BundleResource Include="Resources\wine.png" />
   </ItemGroup>
   <ItemGroup>
     <XamarinComponentReference Include="pdreview">

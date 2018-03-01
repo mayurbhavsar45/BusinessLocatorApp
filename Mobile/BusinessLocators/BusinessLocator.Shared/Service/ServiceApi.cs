@@ -32,6 +32,7 @@ namespace BusinessLocator.Shared.Service
             vals.Add(new KeyValuePair<string, string>("username", username));
             vals.Add(new KeyValuePair<string, string>("password", password));
             vals.Add(new KeyValuePair<string, string>("grant_type", "password"));
+            vals.Add(new KeyValuePair<string, string>("SiteID", GlobalConfiguration.SiteId.ToString()));
 
             if(CrossConnectivity.Current.IsConnected)
             {
@@ -126,7 +127,7 @@ namespace BusinessLocator.Shared.Service
 
         public async Task<ResponseWrapper<UserProfileModel>> GetUserLocation(double lat, double lng, string search = null, string role = null)
         {
-            var url = "/api/User/GetUserByLocation/" + lat + "/" + lng + "/1/10/" + search + "/" + role;
+            var url = "/api/User/GetUserByLocation/" + lat + "/" + lng + "/" + GlobalConfiguration.SiteId + "/1/10/" + search + "/" + role;
             return await Get<ResponseWrapper<UserProfileModel>>(url, new Dictionary<string, object>());
         }
 

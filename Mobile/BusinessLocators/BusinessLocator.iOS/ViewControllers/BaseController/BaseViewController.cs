@@ -20,6 +20,15 @@ namespace BusinessLocator.iOS
             LoadingScreen.Parent = this;
         }
 
+        public override void LoadView()
+        {
+            base.LoadView();
+
+            LoadingScreen = Storyboard.InstantiateViewController<LoadingScreenViewController>();
+            LoadingScreen.Parent = this;
+        }
+
+
         public override void DidReceiveMemoryWarning()
         {
             base.DidReceiveMemoryWarning();

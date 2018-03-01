@@ -37,7 +37,7 @@ namespace BusinessLocator.iOS
 
                 List<UserProfileModel> data = new List<UserProfileModel>();
 
-                for (var i = 0; i < response.Result.RecordList.Count;i++)
+                for (var i = 0; i < response.Result.RecordList.Count; i++)
                 {
                     
                     var result = response.Result.RecordList[i];

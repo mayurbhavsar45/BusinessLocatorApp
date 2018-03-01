@@ -66,6 +66,11 @@ namespace BusinessLocator.iOS
                 collectionViewPager = null;
             }
 
+            if (IndicatorView != null) {
+                IndicatorView.Dispose ();
+                IndicatorView = null;
+            }
+
             if (lblTitle != null) {
                 lblTitle.Dispose ();
                 lblTitle = null;

@@ -12,7 +12,7 @@ using BusinessLocator.Shared.Models;
 
 namespace BusinessLocator.iOS
 {
-    public partial class UserProfileViewController : UIViewController
+    public partial class UserProfileViewController : BaseViewController
     {
         UIImagePickerController imagePicker;
 
@@ -99,6 +99,7 @@ namespace BusinessLocator.iOS
             apiResponse.HandleError(null, true);
             apiResponse.OnSucess(response =>
             {
+                LoadingScreen.Hide();
                 var result = response.Result;
                 lblName.Text = result.DisplayName;
                 lblMobileNumber.Text = result.PhoneNumber;
